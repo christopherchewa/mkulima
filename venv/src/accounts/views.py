@@ -314,12 +314,13 @@ def product_list_view(request, template_name="index.html"):
 	
 	today = timezone.now()
 	queryset_list = Product.objects.order_by('-id')[:3]
+	queryset_list2 = Product.objects.order_by('id')[:3]
 
 
 	
 
 
-	return render(request, template_name, {'today':today, 'products':queryset_list})
+	return render(request, template_name, {'today':today, 'products':queryset_list, 'products2':queryset_list2})
 	
 def product_details_view(request, slug=None, template_name="product_details.html"):
 	

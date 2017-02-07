@@ -215,7 +215,7 @@
 						<h2 class="title text-center">Featured Items</h2>
                         
                         <div class="row">
-                            {% for product in products %}
+                            {% for product in products2 %}
 							<div class="col-sm-4">
 								<div class="product-image-wrapper">
 									<div class="single-products">
@@ -238,14 +238,14 @@
 
 													<strong id="tap_count"></strong>
 
-													<button type="button" id="taps" class="btn btn-default add-to-cart" data-productid="{{product.id}}" ><i class="fa fa-shopping-cart"></i>Tap</button>
+													<a id="taps" class="btn btn-default add-to-cart" data-productid="{{product.id}}" ><i class="fa fa-shopping-cart"></i>Tap</a>
 												</div>
 											</div>
 									</div>
 									<div class="choose">
 										<ul class="nav nav-pills nav-justified">
-											<li><button type="button" id="taps" data-productid="{{product.id}}"><i class="fa fa-plus-square"></i>Tap</button></li>
-											<li><button type="button" id="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</button></li>
+											<li><a id="taps" data-productid="{{product.id}}"><i class="fa fa-plus-square"></i>Tap</a></li>
+											<li><a id="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
 										</ul>
 								</div>
 							</div>
@@ -276,14 +276,14 @@
 
 													<strong id="tap_count"></strong>
 
-													<button type="button" id="taps" class="btn btn-default add-to-cart" data-productid="{{product.id}}" ><i class="fa fa-shopping-cart"></i>Tap</button>
+													<a id="taps" class="btn btn-default add-to-cart" data-productid="{{product.id}}" ><i class="fa fa-shopping-cart"></i>Tap</a>
 												</div>
 											</div>
 									</div>
 									<div class="choose">
 										<ul class="nav nav-pills nav-justified">
-											<li><button type="button" id="taps" data-productid="{{product.id}}"><i class="fa fa-plus-square"></i>Tap</button></li>
-											<li><button type="button" id="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</button></li>
+											<li><a id="taps" data-productid="{{product.id}}"><i class="fa fa-plus-square"></i>Tap</a></li>
+											<li><a id="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
 										</ul>
 								</div>
 							</div>
