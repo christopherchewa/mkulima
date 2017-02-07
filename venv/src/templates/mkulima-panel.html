@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mkulima Online </title>
+
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+
+    <!--Open Sans Font [ OPTIONAL ]-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="{% static 'css/nifty.min.css' %}" rel="stylesheet">
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <link href="{% static 'css/nifty-demo-icons.min.css' %}" rel="stylesheet">
+
+    
+    <!--Themify Icons [ OPTIONAL ]-->
+    <link href="{% static 'css/themify-icons.min.css' %}" rel="stylesheet">
+        
+    <!--Font Awesome [ OPTIONAL ]-->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+
+    
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--Pace - Page Load Progress Par [OPTIONAL]-->
+    <link href="{% static 'css/pace.min.css' %}" rel="stylesheet">
+
+
+
+
+
+
+    <!--=================================================-->
+    
+        <!--Icons [ SAMPLE ]-->
+    
+
+    
+    <!--=================================================
+
+
+    =================================================-->
+        
+
+</head>
+
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+<body>
+    <div id="container" class="effect aside-float aside-bright mainnav-out">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="default.html" class="navbar-brand">
+                        <img src="img/logo.png" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">Mkulima Online</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle push" href="#">
+                                <i class="demo-pli-view-list"></i>
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+
+
+
+                        <!--Notification dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                <i class="demo-pli-bell"></i>
+                                <span class="badge badge-header badge-danger"></span>
+                            </a>
+
+                            <!--Notification dropdown menu-->
+                            <div class="dropdown-menu dropdown-menu-md">
+                                <div class="pad-all bord-btm">
+                                    <p class="text-semibold text-main mar-no">You have 3 notifications.</p>
+                                </div>
+                                <div class="nano scrollable">
+                                    <div class="nano-content">
+                                        <ul class="head-list">
+                                            
+                                            <!-- Dropdown list-->
+                                            <li>
+                                                <a class="media" href="#">
+                                                    <div class="media-left">
+                                                        <i class="demo-pli-file-edit icon-2x"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="text-nowrap">Write a review</div>
+                                                        <small class="text-muted">Last Active 8 hours ago</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <!-- Dropdown list-->
+                                            <li class="bg-gray">
+                                                <a class="media" href="#">
+                                                    <div class="media-left">
+                                                        <img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/9.png">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="text-nowrap">Lucy sent you a note</div>
+                                                        <small class="text-muted">30 minutes ago</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <!-- Dropdown list-->
+                                            <li class="bg-gray">
+                                                <a class="media" href="#">
+                                                    <div class="media-left">
+                                                        <img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/3.png">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="text-nowrap">Jackson sent you a note</div>
+                                                        <small class="text-muted">40 minutes ago</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!--Dropdown footer-->
+                                <div class="pad-all bord-top">
+                                    <a href="#" class="btn-link text-dark box-block">
+                                        <i class="fa fa-angle-right fa-lg pull-right"></i>Show All Notifications
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End notifications dropdown-->
+
+                    </ul>
+                    <ul class="nav navbar-top-links pull-right">
+
+                        <!--Language selector-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="dropdown">
+                            <a id="demo-lang-switch" class="lang-selector dropdown-toggle" href="#" data-toggle="dropdown">
+                                <span class="lang-selected">
+                                    <img class="lang-flag" src="img/flags/kenya.png" alt="English Kenya">
+                                </span>
+                            </a>
+
+                            <!--Language selector menu-->
+                            <ul class="head-list dropdown-menu">
+						        <li>
+						            <!--English-->
+						            <a href="#" class="active">
+						                <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English">
+						                <span class="lang-id">EN</span>
+						                <span class="lang-name">English</span>
+						            </a>
+						        </li>
+						        <li>
+						            <!--English-->
+						            <a href="#">
+						                <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English">
+						                <span class="lang-id">EN</span>
+						                <span class="lang-name">English</span>
+						            </a>
+						        </li>
+						        <li>
+						            <!--Kenya-->
+						            <a href="#">
+						                <img class="lang-flag" src="img/flags/kenya.png" alt="Kiswahili">
+						                <span class="lang-id">KW</span>
+						                <span class="lang-name">Kiswahili</span>
+						            </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End language selector-->
+
+
+
+                        <!--User dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="pull-right">
+                                    <img class="img-circle img-user media-object" src="img/profile-photos/1.png" alt="Profile Picture">
+                                    <!--<i class="demo-pli-male ic-user"></i>-->
+                                </span>
+                                <div class="username hidden-xs">Mack Mende</div>
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
+                                <!-- User dropdown menu -->
+                                <ul class="head-list">
+                                    <li>
+                                        <a href="pages-profile.html">
+                                            <i class="demo-pli-male icon-lg icon-fw"></i> Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="badge badge-danger pull-right">4</span>
+                                            <i class="demo-pli-mail icon-lg icon-fw"></i> Notes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="demo-pli-information icon-lg icon-fw"></i> Help
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pages-lock-screen.html">
+                                            <i class="demo-pli-computer-secure icon-lg icon-fw"></i> Lock screen
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- Dropdown footer -->
+                                <div class="pad-all text-right">
+                                    <a href="pages-login.html" class="btn btn-primary">
+                                        <i class="demo-pli-unlock"></i> Logout
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End user dropdown-->
+
+                        <li>
+                            <a href="#" class="aside-toggle navbar-aside-icon">
+                                <i class="pci-ver-dots"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                
+                <!--Page Title-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div id="page-title" >
+                    <h1 class="page-header text-overflow">Welcome Mkulima</h1>
+
+                    <!--Searchbox-->
+                    <div class="searchbox">
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search..">
+                            <span class="input-group-btn">
+                                <button class="text-muted" type="button"><i class="demo-pli-magnifi-glass"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End page title-->
+
+
+                <!--Breadcrumb-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <ol class="breadcrumb">
+					<li><a href="default.html">Home</a></li>
+					<li class="active"><a href="#">Dashboard</a></li>
+                </ol>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End breadcrumb-->
+                
+                
+                
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+                    <div class="fixed-fluid">
+                        <div class="fluid">
+                            <div class="col-sm-3 col-md-2">
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                            <div class="col-sm-8 col-md-8 col-lg-8 pull-lg-left">
+                                <div class="row">
+                                    <div class="">
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                    <!--Tile-->
+                                    <!--===================================================-->
+                                    <a href= "/products/create/">
+                                        <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
+                                        <div class="media-left">
+                                            <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
+                                                <i class="ti-plus icon-2x"></i>
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <p class="text-2x mar-no text-semibold">Add Item</p>
+                                            <p class="text-muted mar-no">Add new item</p>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    <!--===================================================-->
+                                    <!--Tile-->
+                                    <!--===================================================-->
+                                    <a href="/products/editlist">
+                                        <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
+                                        <div class="media-left">
+                                            <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
+                                                <i class="ti-pencil-alt icon-2x"></i>
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <p class="text-2x mar-no text-semibold">Edit Item</p>
+                                            <p class="text-muted mar-no">Change exising item</p>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    <!--===================================================-->
+                                    <!--Tile-->
+                                    <!--===================================================-->
+                                    <a href="products/deletelist">
+                                        <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
+                                        <div class="media-left">
+                                            <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
+                                                <i class="ti-trash icon-2x"></i>
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <p class="text-2x mar-no text-semibold">Delete Item</p>
+                                            <p class="text-muted mar-no">Delete existing item</p>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    <!--===================================================-->
+                                </div>
+                            </div>
+                            <div class="col-sm-1 col-md-2">
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container-fluid">
+                        <div class="col-md-12">
+                            <div class="row">
+                            <div class="col-sm-6 col-lg-4 col-md-3 bord-rgt">
+					        <!--List Todo-->
+					        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <div class="panel panel-trans">
+					            <div class="panel-heading">
+					                <h3 class="panel-title">To do list</h3>
+					            </div>
+					            <div class="pad-ver">
+					                <ul class="list-group bg-trans list-todo mar-no">
+					                    <li class="list-group-item">
+					                        <input id="demo-todolist-1" class="magic-checkbox" type="checkbox">
+					                        <label for="demo-todolist-1"><span>Update contact details. <span class="label label-danger">Important</span></span></label>
+					                    </li>
+					                    <li class="list-group-item">
+					                        <input id="demo-todolist-2" class="magic-checkbox" type="checkbox" checked>
+					                        <label for="demo-todolist-2"><span>Confirm package delivery</span></label>
+					                    </li>
+					                    <li class="list-group-item">
+					                        <input id="demo-todolist-4" class="magic-checkbox" type="checkbox">
+					                        <label for="demo-todolist-4"><span>Update inventory <span class="label label-warning">Pending</span></span></label>
+					                    </li>
+					                    <li class="list-group-item">
+					                        <input id="demo-todolist-5" class="magic-checkbox" type="checkbox" checked>
+					                        <label for="demo-todolist-5"><span>Communicate with Njuki <span class="label label-info">2 Mins</span></span></label>
+					                    </li>
+					                </ul>
+					            </div>
+					            <div class="input-group pad-all">
+					                <input type="text" class="form-control" placeholder="New task" autocomplete="off">
+					                <span class="input-group-btn">
+					                    <button type="button" class="btn btn-success"><i class="demo-pli-add"></i></button>
+					                </span>
+					            </div>
+					        </div>
+					        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					        <!--End todo list-->
+                                
+					    </div>
+                                
+                                <div class="col-md-1 hidden-xs hidden-lg">
+                                </div>
+					    <div class="col-lg-4 col-md-4 bord-rgt">
+					        <div class="panel panel-trans">
+					            <div class="panel-heading hidden-xs">
+					                <div class="panel-control">
+					                    <a title="" data-html="true" data-container="body" data-original-title="&lt;p class='h4 text-semibold'&gt;Information&lt;/p&gt;&lt;p style='width:150px'&gt;View support information and options.&lt;/p&gt;" href="#" class="demo-psi-information icon-lg icon-fw unselectable text-info add-tooltip"></a>
+					                </div>
+					                <h3 class="panel-title">Support</h3>
+					            </div>
+					            <div class="bord-btm hidden-xs">
+					                <ul class="list-group bg-trans">
+					                    <li class="list-group-item">
+					                        <div class="pull-right">
+					                            <input id="demo-online-status-checkbox" class="toggle-switch" type="checkbox" checked>
+					                            <label for="demo-online-status-checkbox"></label>
+					                        </div>
+					                        Online status
+					                    </li>
+					                    <li class="list-group-item">
+					                        <div class="pull-right">
+					                            <input id="demo-show-off-contact-checkbox" class="toggle-switch" type="checkbox">
+					                            <label for="demo-show-off-contact-checkbox"></label>
+					                        </div>
+					                        Contact Email visilbe
+					                    </li>
+					                </ul>
+					            </div>
+					            <div class="panel-body">
+					                <div class="col-xs-6 pad-btm">
+					                    <p class="text-semibold text-main">Trashed</p>
+					                    <div class="progress progress-sm">
+					                        <div class="progress-bar progress-bar-purple" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;" role="progressbar">
+					                            <span class="sr-only">15%</span>
+					                        </div>
+					                    </div>
+					                    <small>15% Trashed</small>
+					                </div>
+					                <div class="col-xs-6 pad-btm">
+					                    <p class="text-semibold text-main">Succesful Taps</p>
+					                    <div class="progress progress-sm">
+					                        <div class="progress-bar progress-bar-success" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;" role="progressbar">
+					                            <span class="sr-only">70%</span>
+					                        </div>
+					                    </div>
+					                    <small>70% Success</small>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="col-lg-4 col-md-3 hidden-xs">
+					        <div class="panel">
+					            <div class="pad-all">
+					                <div class="media mar-btm">
+					                    <div class="media-left">
+					                        <img src="img/profile-photos/2.png" class="img-md img-circle" alt="Avatar">
+					                    </div>
+					                    <div class="media-body">
+					                        <p class="text-lg text-main text-semibold mar-no">Njuki Ndung'u</p>
+					                        <p>Marketing manager</p>
+					                    </div>
+					                </div>
+					                <blockquote class="bq-sm bq-open bq-close">Lorem ipsum dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</blockquote>
+					            </div>
+					
+					            <div class="bord-top">
+					                <ul class="list-group bg-trans bord-no">
+					                    <li class="list-group-item list-item-sm">
+					                        <div class="media-left">
+					                            <i class="demo-psi-facebook icon-lg"></i>
+					                        </div>
+					                        <div class="media-body">
+					                            <a href="#" class="btn-link text-semibold">Facebook</a>
+					                        </div>
+					                    </li>
+					                    <li class="list-group-item list-item-sm">
+					                        <div class="media-left">
+					                            <i class="demo-psi-twitter icon-lg"></i>
+					                        </div>
+					                        <div class="media-body">
+					                            <a href="#" class="btn-link text-semibold">@Ndung'ij</a>
+					                            <br>
+					                            Marketing is my skill <a href="#" class="btn-link text-bold">#MkulimaConnect</a> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+					                        </div>
+					                    </li>
+					                    <li class="list-group-item list-item-sm">
+					                        <div class="media-left">
+					                            <i class="demo-psi-instagram icon-lg"></i>
+					                        </div>
+					                        <div class="media-body">
+					                            <a href="#" class="btn-link text-semibold">NjukiNdung'u</a>
+					                        </div>
+					                    </li>
+					                    <li class="list-group-item list-item-sm">
+					                        <div class="media-body">
+					
+					                        </div>
+					                    </li>
+					                </ul>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+                        </div>
+                    </div>
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+
+
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+
+            
+            <!--ASIDE-->
+            <!--===================================================-->
+            <aside id="aside-container">
+                <div id="aside">
+                    <div class="nano">
+                        <div class="nano-content">
+                            
+                            <!--Nav tabs-->
+                            <!--================================-->
+                            <ul class="nav nav-tabs nav-justified">
+                                <li class="active">
+                                    <a href="#demo-asd-tab-1" data-toggle="tab">
+                                        <i class="ti-rss-alt "></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#demo-asd-tab-2" data-toggle="tab">
+                                        <i class="demo-pli-information icon-fw"></i> Report
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#demo-asd-tab-3" data-toggle="tab">
+                                        <i class="demo-pli-wrench icon-fw"></i> Settings
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--================================-->
+                            <!--End nav tabs-->
+
+
+
+                            <!-- Tabs Content -->
+                            <!--================================-->
+                            <div class="tab-content">
+
+                                <!--First tab (Contact list)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <div class="tab-pane fade in active" id="demo-asd-tab-1">
+                                    <br>
+                                    <p class="pad-hor text-semibold text-main">
+                                        <span class="pull-right badge badge-success">Offline</span> Recent Contacts
+                                    </p>
+
+                                    <!--Works-->
+                                    <div class="list-group bg-trans">
+                                        <a href="#" class="list-group-item">
+                                            <span class="badge badge-purple badge-icon badge-fw pull-left"></span> Joey K. Githae
+                                        </a>
+                                        <a href="#" class="list-group-item">
+                                            <span class="badge badge-info badge-icon badge-fw pull-left"></span> Andrew Bosco
+                                        </a>
+                                        <a href="#" class="list-group-item">
+                                            <span class="badge badge-success badge-icon badge-fw pull-left"></span> John Juma
+                                        </a>
+                                        <a href="#" class="list-group-item">
+                                            <span class="badge badge-danger badge-icon badge-fw pull-left"></span> Susan Sum
+                                        </a>
+                                    </div>
+
+
+                                    <hr>
+                                    <p class="pad-hor mar-top text-semibold text-main">News</p>
+
+                                    <div class="pad-hor">
+                                        <p class="text-muted">Mkulima Online will be under maintainence during the
+                                            <a data-title="45%" class="add-tooltip text-semibold" href="#">Period of</a>: 20/04/17 until 30/04/17.
+                                        </p>
+                                        <small class="text-muted"><em>Last Update : Dec 12, 2016</em></small>
+                                    </div>
+
+
+                                </div>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--End first tab (Contact list)-->
+
+
+                                <!--Second tab (Custom layout)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <div class="tab-pane fade" id="demo-asd-tab-2">
+                                    <hr>
+                                    <p class="pad-hor text-semibold text-main">Additional Actions</p>
+
+                                    <!--Simple Menu-->
+                                    <div class="list-group bg-trans">
+                                        <a href="#" class="list-group-item"><i class="demo-pli-information icon-lg icon-fw"></i> Service Information</a>
+                                        <a href="#" class="list-group-item"><i class="demo-pli-mine icon-lg icon-fw"></i> Report Misconduct</a>
+                                        <a href="#" class="list-group-item"><i class="demo-pli-credit-card-2 icon-lg icon-fw"></i> Payment Issue</a>
+                                        <a href="#" class="list-group-item"><i class="demo-pli-support icon-lg icon-fw"></i> Note Center</a>
+                                    </div>
+
+
+                                    <hr>
+
+                                    <div class="text-center">
+                                        <div><i class="demo-pli-old-telephone icon-3x"></i></div>
+                                        Questions?
+                                        <p class="text-lg text-semibold text-main"> (020) 0204-51434 </p>
+                                        <small><em>We are here 24/7</em></small>
+                                    </div>
+                                </div>
+                                <!--End second tab (Custom layout)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+
+                                <!--Third tab (Settings)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <div class="tab-pane fade" id="demo-asd-tab-3">
+                                    <ul class="list-group bg-trans">
+                                        <li class="pad-top list-header">
+                                            <p class="text-semibold text-main mar-no">Account Settings</p>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="toggle-switch" id="demo-switch-1" type="checkbox">
+                                                <label for="demo-switch-1"></label>
+                                            </div>
+                                            <p class="mar-no">Deactivate my account</p>
+                                            <small class="text-muted">Are you sure you want to deactivate your account ?</small>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="toggle-switch" id="demo-switch-2" type="checkbox" checked>
+                                                <label for="demo-switch-2"></label>
+                                            </div>
+                                            <p class="mar-no">Quiet mode</p>
+                                            <small class="text-muted">Appear to your network as offline.</small>
+                                        </li>
+                                    </ul>
+
+
+                                    <hr>
+
+                                    <ul class="list-group pad-btm bg-trans">
+                                        <li class="list-header"><p class="text-semibold text-main mar-no">Public Settings</p></li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="toggle-switch" id="demo-switch-4" type="checkbox" checked>
+                                                <label for="demo-switch-4"></label>
+                                            </div>
+                                            Mkulima Newsletter
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="toggle-switch" id="demo-switch-5" type="checkbox" checked>
+                                                <label for="demo-switch-5"></label>
+                                            </div>
+                                            Send Automatic Feedback
+                                        </li>
+                                    </ul>
+
+
+
+                                    <hr>
+
+                                    <p class="pad-hor text-semibold text-main mar-no">Account History</p>
+                                    <div class="pad-all">
+                                        <p>Successfull Taps</p>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar progress-bar-success" style="width: 65%;"><span class="sr-only">65%</span></div>
+                                        </div>
+                                        <small class="text-muted">65% Completed</small>
+                                    </div>
+                                    <div class="pad-hor">
+                                        <p>Unsuccessful Taps</p>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar progress-bar-danger" style="width: 15%;"><span class="sr-only">15%</span></div>
+                                        </div>
+                                        <small class="text-muted">6/23 Trash</small>
+                                    </div>
+
+                                </div>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--Third tab (Settings)-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!--===================================================-->
+            <!--END ASIDE-->
+
+            
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
+
+                    <!--Menu-->
+                    <!--================================-->
+                    <div id="mainnav-menu-wrap">
+                        <div class="nano">
+                            <div class="nano-content">
+
+                                <!--Profile Widget-->
+                                <!--================================-->
+                                <div id="mainnav-profile" class="mainnav-profile">
+                                    <div class="profile-wrap">
+                                        <div class="pad-btm">
+                                            <span class="label label-success pull-right">Hello</span>
+                                            <img class="img-circle img-sm img-border" src="img/profile-photos/1.png" alt="Profile Picture">
+                                        </div>
+                                        <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
+                                            <span class="pull-right dropdown-toggle">
+                                                <i class="dropdown-caret"></i>
+                                            </span>
+                                            <p class="mnp-name">Mack Mende</p>
+                                            <span class="mnp-desc">mack.mende@mkulima-online</span>
+                                        </a>
+                                    </div>
+                                    <div id="profile-nav" class="collapse list-group bg-trans">
+                                        <a href="pages-profile.html" class="list-group-item">
+                                            <i class="demo-pli-male icon-lg icon-fw"></i> View Profile
+                                        </a>
+                                        <a href="#" class="list-group-item">
+                                            <i class="demo-pli-gear icon-lg icon-fw"></i> Settings
+                                        </a>
+                                        <a href="#" class="list-group-item">
+                                            <i class="demo-pli-information icon-lg icon-fw"></i> Help
+                                        </a>
+                                        <a href="pages-login.html" class="list-group-item">
+                                            <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                                <ul id="mainnav-menu" class="list-group">
+						
+						            <!--Category name-->
+						            <li class="list-header">Navigation</li>
+                                    
+						            <!--Menu list item-->
+						            <li class="active-sub">
+						                <a class="active-link">
+						                    <i class="ti-home"></i>
+						                    <span class="menu-title">
+												<strong>Dashboard</strong>
+											</span>
+						                </a>
+						            </li>
+						
+						            <!--Menu list item-->
+						            <li>
+						                <a href="#">
+						                    <i class="ti-hummer"></i>
+						                    <span class="menu-title">Actions</span>
+											<i class="arrow"></i>
+						                </a>
+						
+						                <!--Submenu-->
+						                <ul class="collapse">
+											<li><a href="#">My Listings</a></li>
+                                            <li><a href="add-item.html">Add Listing</a></li>
+											<li><a href="#">Remove Listing</a></li>
+											
+						                </ul>
+						            </li>
+						
+						            <!--Menu list item-->
+						            <li>
+						                <a href="#">
+						                    <i class="fa fa-balance-scale"></i>
+						                    <span class="menu-title">Warehouse</span>
+											<i class="arrow"></i>
+						                </a>
+						
+						                <!--Submenu-->
+						                <ul class="collapse">
+						                    <li><a href="tables-bootstrap.html">Inventory Report</a></li>
+											<li><a href="#">Manage Inventory</a></li>
+											
+						                </ul>
+						            </li>
+						              
+						            <!--Category name-->
+						            <li class="list-header">Toolbox</li>
+						
+						            <!--Menu list item-->
+						            <li>
+						                <a href="#">
+						                    <i class="fa fa-sliders"></i>
+						                    <span class="menu-title">Tools</span>
+											<i class="arrow"></i>
+						                </a>
+						
+						                <!--Submenu-->
+						                <ul class="collapse">
+						                    <li><a href="#">FAQ</a></li>
+											<li><a href="pages-lock-screen.html">Lock Screen</a></li>
+											
+						                </ul>
+						            </li>
+						            <li class="list-divider"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--================================-->
+                    <!--End menu-->
+
+                </div>
+            </nav>
+            <!--===================================================-->
+            <!--END MAIN NAVIGATION-->
+
+        </div>
+
+        
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+
+            <!-- Visible when footer positions are fixed -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="show-fixed pull-right">
+                You have <a href="#" class="text-bold text-main"><span class="label label-danger">3</span> pending action.</a>
+            </div>
+
+
+
+            <!-- Visible when footer positions are static -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="hide-fixed pull-right pad-rgt">
+                4GB of <strong>5GB</strong> Free.
+            </div>
+
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <p class="pad-lft">&#0169; 2016 Mkulima-Online</p>
+
+
+
+        </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+
+
+        <!-- SCROLL PAGE BUTTON -->
+        <!--===================================================-->
+        <button class="scroll-top btn">
+            <i class="pci-chevron chevron-up"></i>
+        </button>
+        <!--===================================================-->
+
+
+
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+
+
+    
+    
+    <script src="{% static 'js/pace.min.js' %}"></script>
+
+
+    <!--jQuery [ REQUIRED ]-->
+    <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+
+
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="{% static 'js/nifty.min.js' %}"></script>
+
+</body>
+
+<!-- Mirrored from www.themeon.net/nifty/v2.5/default.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Jul 2016 13:44:21 GMT -->
+</html>

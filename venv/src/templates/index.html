@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | mkulima online</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mycss.css' %}" rel="stylesheet">
+    
+    
+    <!--[if lt IE 9]>
+    
+
+
+    <![endif]-->       
+</head><!--/head-->
+
+<body>
+	<header id="header"><!--header-->
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="index.html"><img src="images/home/u332-8.png" alt="Mkulima Online" /></a>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+        
+        <div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href="#"><i class="fa fa-phone"></i> +254 701 188 821</a></li>
+								<li><a href="https://www.mkulima-online.com"><i class="fa fa-envelope"></i> info@mkulima-online.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="/products/" class="active">Market</a></li>
+								<li class="dropdown"><a href="#">Browse<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="shop.html">Farm Input</a></li>
+										<li><a href="product-details.html">services</a></li> 
+										<li><a href="checkout.html">New Arrivals</a></li> 
+										<li><a href="cart.html">Top Featured</a></li> 
+										<li><a href="login.html">Login</a></li> 
+                                    </ul>
+                                </li> 
+								<li class="dropdown"><a href="#">Network<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="blog.html">My Networks</a></li>
+										<li><a href="blog-single.html">Top Rated</a></li>
+                                    </ul>
+                                </li> 
+								<li><a href="contact-us.html">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="Search"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+	
+	<section id="BODY">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3 hidden-xs">
+					<div class="left-sidebar">
+						<h2>Browse</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Farm Input
+										</a>
+									</h4>
+								</div>
+								<div id="sportswear" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Samsung </a></li>
+											<li><a href="#">Seeds </a></li>
+											<li><a href="#">Supplements </a></li>
+											<li><a href="#">Machinery</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Services
+										</a>
+									</h4>
+								</div>
+								<div id="mens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Transport</a></li>
+											<li><a href="#">Machinery</a></li>
+											<li><a href="#">Human Resource</a></li>
+											<li><a href="#">Excavation</a></li>
+											<li><a href="#">Marketing</a></li>
+											<li><a href="#">General Service</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">New Arrivals</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Featured</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Top News</a></h4>
+								</div>
+							</div>							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Tools</a></h4>
+								</div>
+							</div>							
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Networks</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right">(50)</span>Naivasha</a></li>
+									<li><a href="#"> <span class="pull-right">(56)</span>Uasin Gishu</a></li>
+									<li><a href="#"> <span class="pull-right">(27)</span>Kitale</a></li>
+									<li><a href="#"> <span class="pull-right">(32)</span>Nyeri</a></li>
+									<li><a href="#"> <span class="pull-right">(5)</span>Kwale</a></li>
+									<li><a href="#"> <span class="pull-right">(9)</span>Nairobi</a></li>
+									<li><a href="#"> <span class="pull-right">(4)</span>Sony</a></li>
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+						
+						<div class="shipping text-center hidden-xs"><!--shipping-->
+							<img class="img-responsive" src="images/home/shipping.jpg" alt="" />
+						</div><!--/shipping-->
+					
+					</div>
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Featured Items</h2>
+                        
+                        <div class="row">
+                            {% for product in products %}
+							<div class="col-sm-4">
+								<div class="product-image-wrapper">
+									<div class="single-products">
+											<div class="productinfo text-center">
+											{% if product.image %}
+												<img src="{{product.image.url}}" alt="" />
+											{% endif %}
+
+												<h2>{{product.name}}</h2>
+												<p>Ksh {{product.price}}</p>
+												
+											</div>
+											<div class="product-overlay">
+												<div class="overlay-content">
+	                                            <div class="user-img img-responsive">
+	                                                <img class="img-circle" src="images/users/1.jpg">
+	                                            </div>
+													<h2>{{product.name}}</h2>
+													<p>Ksh {{product.price}}</p>
+
+													<strong id="tap_count"></strong>
+
+													<button type="button" id="taps" class="btn btn-default add-to-cart" data-productid="{{product.id}}" ><i class="fa fa-shopping-cart"></i>Tap</button>
+												</div>
+											</div>
+									</div>
+									<div class="choose">
+										<ul class="nav nav-pills nav-justified">
+											<li><button type="button" id="taps" data-productid="{{product.id}}"><i class="fa fa-plus-square"></i>Tap</button></li>
+											<li><button type="button" id="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</button></li>
+										</ul>
+								</div>
+							</div>
+							</div>
+						{% endfor %}
+						</div>
+						<div class="row">
+                            {% for product in products %}
+							<div class="col-sm-4">
+								<div class="product-image-wrapper">
+									<div class="single-products">
+											<div class="productinfo text-center">
+											{% if product.image %}
+												<img src="{{product.image.url}}" alt="" />
+											{% endif %}
+
+												<h2>{{product.name}}</h2>
+												<p>Ksh {{product.price}}</p>
+												
+											</div>
+											<div class="product-overlay">
+												<div class="overlay-content">
+	                                            <div class="user-img img-responsive">
+	                                                <img class="img-circle" src="images/users/1.jpg">
+	                                            </div>
+													<h2>{{product.name}}</h2>
+													<p>Ksh {{product.price}}</p>
+
+													<strong id="tap_count"></strong>
+
+													<button type="button" id="taps" class="btn btn-default add-to-cart" data-productid="{{product.id}}" ><i class="fa fa-shopping-cart"></i>Tap</button>
+												</div>
+											</div>
+									</div>
+									<div class="choose">
+										<ul class="nav nav-pills nav-justified">
+											<li><button type="button" id="taps" data-productid="{{product.id}}"><i class="fa fa-plus-square"></i>Tap</button></li>
+											<li><button type="button" id="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</button></li>
+										</ul>
+								</div>
+							</div>
+							</div>
+						{% endfor %}
+						</div>
+
+
+
+
+
+
+
+
+
+					</div><!--features_items-->
+					
+					<div class="category-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#mostpopular" data-toggle="tab">Most Popular</a></li>
+								<li><a href="#topsellers" data-toggle="tab">Top Sellers</a></li>
+								<li><a href="#newarrivals" data-toggle="tab">New Arrivals</a></li>
+								<li><a href="#topdeals" data-toggle="tab">Top Deals</a></li>								
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade active in" id="mostpopular" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/gallery1.jpg" alt="" />
+												<h2>Tomato Pila</h2>
+												<p>Ksh 104,956</p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Tap</a>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							
+							<div class="tab-pane fade" id="topsellers" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/product2.jpg" alt="" />
+												<h2>Venice Flowers</h2>
+												<p>Ksh 56,999</p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Tap</a>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							
+							</div>
+							
+							<div class="tab-pane fade" id="newarrivals" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/gallery3.jpg" alt="" />
+												<h2>Kitale Spruce Kale</h2>
+												<p>Ksh 69,999</p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Tap</a>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							
+							<div class="tab-pane fade" id="topdeals" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/gallery1.jpg" alt="" />
+												<h2>Plum Tomatoes</h2>
+												<p>Ksh 103,999</p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Tap</a>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					</div><!--/category-tab-->
+					
+					<div class="recommended_items"><!--recommended_items-->
+						<h2 class="title text-center">Top News</h2>
+						
+						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner">
+								<div class="item active">	
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/product8.jpg" alt="" />
+													<h2>Fresh Vegetables</h2>
+													<p>Ksh 56,999</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Tap</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/product3.jpg" alt="" />
+													<h2>Yellow Rose Pro</h2>
+													<p>Ksh 68,999</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Tap</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/product4.jpg" alt="" />
+													<h2>Assorted Groceries</h2>
+													<p>Ksh 103,999</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Tap</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">	
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/product2.jpg" alt="" />
+													<h2>Lenovo Ideapad</h2>
+													<p>Ksh 56,999</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Tap</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/product8.jpg" alt="" />
+													<h2>Fresh Farm Vegetables</h2>
+													<p>Ksh 56,999</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Tap</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/product1.jpg" alt="" />
+													<h2>Farm Fresh Tomatoes</h2>
+													<p>Ksh 103,999</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Tap</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+								<i class="fa fa-angle-left"></i>
+							  </a>
+							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+								<i class="fa fa-angle-right"></i>
+							  </a>			
+						</div>
+					</div><!--/recommended_items-->
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer id="footer"><!--Footer-->
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Mkulima Info</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Online Help</a></li>
+								<li><a href="#">FAQ’s</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Shop Quick</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Farm Input</a></li>
+								<li><a href="#">Services</a></li>
+								<li><a href="#">Discounts</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Policies</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Terms of Use</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Refund Policy</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About mkulima online</h2>
+							<ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Information</a></li>
+                                
+								<li><a href="#">Copyright</a></li>
+							</ul>
+						</div>
+					</div>
+                    <div class="col-sm-3 col-sm-offset-1">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+							<p>3134 Muindi Mbingu, Mombasa(KENYA)</p>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2016 mkulima online.</p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+	  
+	  <script src="{% static 'js/mkulima-ajax.js' %}"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	
+    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+	
+</body>
+</html>
