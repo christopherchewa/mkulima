@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"to",
+				"topdeals\t(index.html)"
+			],
+			[
+				"new",
+				"newarrivals\t(index.html)"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"sacc",
+				"sacco_name"
+			],
+			[
+				"H",
+				"HttpResponse"
+			],
+			[
+				"It",
+				"IntegerField"
+			],
+			[
+				"customer",
+				"customerinfo"
+			],
+			[
+				"PROD",
+				"product"
+			],
+			[
+				"Pro",
+				"Product"
+			],
+			[
 				"Ht",
 				"Http404"
 			],
@@ -46,10 +82,6 @@
 			[
 				"order",
 				"order_by\t(models.py)"
-			],
-			[
-				"re",
-				"request"
 			],
 			[
 				"erro",
@@ -328,10 +360,6 @@
 				"model"
 			],
 			[
-				"H",
-				"HttpResponseRedirect\t(views.py)"
-			],
-			[
 				"changePA",
 				"changePasswordForm"
 			],
@@ -486,175 +514,18 @@
 			[
 				"pare",
 				"parent_obj"
-			],
-			[
-				"h",
-				"h1\tTag"
-			],
-			[
-				"Role",
-				"Role"
-			],
-			[
-				"c",
-				"count_words"
-			],
-			[
-				"str",
-				"strip_tags"
-			],
-			[
-				"html",
-				"html_string"
-			],
-			[
-				"contne",
-				"content_object"
-			],
-			[
-				"pr",
-				"parent_id"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "src/templates/pages-login.html",
+			"file": "/D/Stuff/DjangoFiles/lens/venv/src/templates/panel.html",
 			"settings":
 			{
-				"buffer_size": 4162,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/templates/base.html",
-			"settings":
-			{
-				"buffer_size": 5370,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/accounts/views.py",
-			"settings":
-			{
-				"buffer_size": 10651,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/Stuff/DjangoFiles/trydjango192/src/posts/views.py",
-			"settings":
-			{
-				"buffer_size": 4638,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/static/css/mycss.css",
-			"settings":
-			{
-				"buffer_size": 124,
+				"buffer_size": 8730,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/templates/index.html",
-			"settings":
-			{
-				"buffer_size": 18253,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/static/js/mkulima-ajax.js",
-			"settings":
-			{
-				"buffer_size": 623,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/accounts/models.py",
-			"settings":
-			{
-				"buffer_size": 4287,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/Stuff/DjangoFiles/login/venv/src/accounts/models.py",
-			"settings":
-			{
-				"buffer_size": 2395,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/src/urls.py",
-			"settings":
-			{
-				"buffer_size": 1472,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/accounts/urls.py",
-			"settings":
-			{
-				"buffer_size": 877,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/templates/add-product.html",
-			"settings":
-			{
-				"buffer_size": 35521,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/myauthapp/templates/myauthapp/login.html",
-			"settings":
-			{
-				"buffer_size": 2028,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/Stuff/DjangoFiles/trydjango192/src/accounts/forms.py",
-			"settings":
-			{
-				"buffer_size": 1493,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/accounts/admin.py",
-			"settings":
-			{
-				"buffer_size": 386,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/myauthapp/templates/myauthapp/register.html",
-			"settings":
-			{
-				"buffer_size": 2559,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -724,20 +595,50 @@
 	[
 		"/D/Stuff/DjangoFiles/mkulima-online/venv",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates"
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/static_cdn"
 	],
 	"file_history":
 	[
-		"/D/Stuff/DjangoFiles/login/venv/src/accounts/views.py",
+		"/D/Stuff/DjangoFiles/lens/venv/src/static/css/settings.css",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/pages-login.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/base.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/views.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/orders.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/product-confirm-delete.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/mkulima-panel.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/css/mycss.css",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/index.html",
+		"/C/Users/Chewa/Downloads/Compressed/lens by M'Rinyiru1 - trial/panel.html",
+		"/D/Stuff/DjangoFiles/login/venv/src/templates/base.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/css/font-awesome.min.css",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/models.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/src/urls.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/urls.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/navbar.html",
+		"/D/Stuff/DjangoFiles/trydjango192/src/templates/messages_display.html",
+		"/D/Stuff/DjangoFiles/trydjango192/src/templates/base.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/product-editlist.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/product-deletelist.html",
+		"/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/myauthapp/templates/myauthapp/login.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/admin.py",
+		"/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/myauthapp/templates/myauthapp/register.html",
 		"/D/Stuff/DjangoFiles/trydjango192/src/posts/views.py",
+		"/D/Stuff/DjangoFiles/trydjango192/src/posts/models.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/add-product.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/css/themify-icons.min.css",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/css/nifty-demo-icons.min.css",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/Lib/site-packages/django/http/response.py",
+		"/D/Stuff/DjangoFiles/login/venv/src/accounts/models.py",
+		"/D/Stuff/DjangoFiles/trydjango192/src/accounts/forms.py",
+		"/D/Stuff/DjangoFiles/djangocrud/mysite/servers/templates/servers/server_confirm_delete.html",
+		"/D/Stuff/DjangoFiles/login/venv/src/accounts/views.py",
 		"/D/Stuff/DjangoFiles/trydjango192/src/templates/post_list.html",
 		"/D/Stuff/DjangoFiles/crud/mysite/rango/models.py",
-		"/D/Stuff/DjangoFiles/trydjango192/src/posts/models.py",
 		"/D/Stuff/DjangoFiles/trydjango192/src/accounts/models.py",
 		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/myauthapp/views.py",
 		"/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/myauthapp/views.py",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/css/mycss.css",
 		"/D/Stuff/DjangoFiles/djangocrud/mysite/servers/templates/servers/server_list.html",
 		"/D/Stuff/DjangoFiles/login/venv/src/src/urls.py",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/pages-register.html",
@@ -747,20 +648,14 @@
 		"/D/Stuff/DjangoFiles/trydjango192/src/trydjango19/settings.py",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/css/mycss.css",
 		"/D/Stuff/DjangoFiles/trydjango192/src/templates/login_form.html",
-		"/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/myauthapp/templates/myauthapp/login.html",
 		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/myauthapp/templates/myauthapp/login.html",
 		"/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/mysite/settings.py",
 		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/mysite/settings.py",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/src/urls.py",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/admin.py",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/models.py",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/views.py",
 		"/D/Stuff/DjangoFiles/lens/venv/src/photoapp/models.py",
 		"/D/Stuff/DjangoFiles/lens/venv/src/src/settings.py",
 		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/myauthapp/models.py",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/db.sqlite3",
 		"/D/Stuff/DjangoFiles/faiba-mitaani/venv/src/accounts/models.py",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/urls.py",
 		"/D/Stuff/DjangoFiles/lens/venv/src/src/urls.py",
 		"/D/Stuff/DjangoFiles/lens/venv/src/photoapp/admin.py",
 		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/accounts/models.py",
@@ -781,7 +676,6 @@
 		"/D/Stuff/JavaFx/JavaFx Files/loginSQLite/src/Login/MainPage.fxml",
 		"/D/Stuff/DjangoFiles/trydjango192/src/comments/views.py",
 		"/D/Stuff/DjangoFiles/trydjango192/src/templates/comment_thread.html",
-		"/D/Stuff/DjangoFiles/trydjango192/src/templates/base.html",
 		"/D/Stuff/Web/designs/lens by M'Rinyiru1/panel.html",
 		"/C/Users/Chewa/Music/Biozeq/Bio-Zeq Kenya home.html",
 		"/D/Stuff/Web/bootstrap/Bootstrap 3/boostrap 3 tutorial files/vd4/collapsing navigation.html",
@@ -834,29 +728,7 @@
 		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/myauthapp/templates/myauthapp/register.html",
 		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/accounts/templates/accounts/login_form.html",
 		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/accounts/templates/accounts/base.html",
-		"/D/Stuff/DjangoFiles/trydjango192/src/templates/post_details.html",
-		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/mysite/settings.py",
-		"/D/Stuff/DjangoFiles/trydjango192/src/trydjango19/urls.py",
-		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/accounts/templates/accounts/register_form.html",
-		"/D/Stuff/DjangoFiles/trydjango192/src/templates/registration_form.html",
-		"/D/Stuff/DjangoFiles/trydjango192/src/accounts/forms.py",
-		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/accounts/templates/accounts/index.html",
-		"/D/Stuff/DjangoFiles/authapp/mysite/myauthapp/views.py",
-		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/accounts/urls.py",
-		"/D/Stuff/DjangoFiles/trydjango192/src/templates/messages_display.html",
-		"/D/Stuff/DjangoFiles/BACKUP FILES/trdjango192/settings/settings.py",
-		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/accounts/templates/accounts/registration_form.html",
-		"/D/Stuff/DjangoFiles/authapp/mysite/myauthapp/templates/myauthapp/installers-home.html",
-		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/mysite/urls.py",
-		"/D/Stuff/DjangoFiles/authapp/mysite/mysite/urls.py",
-		"/D/Stuff/DjangoFiles/BACKUP FILES/deployapplication.herokuapp.com/deploy/venv/apps/accounts/views.py",
-		"/D/Stuff/DjangoFiles/BACKUP FILES/deployapplication.herokuapp.com/deploy/venv/apps/accounts/models.py",
-		"/D/Stuff/DjangoFiles/authapp/mysite/myauthapp/templates/myauthapp/login.html",
-		"/D/Stuff/Web/designs/faiba mitaani/assets/css/mycss.css",
-		"/D/Stuff/Web/designs/faiba mitaani/home-retention.html",
-		"/D/Stuff/DjangoFiles/authapp/mysite/mysite/settings.py",
-		"/D/Stuff/DjangoFiles/userauthview.py",
-		"/D/Stuff/DjangoFiles/authapp/mysite/myauthapp/templates/myauthapp/base.html"
+		"/D/Stuff/DjangoFiles/trydjango192/src/templates/post_details.html"
 	],
 	"find":
 	{
@@ -874,6 +746,33 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"id=\"",
+			"entry-",
+			"timez",
+			"-id",
+			"<na",
+			"fonts/",
+			"url",
+			"src: url",
+			"fonts/",
+			"not request.user.is_authenticated()",
+			"return",
+			"isadmin",
+			"product",
+			"Order #Manure",
+			"#",
+			"'static/",
+			"categ",
+			"rel=\"stylesheet\"",
+			"form",
+			"add",
+			"form",
+			"Add ",
+			"Add I",
+			"div",
+			"<i class=\"fa fa-clock-o\"></i>",
+			"row",
+			"<a type=\"button\"",
 			"=",
 			".ex",
 			"qs",
@@ -974,34 +873,7 @@
 			"pages/contact/contact",
 			"ages/about/about",
 			"ace.html",
-			"ery-style.html",
-			"portfolio/rectangular-layout/rectangular-",
-			"ml",
-			"portfolio/square-layout/square-",
-			"ml",
-			"ery-",
-			"portfolio/masonry-layout/masonry",
-			"\"home/home-",
-			"components/com_sppagebuilder/",
-			"templates/probusiness",
-			"m-4",
-			"sm-12",
-			"-12",
-			"home/hom",
-			"iframe",
-			"ifra",
-			"1600",
-			"__jx__",
-			"class=\"zopim\"",
-			"zopim",
-			"<section class=\"sppb-section \" style=\"\"><div class=\"sppb-row\"><div class=\"sppb-col-sm-12\"><div class=\"sppb-addon-container\" style=\"\"><div class=\"sppb-addon sppb-addon-module \"><div class=\"sppb-addon-content\"><!-- START REVOLUTION SLIDER 4.6.8 fullwidth mode -->\n\n<div style=\"position:relative;width:100%;height:auto;margin-top:0px;margin-bottom:0px\" class=\"forcefullwidth_wrapper_tp_banner\"><div id=\"rev_slider_1_1_wrapper\" class=\"rev_slider_wrapper fullwidthbanner-container\" style=\"margin: 0px auto; background-color: rgb(233, 233, 233); padding: 0px; max-height: 550px; height: 550px; left: 0px; position: absolute; width: 1073px; overflow: visible;\">\n\t<div id=\"rev_slider_1_1\" class=\"rev_slider fullwidthabanner revslider-initialised tp-simpleresponsive\" style=\"max-height: 550px; height: 550px; background-color: rgb(233, 233, 233); background-image: none; perspective: 2500px; backface-visibility: hidden; transform-style: preserve-3d;\">\n<ul class=\"tp-revslider-mainul\" style=\"display: block; overflow: hidden; width: 100%; height: 100%; max-height: 550px;\">\t<!-- SLIDE  1-->\n\t<li data-transition=\"random\" data-slotamount=\"7\" data-masterspeed=\"300\" data-saveperformance=\"off\" class=\"tp-revslider-slidesli active-revslide current-sr-slide-visible\" style=\"width: 100%; height: 100%; overflow: hidden; z-index: 20; visibility: inherit; opacity: 1;\">\n\t\t<!-- MAIN IMAGE -->\n\t\t<div class=\"slotholder\" style=\"width:100%;height:100%;\" data-duration=\"undefined\" data-zoomstart=\"undefined\" data-zoomend=\"undefined\" data-rotationstart=\"undefined\" data-rotationend=\"undefined\" data-ease=\"undefined\" data-bgpositionend=\"undefined\" data-bgposition=\"center top\" data-kenburns=\"undefined\" data-easeme=\"undefined\" data-bgfit=\"cover\" data-bgfitend=\"undefined\" data-owidth=\"undefined\" data-oheight=\"undefined\"><div class=\"tp-bgimg defaultimg\" data-lazyload=\"undefined\" data-bgfit=\"cover\" data-bgposition=\"center top\" data-bgrepeat=\"no-repeat\" data-lazydone=\"undefined\" src=\"images/pro/slide1.jpg\" data-src=\"images/pro/slide1.jpg\" style=\"background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;images/pro/slide1.jpg&quot;); background-size: cover; background-position: center top; width: 100%; height: 100%; opacity: 1; visibility: inherit;\"></div></div>\n\t\t<!-- LAYERS -->\n\n\t\t<!-- LAYER NR. 1 -->\n\t\t<div class=\"tp-caption large_bold_white randomrotate tp-resizeme start splitted\" data-x=\"center\" data-hoffset=\"0\" data-y=\"100\" data-speed=\"300\" data-start=\"500\" data-easing=\"easeInOutBounce\" data-splitin=\"chars\" data-splitout=\"none\" data-elementdelay=\"0.2\" data-endelementdelay=\"0.1\" data-endspeed=\"300\" style=\"z-index: 5; white-space: nowrap; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 60px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 58px; left: 121px; top: 100px; visibility: visible; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);\"><div class=\"tp-splitted\" style=\"display: block; text-align: left; position: relative;\"><div style=\"position:relative;display:inline-block;\" class=\"tp-splitted\"><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">W</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">E</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">L</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">C</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">O</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">M</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">E</div></div> <div style=\"position:relative;display:inline-block;\" class=\"tp-splitted\"><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">T</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">O</div></div> <div style=\"position:relative;display:inline-block;\" class=\"tp-splitted\"><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">P</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">R</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">O</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">B</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">U</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">S</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">I</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">N</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">E</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">S</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">S</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">\n</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">\t</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">\t</div></div> </div></div>\n\n\t\t<!-- LAYER NR. 2 -->\n\t\t<div class=\"tp-caption mediumlarge_light_white_center tp-fade tp-resizeme start\" data-x=\"center\" data-hoffset=\"0\" data-y=\"160\" data-speed=\"300\" data-start=\"500\" data-easing=\"Power3.easeInOut\" data-splitin=\"none\" data-splitout=\"none\" data-elementdelay=\"0.1\" data-endelementdelay=\"0.1\" data-endspeed=\"300\" style=\"z-index: 6; white-space: nowrap; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 40px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 24px; left: 269.5px; top: 160px; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\">A high quality multi-purpose Business Joomla template\n\t\t</div>\n\n\t\t<!-- LAYER NR. 3 -->\n\t\t<div class=\"tp-caption mediumlarge_light_white_center tp-fade tp-resizeme start\" data-x=\"center\" data-hoffset=\"0\" data-y=\"200\" data-speed=\"300\" data-start=\"500\" data-easing=\"Power3.easeInOut\" data-splitin=\"none\" data-splitout=\"none\" data-elementdelay=\"0.1\" data-endelementdelay=\"0.1\" data-endspeed=\"300\" style=\"z-index: 7; white-space: nowrap; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 40px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 24px; left: 258.5px; top: 200px; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\">Ready to deploy and display perfect on all mobile devices\n\t\t</div>\n\n\t\t<!-- LAYER NR. 4 -->\n\t\t<div class=\"tp-caption mediumlarge_light_white_center tp-fade tp-resizeme start\" data-x=\"center\" data-hoffset=\"0\" data-y=\"270\" data-speed=\"300\" data-start=\"500\" data-easing=\"Power3.easeInOut\" data-splitin=\"none\" data-splitout=\"none\" data-elementdelay=\"0.1\" data-endelementdelay=\"0.1\" data-endspeed=\"300\" style=\"z-index: 8; white-space: nowrap; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 40px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 24px; left: 469px; top: 270px; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\"><a href=\"http://goo.gl/DNjUhU\" class=\"sppb-btn sppb-btn-success sppb-btn-lg\" style=\"transition: all 0.2s ease-out 0s; min-height: 0px; min-width: 0px; line-height: 23px; border-width: 0px; margin: 0px; padding: 10px 16px; letter-spacing: 0px; font-size: 18px;\"><i class=\"icon-map-pin\" style=\"transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 18px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 18px;\"></i>  Learn More</a>\n\t\t</div>\n\t</li>\n\t<!-- SLIDE  2-->\n\t<li data-transition=\"random\" data-slotamount=\"7\" data-masterspeed=\"300\" data-saveperformance=\"off\" class=\"tp-revslider-slidesli active-revslide\" style=\"width: 100%; height: 100%; overflow: hidden; visibility: hidden; opacity: 0; z-index: 18;\">\n\t\t<!-- MAIN IMAGE -->\n\t\t<div class=\"slotholder\" style=\"width:100%;height:100%;\" data-duration=\"undefined\" data-zoomstart=\"undefined\" data-zoomend=\"undefined\" data-rotationstart=\"undefined\" data-rotationend=\"undefined\" data-ease=\"undefined\" data-bgpositionend=\"undefined\" data-bgposition=\"center top\" data-kenburns=\"undefined\" data-easeme=\"undefined\" data-bgfit=\"cover\" data-bgfitend=\"undefined\" data-owidth=\"undefined\" data-oheight=\"undefined\"><div class=\"tp-bgimg defaultimg\" data-lazyload=\"undefined\" data-bgfit=\"cover\" data-bgposition=\"center top\" data-bgrepeat=\"no-repeat\" data-lazydone=\"undefined\" src=\"images/pro/slide1.jpg\" data-src=\"images/pro/slide1.jpg\" style=\"background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;images/pro/slide1.jpg&quot;); background-size: cover; background-position: center top; width: 100%; height: 100%; opacity: 1; visibility: inherit;\"></div></div>\n\t\t<!-- LAYERS -->\n\n\t\t<!-- LAYER NR. 1 -->\n\t\t<div class=\"tp-caption large_bold_white randomrotate tp-resizeme start splitted\" data-x=\"center\" data-hoffset=\"0\" data-y=\"100\" data-speed=\"300\" data-start=\"500\" data-easing=\"easeInOutBounce\" data-splitin=\"chars\" data-splitout=\"none\" data-elementdelay=\"0.2\" data-endelementdelay=\"0.1\" data-endspeed=\"300\" style=\"z-index: 5; white-space: nowrap; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 60px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 58px; left: 120.5px; top: 100px; visibility: visible; opacity: 0; transform: matrix3d(0.997564, 0.0697565, 0, 0, -0.0697565, 0.997564, 0, 0, 0, 0, 1, 0, 20, -76, 0, 1);\"><div class=\"tp-splitted\" style=\"display: block; text-align: left; position: relative;\"><div style=\"position:relative;display:inline-block;\" class=\"tp-splitted\"><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">W</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">E</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">L</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">C</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">O</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">M</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">E</div></div> <div style=\"position:relative;display:inline-block;\" class=\"tp-splitted\"><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">T</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">O</div></div> <div style=\"position:relative;display:inline-block;\" class=\"tp-splitted\"><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">P</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">R</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">O</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">B</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">U</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">S</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">I</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">N</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">E</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">S</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">S</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">\n</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">\t</div><div style=\"position: relative; display: inline-block; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\" class=\"tp-splitted\">\t</div></div> </div></div>\n\n\t\t<!-- LAYER NR. 2 -->\n\t\t<div class=\"tp-caption mediumlarge_light_white_center tp-fade tp-resizeme start\" data-x=\"center\" data-hoffset=\"0\" data-y=\"160\" data-speed=\"300\" data-start=\"500\" data-easing=\"Power3.easeInOut\" data-splitin=\"none\" data-splitout=\"none\" data-elementdelay=\"0.1\" data-endelementdelay=\"0.1\" data-endspeed=\"300\" style=\"z-index: 6; white-space: nowrap; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 40px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 24px; left: 269px; top: 160px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\">A high quality multi-purpose Business Joomla template\n\t\t</div>\n\n\t\t<!-- LAYER NR. 3 -->\n\t\t<div class=\"tp-caption mediumlarge_light_white_center tp-fade tp-resizeme start\" data-x=\"center\" data-hoffset=\"0\" data-y=\"200\" data-speed=\"300\" data-start=\"500\" data-easing=\"Power3.easeInOut\" data-splitin=\"none\" data-splitout=\"none\" data-elementdelay=\"0.1\" data-endelementdelay=\"0.1\" data-endspeed=\"300\" style=\"z-index: 7; white-space: nowrap; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 40px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 24px; left: 258px; top: 200px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\">Ready to deploy and display perfect on all mobile devices\n\t\t</div>\n\n\t\t<!-- LAYER NR. 4 -->\n\t\t<div class=\"tp-caption mediumlarge_light_white_center tp-fade tp-resizeme start\" data-x=\"center\" data-hoffset=\"0\" data-y=\"270\" data-speed=\"300\" data-start=\"500\" data-easing=\"Power3.easeInOut\" data-splitin=\"none\" data-splitout=\"none\" data-elementdelay=\"0.1\" data-endelementdelay=\"0.1\" data-endspeed=\"300\" style=\"z-index: 8; white-space: nowrap; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 40px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 24px; left: 469px; top: 270px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);\"><a href=\"http://goo.gl/DNjUhU\" class=\"sppb-btn sppb-btn-success sppb-btn-lg\" style=\"transition: all 0.2s ease-out 0s; min-height: 0px; min-width: 0px; line-height: 23px; border-width: 0px; margin: 0px; padding: 10px 16px; letter-spacing: 0px; font-size: 18px;\"><i class=\"icon-map-pin\" style=\"transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 18px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 18px;\"></i>  Learn More</a>\n\t\t</div>\n\t</li>\n</ul>\n<div class=\"tp-bannertimer\" style=\"width: 99.7889%; visibility: visible; transform: translate3d(0px, 0px, 0px);\"></div>\t<div class=\"tp-loader spinner0\" style=\"display: none;\"><div class=\"dot1\"></div><div class=\"dot2\"></div><div class=\"bounce1\"></div><div class=\"bounce2\"></div><div class=\"bounce3\"></div></div></div>\n\t\t\t\n\t\t\t<script type=\"text/javascript\">\n\n\t\t\t\t\t\n\t\t\t\t/******************************************\n\t\t\t\t\t-\tPREPARE PLACEHOLDER FOR SLIDER\t-\n\t\t\t\t******************************************/\n\t\t\t\t\t\t\t\t\n\t\t\t\t \n\t\t\t\t\t\tvar setREVStartSize = function() {\n\t\t\t\t\t\t\tvar\ttpopt = new Object(); \n\t\t\t\t\t\t\t\ttpopt.startwidth = 960;\n\t\t\t\t\t\t\t\ttpopt.startheight = 550;\n\t\t\t\t\t\t\t\ttpopt.container = jQuery('#rev_slider_1_1');\n\t\t\t\t\t\t\t\ttpopt.fullScreen = \"off\";\n\t\t\t\t\t\t\t\ttpopt.forceFullWidth=\"on\";\n\n\t\t\t\t\t\t\ttpopt.container.closest(\".rev_slider_wrapper\").css({height:tpopt.container.height()});tpopt.width=parseInt(tpopt.container.width(),0);tpopt.height=parseInt(tpopt.container.height(),0);tpopt.bw=tpopt.width/tpopt.startwidth;tpopt.bh=tpopt.height/tpopt.startheight;if(tpopt.bh>tpopt.bw)tpopt.bh=tpopt.bw;if(tpopt.bh<tpopt.bw)tpopt.bw=tpopt.bh;if(tpopt.bw<tpopt.bh)tpopt.bh=tpopt.bw;if(tpopt.bh>1){tpopt.bw=1;tpopt.bh=1}if(tpopt.bw>1){tpopt.bw=1;tpopt.bh=1}tpopt.height=Math.round(tpopt.startheight*(tpopt.width/tpopt.startwidth));if(tpopt.height>tpopt.startheight&&tpopt.autoHeight!=\"on\")tpopt.height=tpopt.startheight;if(tpopt.fullScreen==\"on\"){tpopt.height=tpopt.bw*tpopt.startheight;var cow=tpopt.container.parent().width();var coh=jQuery(window).height();if(tpopt.fullScreenOffsetContainer!=undefined){try{var offcontainers=tpopt.fullScreenOffsetContainer.split(\",\");jQuery.each(offcontainers,function(e,t){coh=coh-jQuery(t).outerHeight(true);if(coh<tpopt.minFullScreenHeight)coh=tpopt.minFullScreenHeight})}catch(e){}}tpopt.container.parent().height(coh);tpopt.container.height(coh);tpopt.container.closest(\".rev_slider_wrapper\").height(coh);tpopt.container.closest(\".forcefullwidth_wrapper_tp_banner\").find(\".tp-fullwidth-forcer\").height(coh);tpopt.container.css({height:\"100%\"});tpopt.height=coh;}else{tpopt.container.height(tpopt.height);tpopt.container.closest(\".rev_slider_wrapper\").height(tpopt.height);tpopt.container.closest(\".forcefullwidth_wrapper_tp_banner\").find(\".tp-fullwidth-forcer\").height(tpopt.height);}\n\t\t\t\t\t\t};\n\t\t\t\t\t\t\n\t\t\t\t\t\t/* CALL PLACEHOLDER */\n\t\t\t\t\t\tsetREVStartSize();\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\tvar tpj=jQuery;\t\t\t\t\n\t\t\t\ttpj.noConflict();\t\t\t\t\n\t\t\t\tvar revapi1;\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\ttpj(document).ready(function() {\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\tif(tpj('#rev_slider_1_1').revolution == undefined){\n\t\t\t\t\trevslider_showDoubleJqueryError('#rev_slider_1_1');\n\t\t\t\t}else{\n\t\t\t\t   revapi1 = tpj('#rev_slider_1_1').show().revolution(\n\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\tdottedOverlay:\"none\",\n\t\t\t\t\t\tdelay:9000,\n\t\t\t\t\t\tstartwidth:960,\n\t\t\t\t\t\tstartheight:550,\n\t\t\t\t\t\thideThumbs:200,\n\t\t\t\t\t\t\n\t\t\t\t\t\tthumbWidth:100,\n\t\t\t\t\t\tthumbHeight:50,\n\t\t\t\t\t\tthumbAmount:1,\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\tsimplifyAll:\"off\",\t\t\t\t\t\t\n\t\t\t\t\t\tnavigationType:\"none\",\n\t\t\t\t\t\tnavigationArrows:\"solo\",\n\t\t\t\t\t\tnavigationStyle:\"round\",\t\t\t\t\t\t\n\t\t\t\t\t\ttouchenabled:\"on\",\n\t\t\t\t\t\tonHoverStop:\"on\",\t\t\t\t\t\t\n\t\t\t\t\t\tnextSlideOnWindowFocus:\"off\",\n\t\t\t\t\t\t\n\t\t\t\t\t\tswipe_threshold: 75,\n\t\t\t\t\t\tswipe_min_touches: 1,\n\t\t\t\t\t\tdrag_block_vertical: false,\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\tkeyboardNavigation:\"off\",\n\t\t\t\t\t\t\n\t\t\t\t\t\tnavigationHAlign:\"center\",\n\t\t\t\t\t\tnavigationVAlign:\"bottom\",\n\t\t\t\t\t\tnavigationHOffset:0,\n\t\t\t\t\t\tnavigationVOffset:20,\n\n\t\t\t\t\t\tsoloArrowLeftHalign:\"left\",\n\t\t\t\t\t\tsoloArrowLeftValign:\"center\",\n\t\t\t\t\t\tsoloArrowLeftHOffset:20,\n\t\t\t\t\t\tsoloArrowLeftVOffset:0,\n\n\t\t\t\t\t\tsoloArrowRightHalign:\"right\",\n\t\t\t\t\t\tsoloArrowRightValign:\"center\",\n\t\t\t\t\t\tsoloArrowRightHOffset:20,\n\t\t\t\t\t\tsoloArrowRightVOffset:0,\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\tshadow:0,\n\t\t\t\t\t\tfullWidth:\"on\",\n\t\t\t\t\t\tfullScreen:\"off\",\n\n\t\t\t\t\t\t\t\t\t\t\t\tspinner:\"spinner0\",\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\tstopLoop:\"off\",\n\t\t\t\t\t\tstopAfterLoops:-1,\n\t\t\t\t\t\tstopAtSlide:-1,\n\n\t\t\t\t\t\tshuffle:\"off\",\n\t\t\t\t\t\t\n\t\t\t\t\t\tautoHeight:\"off\",\t\t\t\t\t\t\n\t\t\t\t\t\tforceFullWidth:\"on\",\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\thideThumbsOnMobile:\"off\",\n\t\t\t\t\t\thideNavDelayOnMobile:1500,\n\t\t\t\t\t\thideBulletsOnMobile:\"off\",\n\t\t\t\t\t\thideArrowsOnMobile:\"off\",\n\t\t\t\t\t\thideThumbsUnderResolution:0,\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\thideSliderAtLimit:0,\n\t\t\t\t\t\thideCaptionAtLimit:0,\n\t\t\t\t\t\thideAllCaptionAtLilmit:0,\n\t\t\t\t\t\tstartWithSlide:0,\n\t\t\t\t\t\tisJoomla: true\n\t\t\t\t\t});\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t}\t\t\t\t\t\n\t\t\t\t});\t/*ready*/\n\t\t\t\t\t\t\t\t\t\n\t\t\t</script>\n\t\t\t<div style=\"position: absolute; top: 275px; margin-top: -20px; left: 20px;\" class=\"tp-leftarrow tparrows default round hidearrows\"><div class=\"tp-arr-allwrapper\"><div class=\"tp-arr-iwrapper\"><div class=\"tp-arr-imgholder\" style=\"visibility: inherit; opacity: 1; background-image: url(&quot;images/pro/slide1.jpg&quot;);\"></div><div class=\"tp-arr-imgholder2\"></div><div class=\"tp-arr-titleholder\"></div><div class=\"tp-arr-subtitleholder\"></div></div></div></div><div style=\"position: absolute; top: 275px; margin-top: -20px; right: 20px;\" class=\"tp-rightarrow tparrows default round hidearrows\"><div class=\"tp-arr-allwrapper\"><div class=\"tp-arr-iwrapper\"><div class=\"tp-arr-imgholder\" style=\"visibility: inherit; opacity: 1; background-image: url(&quot;images/pro/slide1.jpg&quot;);\"></div><div class=\"tp-arr-imgholder2\"></div><div class=\"tp-arr-titleholder\"></div><div class=\"tp-arr-subtitleholder\"></div></div></div></div></div><div class=\"tp-fullwidth-forcer\" style=\"width: 100%; height: 550px;\"></div></div>\n<!-- END REVOLUTION SLIDER -->\t</div></div></div></div></div></section>",
-			"<div class=\"col-sm-3\">",
-			"unlock",
-			"backgroun",
-			"('');",
-			"'",
-			"\"",
-			"role=\"pr"
+			"ery-style.html"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1019,24 +891,24 @@
 	"groups":
 	[
 		{
-			"selected": 11,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/templates/pages-login.html",
+					"file": "/D/Stuff/DjangoFiles/lens/venv/src/templates/panel.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4162,
+						"buffer_size": 8730,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								8460,
+								8460
 							]
 						],
 						"settings":
@@ -1044,443 +916,10 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 252.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/templates/base.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5370,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3510,
-								3510
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 105.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/accounts/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10651,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7735,
-								7735
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2924.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/D/Stuff/DjangoFiles/trydjango192/src/posts/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4638,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3010,
-								3010
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 426.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/static/css/mycss.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 124,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								97,
-								124
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS3/CSS3.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/templates/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18253,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9631,
-								9631
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 148.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/static/js/mkulima-ajax.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 623,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/accounts/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4287,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1498,
-								1498
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 566.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/D/Stuff/DjangoFiles/login/venv/src/accounts/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2395,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								909,
-								847
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/src/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1472,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "src/accounts/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 877,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								877,
-								877
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "src/templates/add-product.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 35521,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								16578,
-								16578
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4868.0,
+						"translation.y": 838.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/myauthapp/templates/myauthapp/login.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2028,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1250,
-								1108
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 51.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "/D/Stuff/DjangoFiles/trydjango192/src/accounts/forms.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1493,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 142.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "src/accounts/admin.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 386,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								383,
-								383
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/myauthapp/templates/myauthapp/register.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2559,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1748,
-								1703
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 246.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
 					"type": "text"
 				}
 			]
@@ -1519,7 +958,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 117.0
+		"height": 23.0
 	},
 	"output.find_results":
 	{
@@ -1571,8 +1010,8 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 236.0,
-	"status_bar_visible": true,
+	"side_bar_width": 214.0,
+	"status_bar_visible": false,
 	"template_settings":
 	{
 	}

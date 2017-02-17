@@ -2,7 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.core.urlresolvers import reverse
+from django.utils import timezone
+from phonenumber_field.modelfields import PhoneNumberField
+
+
 
 def profile_upload_location(instance, filename):
 
@@ -17,11 +22,7 @@ def product_upload_location(instance, filename):
 
 # Create your models here.
 
-class UserType(models.Model):
-	usertype = models.CharField(max_length=120)
 
-	def __str__(self):
-		return self.usertype
 
 
 
@@ -31,13 +32,9 @@ class AdminUserProfile(models.Model):
 	image = models.ImageField(null=True, blank=True, upload_to=profile_upload_location, width_field='width_field', height_field='height_field')
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
-	usertype = models.CharField(max_length=120, default="Admin")
-	isadmin = models.BooleanField(default=True)
-	ismkulima = models.BooleanField(default=False)
-	iscustomer = models.BooleanField(default=False)
+	usertype = models.CharField(max_length=255, default="Admin")
 	
-
-
+	
 	def __str__(self):
 		return self.user.username
 
@@ -58,10 +55,8 @@ class MkulimaUserProfile(models.Model):
 	image = models.ImageField(null=True, blank=True, upload_to=profile_upload_location, width_field='width_field', height_field='height_field')
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
-	usertype = models.CharField(max_length=120, default="Mkulima")
-	isadmin = models.BooleanField(default=False)
-	ismkulima = models.BooleanField(default=True)
-	iscustomer = models.BooleanField(default=False)
+	usertype = models.CharField(max_length=255, default="Mkulima")
+	
 
 
 	def __str__(self):
@@ -70,15 +65,14 @@ class MkulimaUserProfile(models.Model):
 
 class CustomerUserProfile(models.Model):
 	user = models.OneToOneField(User)
-	bio = models.TextField(null=True, blank=True)
 	image = models.ImageField(null=True, blank=True, upload_to=profile_upload_location, width_field='width_field', height_field='height_field')
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
-	usertype = models.CharField(max_length=120, default="Customer")
-	isadmin = models.BooleanField(default=False)
-	ismkulima = models.BooleanField(default=False)
-	iscustomer = models.BooleanField(default=True)
-	
+	phonenumber = models.CharField(max_length=10)
+	usertype = models.CharField(max_length=255, default="Customer")
+
+
+
 
 	def __str__(self):
 		return self.user.username
@@ -88,13 +82,16 @@ class Product(models.Model):
 	user = models.ForeignKey(User)
 	name = models.CharField(max_length=255, null=True, blank=True)
 	price = models.IntegerField(default=0)
+	description = models.TextField(null=True, blank=True)
 	slug = models.SlugField(unique=True)
-	quantity = models.IntegerField(default=0)
 	taps = models.IntegerField(default=0)
 	trashes = models.IntegerField(default=0)
 	image = models.ImageField(null=True, blank=True, upload_to=product_upload_location, width_field='width_field', height_field='height_field')
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
+	timestamp = models.DateTimeField(default=timezone.now)
+	updated = models.DateTimeField(auto_now = True, auto_now_add = False)
+	quantity = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10000), MinValueValidator(1)])
 
 	
 	def __str__(self):
@@ -104,10 +101,14 @@ class Product(models.Model):
 		return reverse('product-details', kwargs={'slug':self.slug})
 
 class Order(models.Model):
-	user = models.ForeignKey(User, default=1)
+	customer_firstname = models.CharField(max_length=255, null=False, blank=False)
+	customer_lastname = models.CharField(max_length=255, null=False, blank=False)
+	customer_email = models.EmailField(max_length=120, null=False, blank=False)
+	customer_phonenumber = models.CharField(max_length=10)
+	quantity = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10000), MinValueValidator(1)])
 	product = models.ForeignKey(Product)
-	owner = models.ForeignKey(User, related_name='owner', default=1)
-	timestamp = models.DateTimeField(auto_now_add=False, auto_now=False)
+	timestamp = models.DateTimeField(auto_now_add=False, auto_now=False, default=timezone.now)
+	
 
 	def __str__(self):
 		return self.product.name
@@ -115,6 +116,7 @@ class Order(models.Model):
 
 
 def create_slug(instance, new_slug=None):
+
 
 	#new_slug is none
 	slug = slugify(instance.name)

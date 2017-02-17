@@ -1,0 +1,9 @@
+{% load crispy_forms_tags %}
+<div class="modal-body" id="js-order-form">
+    <form id="demo-bvd-notempty order-form" action="/product/details/" method="POST" class="form-horizontal" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% crispy form %}
+        <input class="btn btn-success submit-order-form" type="submit" name="submit" value="Place order">
+    </form>
+</div>

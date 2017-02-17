@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'nifty-demo-icons';
-    src: url('fonts/nifty-demo-icons9cd8.eot?bbef6n');
-    src: url('fonts/nifty-demo-icons9cd8.svg?bbef6n#nifty-demo-icons') format('svg'),url('fonts/nifty-demo-icons9cd8.eot?bbef6n#iefix') format('embedded-opentype'),url('fonts/nifty-demo-icons9cd8.ttf?bbef6n') format('truetype'),url('fonts/nifty-demo-icons9cd8.woff?bbef6n') format('woff');
+    src: url('../fonts/nifty-demo-icons9cd8.eot?bbef6n');
+    src: url('../fonts/nifty-demo-icons9cd8.svg?bbef6n#nifty-demo-icons') format('svg'),url('../fonts/nifty-demo-icons9cd8.eot?bbef6n#iefix') format('embedded-opentype'),url('../fonts/nifty-demo-icons9cd8.ttf?bbef6n') format('truetype'),url('../fonts/nifty-demo-icons9cd8.woff?bbef6n') format('woff');
     font-weight: normal;
     font-style: normal;
 }

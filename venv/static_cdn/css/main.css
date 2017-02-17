@@ -806,3 +806,28 @@ h2.title {
 .recommended_items  h2 {
 }
 
+/****************** Create Account *****************/
+#registration {
+    padding-bottom: 50px;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+.acc-description {
+    text-transform: uppercase;
+    text-align: center;
+ border: 1px solid #ccc;
+    padding-bottom: 10px;
+    color: #777;
+}
+.acc-features {
+    text-transform: none;
+    text-align: justify;
+    padding-left: 35px;
+}
+
+.button-row {
+    margin-top: 30px;
+}
