@@ -80,7 +80,7 @@ class CustomerUserProfile(models.Model):
 
 class Product(models.Model):
 	user = models.ForeignKey(User)
-	name = models.CharField(max_length=255, null=True, blank=True)
+	name = models.CharField(max_length=255, null=False, blank=False)
 	price = models.IntegerField(default=0)
 	description = models.TextField(null=True, blank=True)
 	slug = models.SlugField(unique=True)
@@ -101,13 +101,10 @@ class Product(models.Model):
 		return reverse('product-details', kwargs={'slug':self.slug})
 
 class Order(models.Model):
-	customer_firstname = models.CharField(max_length=255, null=False, blank=False)
-	customer_lastname = models.CharField(max_length=255, null=False, blank=False)
-	customer_email = models.EmailField(max_length=120, null=False, blank=False)
-	customer_phonenumber = models.CharField(max_length=10)
-	quantity = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10000), MinValueValidator(1)])
+	customer = models.ForeignKey(CustomerUserProfile)
 	product = models.ForeignKey(Product)
-	timestamp = models.DateTimeField(auto_now_add=False, auto_now=False, default=timezone.now)
+	quantity = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10000), MinValueValidator(1)])
+	timestamp = models.DateTimeField(default=timezone.now)
 	
 
 	def __str__(self):

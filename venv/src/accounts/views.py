@@ -8,7 +8,8 @@ from django.utils.text import slugify
 from django.db.models import Count
 from django.template.loader import render_to_string
 import json
-
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
 
 from django.contrib.auth import (
 	authenticate, 
@@ -123,10 +124,20 @@ class ProductForm(forms.ModelForm):
 		fields = ['name', 'price','description','image','quantity']
 
 class OrderForm(forms.ModelForm):
+    
+    def __init__(self, *args, **kwargs):
+        self.helper = FormHelper()
+        self.helper.form_id = 'demo-bvd-notempty'
+        self.helper.form_class = 'form-horizontal order-form'
+        self.helper.form_method = 'post'
+        self.helper.form_action = 'tap_product'
 
-	class Meta:
-		model = Order
-		fields = ['customer_firstname', 'customer_lastname', 'customer_email', 'customer_phonenumber', 'quantity']
+        self.helper.add_input(Submit('submit', 'Submit'))
+        super(OrderForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+    	model = Order
+    	exclude = ['customer','product','timestamp']
 
 
 
@@ -449,25 +460,67 @@ def tap_product(request):
 	
 	today = timezone.now()
 	user = request.user
+	data = dict()
 
 	product_id = None
-	if request.method=="GET":
-		product_id = request.GET['product_id']
+	try:
+		product_id = request.session['product_id_ref']
+		obj = Product.objects.get(id=product_id)
 		
 
-	taps = 0
-	if product_id:
-		product = Product.objects.get(id=int(product_id))
-		if product:
-			taps = product.taps + 1
-			product.taps = taps
-			#owner=product.user
-			#Order.objects.create(user=user, product=product, owner=owner, timestamp=timezone.now())
-
-			product.save()
+	except:
+		obj = None
 	
 
-	return HttpResponse(taps)
+	
+	if request.method=="POST":
+		form = OrderForm(request.POST)
+		
+		
+
+		if form.is_valid():
+
+			order = form.save(commit=False)
+			product = Product.objects.get(id=product_id)
+			customer = CustomerUserProfile.objects.get(user=user)
+			order.customer = customer
+			order.product = product
+			order.save()
+			data['form_is_valid'] = True
+		else:
+			data['form_is_valid'] = False
+
+
+	if request.method=="GET":
+		
+		product_id = request.GET['product_id']
+		
+		form = OrderForm()
+		data['html_form'] = render_to_string('order-form.html', {'form':form}, request=request)
+		taps = 0
+
+
+		if product_id:
+			product = Product.objects.get(id=int(product_id))
+
+			if product:
+				taps = product.taps + 1
+				product.taps = taps
+				product.save()
+				data['name'] = product.name
+				data['price'] = product.price
+				data['description'] = product.description
+				
+				
+
+
+	
+	
+
+			
+	return JsonResponse(data, safe=False)
+	
+
 
 def trash_product(request):
 	
@@ -493,32 +546,3 @@ def trash_product(request):
 
 
 
-def product_details_view(request, *args, **kwargs):
-	
-	
-	product_slug = None
-	product_slug = request.GET['product_slug']
-	product = Product.objects.get(slug=product_slug)
-	form = OrderForm(request.POST or None)
-	product_slug = request.GET['product_slug']
-
-	if product_slug:
-		product = Product.objects.get(slug=product_slug)
-		form = OrderForm()
-		html_form = render_to_string('order-form.html', {'form':form}, request=request)
-
-
-		
-
-	if form.is_valid():
-		print("yesvalid")
-		order = form.save(commit=False)
-		order.product = product
-		order.save()
-		print(order)
-		html_form = render_to_string('order-form.html', {'form':form}, request=request)
-
-				
-
-			
-	return JsonResponse({'name':product.name,'price':product.price, 'description':product.description, 'html_form':html_form}, safe=False)

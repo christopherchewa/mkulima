@@ -246,7 +246,7 @@
                                     <div class="choose">
                                         <ul class="nav nav-pills nav-justified">
                                             <li>
-                                                <a type="button" class="taps product-details" data-toggle="modal" data-target="#policy" data-productid="{{product.id}}" data-productslug="{{product.slug}}"><i class="fa fa-plus-square"></i>Tap</a>
+                                                <a type="button" id="static-tap" class="taps product-details" data-toggle="modal" data-target="#policy" data-productid="{{product.id}}" data-productslug="{{product.slug}}"><i class="fa fa-plus-square"></i>Tap</a>
                                             </li>
                                             <li><a type="button" class="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
                                         </ul>
@@ -510,7 +510,7 @@
         </div>
     </footer>
     <!--/Footer-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
     <script src="{% static 'js/mkulima-ajax.js' %}"></script>
