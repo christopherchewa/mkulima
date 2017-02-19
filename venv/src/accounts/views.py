@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404 
 from django import forms
 from django.contrib.auth.models import Group
 from django.http import HttpResponseRedirect, Http404, HttpResponse, JsonResponse
@@ -76,6 +76,13 @@ class UserRegistrationForm(forms.ModelForm):
 
 		return email
 
+class UserEditForm(forms.ModelForm):
+
+	class Meta:
+		model = User
+		fields = ['username','email']
+
+
 class NewSaccoForm(forms.ModelForm):
 
 	class Meta:
@@ -133,14 +140,16 @@ class OrderForm(forms.ModelForm):
         self.helper.form_action = 'tap_product'
 
         self.helper.add_input(Submit('submit', 'Submit'))
+        
+
         super(OrderForm, self).__init__(*args, **kwargs)
+
 
     class Meta:
     	model = Order
-    	exclude = ['customer','product','timestamp']
+    	exclude = ['customer','product','owner','timestamp']
 
-
-
+   
 
 #add views
 
@@ -169,7 +178,6 @@ def register_view(request, template_name="add-account.html"):
 
 def admin_register_view(request, template_name="admin-register.html"):
 
-	
 
 	adminregistrationform = UserRegistrationForm(request.POST or None)
 
@@ -199,6 +207,7 @@ def admin_register_view(request, template_name="admin-register.html"):
 		sacco.save()
 		admin = authenticate(username=username, password=password)
 		login(request, admin)
+		return redirect('admin-panel')
 
 
 		
@@ -211,9 +220,7 @@ def add_sacco_members_view(request, template_name="sacco-member-form.html"):
 
 	adminobject = AdminUserProfile.objects.get(user=admin)
 	sacco_name = adminobject.sacco_name
-	print(sacco_name)
-
-
+	
 	saccomemberform = MkulimaSaccoRegistrationForm(request.POST or None)
 	addsaccomembersform = SaccoMembersForm(request.POST or None)
 	
@@ -233,13 +240,58 @@ def add_sacco_members_view(request, template_name="sacco-member-form.html"):
 
 		member = saccomemberform.save(commit=False)
 		member.user = mkulima
+		member.sacco_name = sacco_name
 
 		memberobject = User.objects.get(email=email)
 		memberobject.groups.add(Group.objects.get(name=sacco_name))
 		memberobject.groups.add(Group.objects.get(name="Mkulima"))
 		member.save()
+		return redirect('/adminpanel/')
 
 	return render(request, template_name, {'sacco_name':sacco_name, 'addsaccomembersform':addsaccomembersform, 'saccomemberform':saccomemberform})
+
+@login_required(login_url='/login/')
+def remove_sacco_members_view(request, pk=None, template_name="member-confirm-remove.html"):
+
+	mkulima = get_object_or_404(User, pk=pk)
+	user = request.user
+	admin = AdminUserProfile.objects.get(user=user)
+	sacco = admin.sacco_name
+	sacco_name = Group.objects.get(name=sacco)
+
+	if not request.user.groups.filter(name=sacco_name).exists() and not request.user.groups.filter(name='Admin').exists():
+		raise Http404
+
+	
+
+	if request.method == 'POST':
+		mkulima.is_active = False
+		mkulima.save()
+		return redirect('/adminpanel/removelist/')
+
+	return render(request, template_name, {'mkulima':mkulima})
+
+@login_required(login_url='/login/')
+def sacco_members_removelist(request, template_name="member-removelist.html"):
+
+
+	if not request.user.groups.filter(name='Admin').exists():
+		raise Http404
+		
+	user = request.user
+	admin = AdminUserProfile.objects.get(user=user)
+	sacco = admin.sacco_name
+	members = MkulimaUserProfile.objects.filter(sacco_name=sacco)
+
+
+	adminobject = AdminUserProfile.objects.get(user=user)
+	sacco_name = str(adminobject.sacco_name)
+	usertype = str(adminobject.usertype)
+
+
+
+	return render(request, template_name, {'members':members, 'sacco_name':sacco_name, 'usertypeadmin':usertype})
+
 
 
 
@@ -302,6 +354,78 @@ def add_customer_view(request, template_name="customer-register.html"):
 	return render(request, template_name, {'customerregistrationform':customerregistrationform, 'phonenumberregistrationform':phonenumberregistrationform})
 
 
+@login_required(login_url='/login/')
+def edit_profile_admin(request, pk=None, template_name="view-profile.html"):
+
+	if not request.user.groups.filter(name='Admin').exists():
+		raise Http404
+
+	user = get_object_or_404(User, pk=pk)
+	userform = UserEditForm(request.POST or None, instance=user)
+	
+
+	if userform.is_valid():
+		admin = userform.save(commit=False)
+		admin.save()
+		return redirect('/adminpanel/')
+
+	return render(request, template_name, {'userform':userform})
+
+
+@login_required(login_url='/login/')
+def edit_profile_mkulima(request, pk=None, template_name="view-profile.html"):
+
+	if not request.user.groups.filter(name='Mkulima').exists(): 
+		raise Http404
+
+	user = get_object_or_404(User, pk=pk)
+	mkulima = MkulimaUserProfile.objects.get(user=user)
+
+	userform = UserEditForm(request.POST or None, instance=user)
+	userprofileform = MkulimaSaccoRegistrationForm(request.POST or None, instance=mkulima)
+
+	if userform.is_valid() and userprofileform.is_valid():
+		mkulima = userform.save()
+		mkulima.save()
+
+		profile = userprofileform.save(commit=False)
+		profile.save()
+
+		return redirect('/mkulimapanel/')
+	
+	return render(request, template_name, {'userform':userform, 'userprofileform':userprofileform})
+
+
+@login_required(login_url='/login/')
+def edit_profile_customer(request, pk=None, template_name="view-profile.html"):
+
+
+	if not request.user.groups.filter(name='Customer').exists():
+		raise Http404
+
+
+	user = get_object_or_404(User, pk=pk)
+	customer = CustomerUserProfile.objects.get(user=user)
+
+	userform = UserEditForm(request.POST or None, instance=user)
+	userprofileform = CustomerForm(request.POST or None, instance=customer)
+	
+
+	if userform.is_valid() and userprofileform.is_valid():
+		customer = userform.save()
+		customer.save()
+
+		profile = userprofileform.save(commit=False)
+		profile.user = customer
+		profile.save()
+
+
+		return redirect('/products/')
+
+	return render(request, template_name, {'userform':userform, 'userprofileform':userprofileform})
+
+	
+	
 
 @login_required(login_url='/login/')
 def mkulima_panel(request, template_name="mkulima-panel.html"):
@@ -309,14 +433,23 @@ def mkulima_panel(request, template_name="mkulima-panel.html"):
 	if not request.user.groups.filter(name='Mkulima').exists():
 		raise Http404
 
-	
-
 	wakulima = MkulimaUserProfile.objects.all()
 
-
-
+	
 
 	return  render(request, template_name, {'wakulima':wakulima})
+
+@login_required(login_url='/login/')
+def admin_panel(request, template_name="admin-panel.html"):
+
+	if not request.user.groups.filter(name='Admin').exists():
+		raise Http404
+		
+	admins = AdminUserProfile.objects.all()
+
+
+
+	return  render(request, template_name, {'admins':admins,})
 
 
 
@@ -330,6 +463,7 @@ def add_product_view(request, template_name="add-product.html"):
 		raise Http404
 
 	addproductform = ProductForm(request.POST or None, request.FILES or None)
+
 
 	if addproductform.is_valid():
 
@@ -354,6 +488,7 @@ def edit_product_view(request, slug=None, template_name="add-product.html"):
 
 	product = get_object_or_404(Product, slug=slug)
 	addproductform = ProductForm(request.POST or None, request.FILES or None, instance=product)
+	
 
 	if addproductform.is_valid():
 
@@ -371,8 +506,6 @@ def delete_product_view(request, slug=None, template_name="product-confirm-delet
 	product = get_object_or_404(Product, slug=slug)
 	if request.user != product.user and not request.user.groups.filter(name='Mkulima').exists():
 		raise Http404
-
-	
 
 	if request.method == 'POST':
 		product.delete()
@@ -405,11 +538,7 @@ def product_list_view(request, template_name="index.html"):
 	topnews1 = Product.objects.order_by('taps')[:3]
 	topnews2 = Product.objects.order_by('-timestamp')[:3]
 
-	
-
-
-
-	return render(request, template_name, {'today':today, 'products':products_row, 'products2':products_row2, 'mostpopular':mostpopular, 'newarrivals':newarrivals, 'topdeals':topdeals, 'topnews1':topnews1, 'topnews2':topnews2, 'sacco_name':sacco_name})
+	return render(request, template_name, {'today':today, 'products':products_row, 'products2':products_row2, 'mostpopular':mostpopular, 'newarrivals':newarrivals, 'topdeals':topdeals, 'topnews1':topnews1, 'topnews2':topnews2, 'sacco_name':sacco_name,})
 	
 
 @login_required(login_url='/login/')
@@ -465,11 +594,8 @@ def tap_product(request):
 	product_id = None
 	try:
 		product_id = request.session['product_id_ref']
-		obj = Product.objects.get(id=product_id)
-		
-
 	except:
-		obj = None
+		product_id = None
 	
 
 	
@@ -482,9 +608,14 @@ def tap_product(request):
 
 			order = form.save(commit=False)
 			product = Product.objects.get(id=product_id)
-			customer = CustomerUserProfile.objects.get(user=user)
+
+			customer = User.objects.get(id=user.id)
+			
+			owner = User.objects.get(username=product.user.username)
+			
 			order.customer = customer
 			order.product = product
+			order.owner = owner
 			order.save()
 			data['form_is_valid'] = True
 		else:

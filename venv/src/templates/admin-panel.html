@@ -88,7 +88,7 @@
 
         <!--NAVBAR-->
         <!--===================================================-->
-       {% include 'top-navbar.html' %}
+        {% include 'top-navbar.html' %}
         <!--===================================================-->
         <!--END NAVBAR-->
 
@@ -111,8 +111,8 @@
                                     <div class="pad-ver">
                                         <img src="img/profile-photos/1.png" class="img-lg img-border img-circle" alt="Profile Picture">
                                     </div>
-                                    <h4 class="text-lg text-overflow mar-no">{{user.username}}</h4>
-                                    <p class="text-sm text-muted">Mkulima</p>
+                                    <h4 class="text-lg text-overflow mar-no">{{request.user.username}}</h4>
+                                    <p class="text-sm text-muted">{{request.user.adminuserprofile.usertype}}</p>
                                     <button class="btn btn-block btn-success ">Follow</button>
                                 </div>
                                 <p class="text-semibold text-main pad-all mar-no">About Me</p>
@@ -136,34 +136,6 @@
 
                         <div class="fluid">
                             <div class="row">
-                            <!--<div class="bg-trans-light pad-all mar-btm clearfix hidden-xs">
-                                <hr class="new-section-xs bord-no">
-                                <div class="col-md-7">
-                                    <div class="row text-center mar-btm">
-                                        <div class="col-xs-3">
-                                            <p class="h4 mar-no">52</p>
-                                            <small class="text-muted">Followers</small>
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <p class="h4 mar-no">72</p>
-                                            <small class="text-muted">Following</small>
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <p class="h4 mar-no">43</p>
-                                            <small class="text-muted">Taps</small>
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <p class="h4 mar-no">45
-                                            </p>
-                                            <small class="text-muted">Trash</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-5 text-right mar-btm">
-                                    <button class="btn btn-sm btn-primary">New Post</button>
-                                    <button class="btn btn-sm btn-success">Edit Profile</button>
-                                </div>
-                            </div>-->
 
 
                             <div class="col-lg-12 pull-lg-left">
@@ -174,8 +146,8 @@
                                     </div>
                                     <!--Tile-->
                                     <!--===================================================-->
-                                    <a href= "/products/create/">
-                                        <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
+                                    <a href= "/adminpanel/addmember/">
+                                        <div class="col-md-6 col-lg-6 col-sm-10 panel media middle pad-all">
                                         <div class="media-left">
                                             <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
                                                 <i class="ti-plus icon-2x"></i>
@@ -183,39 +155,28 @@
                                         </div>
                                         <div class="media-body">
                                             <p class="text-2x mar-no text-semibold">Add</p>
-                                            <p class="text-muted mar-no">Add new item</p>
+                                            <p class="text-muted mar-no">Add new member</p>
+
                                         </div>
                                         </div>
                                     </a>
                                     <!--===================================================-->
                                     <!--Tile-->
                                     <!--===================================================-->
-                                    <a href="/products/editlist/">
-                                        <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
-                                        <div class="media-left">
-                                            <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
-                                                <i class="ti-pencil-alt icon-2x"></i>
-                                            </span>
-                                        </div>
-                                        <div class="media-body">
-                                            <p class="text-2x mar-no text-semibold">Edit</p>
-                                            <p class="text-muted mar-no">Change exising item</p>
-                                        </div>
-                                        </div>
-                                    </a>
+                              
                                     <!--===================================================-->
                                     <!--Tile-->
                                     <!--===================================================-->
-                                    <a href="/products/deletelist/">
-                                        <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
+                                    <a href="/adminpanel/removelist">
+                                        <div class="col-md-6 col-lg-6 col-sm-10 panel media middle pad-all">
                                         <div class="media-left">
                                             <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
                                                 <i class="ti-trash icon-2x"></i>
                                             </span>
                                         </div>
                                         <div class="media-body">
-                                            <p class="text-2x mar-no text-semibold">Delete</p>
-                                            <p class="text-muted mar-no">Delete an existing item</p>
+                                            <p class="text-2x mar-no text-semibold">Remove</p>
+                                            <p class="text-muted mar-no">Remove an existing member</p>
                                         </div>
                                         </div>
                                     </a>
@@ -381,16 +342,16 @@
 
                                         <div class="panel-body">
                                             <div class="list-group bg-trans">
-                                            {% for mkulima in wakulima %}
+                                            {% for admin in admins %}
                                                 <a href="#" class="list-group-item">
                                                     <div class="media-left pos-rel">
                                                         <img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture">
                                                         <i class="badge badge-success badge-stat badge-icon pull-left"></i>
                                                     </div>
                                                     <div class="media-body">
-                                                        <p class="mar-no">{{mkulima.user.username}}</p>
-                                                        {% if mkulima %}
-                                                        <small class="text-muted"><b>Sacco Name: </b>{{mkulima.sacco_name}}</small>
+                                                        <p class="mar-no">{{admin.user.username}}</p>
+                                                        {% if admin %}
+                                                        <small class="text-muted"><b>Sacco Name: </b>{{admin.sacco_name}}</small>
                                                         {% endif %}
                                                     </div>
                                                 </a>
@@ -607,7 +568,7 @@
             <!--MAIN NAVIGATION-->
             <!--===================================================-->
            {% include 'navbar.html' %}
-           
+
             <!--===================================================-->
             <!--END MAIN NAVIGATION-->
 

@@ -23,15 +23,13 @@ def product_upload_location(instance, filename):
 # Create your models here.
 
 
-
-
-
 class AdminUserProfile(models.Model):
 	user = models.OneToOneField(User)
-	sacco_name = models.CharField(max_length=255, null=False, blank=False)
+	sacco_name = models.CharField(max_length=255, null=False, blank=False, unique=True)
 	image = models.ImageField(null=True, blank=True, upload_to=profile_upload_location, width_field='width_field', height_field='height_field')
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
+	#only for pic upload purposes
 	usertype = models.CharField(max_length=255, default="Admin")
 	
 	
@@ -91,19 +89,18 @@ class Product(models.Model):
 	width_field = models.IntegerField(default=0)
 	timestamp = models.DateTimeField(default=timezone.now)
 	updated = models.DateTimeField(auto_now = True, auto_now_add = False)
-	quantity = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10000), MinValueValidator(1)])
+	quantity = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(1000), MinValueValidator(1)])
 
 	
 	def __str__(self):
 		return self.name
 
-	def get_absolute_url(self):
-		return reverse('product-details', kwargs={'slug':self.slug})
 
 class Order(models.Model):
-	customer = models.ForeignKey(CustomerUserProfile)
+	customer = models.ForeignKey(User, related_name='customer')
 	product = models.ForeignKey(Product)
-	quantity = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10000), MinValueValidator(1)])
+	owner = models.ForeignKey(User, related_name='owner')
+	quantity = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(1000), MinValueValidator(1)])
 	timestamp = models.DateTimeField(default=timezone.now)
 	
 

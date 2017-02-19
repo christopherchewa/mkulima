@@ -27,7 +27,6 @@ urlpatterns = [
     url(r'^logout/$', views.logout_view),
     url(r'^register/$', views.register_view),
     url(r'^registeradmin/$', views.admin_register_view),
-    url(r'^addmember/$', views.add_sacco_members_view, name='add-member'),
     url(r'^registermkulima/', views.add_mkulima_view),
     url(r'^registercustomer/', views.add_customer_view),
     url(r'^', include('accounts.urls')),

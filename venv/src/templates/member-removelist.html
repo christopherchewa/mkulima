@@ -3,8 +3,9 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
                 <div id="page-title">
-                    <h1 class="page-header text-overflow">Orders List</h1>
+                    <h1 class="page-header text-overflow">Remove Sacco Members</h1>
                     <!--Searchbox-->
                     
                 </div>
@@ -13,9 +14,9 @@
                 <!--Breadcrumb-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <ol class="breadcrumb">
-                    <li><a href="/mkulimapanel/">Dashboard</a></li>
-                    <li><a href="#">Warehouse</a></li>
-                    <li class="active">Inventory Report</li>
+                    <li><a href="default.html">Home</a></li>
+                    <li><a href="#">Actions</a></li>
+                    <li class="active">Remove Sacco Members</li>
                 </ol>
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End breadcrumb-->
@@ -26,7 +27,7 @@
                         <div class="col-xs-12">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Order Status</h3>
+                                    <h3 class="panel-title">Sacco Members List</h3>
                                 </div>
                                 <!--Data Table-->
                                 <!--===================================================-->
@@ -47,20 +48,31 @@
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Customer</th>
-                                                    <th>Product</th>
-                                                    <th>Quantity</th>
-                                                    <th>Time of order</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Username</th>
+                                                    <th>Email</th>
+                                                    <th class="text-center"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            {% for order in orders %}
+
+                                            {% for member in members %}
+                                                
+                                                    {% if member.user.is_active == True %}
+                                                        
                                                 <tr>
-                                                    <td>{{order.customer}}</td>
-                                                    <td>{{order.product.name}}</td>
-                                                    <td>{{order.quantity}}</td>
-                                                    <td><span class="text-muted">{{order.timestamp}}</span></td>
+                                                    <td>{{member.user.first_name}}</td>
+                                                    <td>{{member.user.last_name}}</td>
+                                                    <td>{{member.user.username}}</td>
+                                                    <td>{{member.user.email}}</td>
+                                                    <td class="text-center">
+                                                        <a class="btn btn-danger" href="/adminpanel/{{member.user.id}}/remove">DELETE</a>
+                                                    </td>
                                                 </tr>
+                                                    
+                                                    {% endif %}
+                                                
                                             {% endfor %}
                                             </tbody>
                                         </table>

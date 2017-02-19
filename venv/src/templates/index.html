@@ -31,15 +31,25 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="{% static 'img/u332-8.png' %}" alt="Mkulima Online" /></a>
+                            <a href="/products/"><img src="{% static 'img/u332-8.png' %}" alt="Mkulima Online" /></a>
                         </div>
                     </div>
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                                <li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.mkulimauserprofile or request.user.adminuserprofile %}
+                                <li><a href='{% if request.user.mkulimauserprofile %} /mkulimapanel/ {% elif request.user.adminuserprofile %} /adminpanel/ {% endif %}'><i class="fa fa-user"></i>Dashboard</a></li>
+                            {% endif %}
+
+                            {% if request.user.customeruserprofile %}
+                                <li><a href='/customerprofile/{{request.user.id}}/edit/'><i class="fa fa-user"></i>View Profile</a></li>
+                            {% endif %}
+
+                        {% endif %}
+                                
+                                  <!--<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>-->
+                                <!--<li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>-->
                                 {% if request.user.is_authenticated %}
                                 <li><a href="/logout/"><i class="fa fa-lock"></i> Logout</a></li>
                                 {% else %}
@@ -96,11 +106,15 @@
                                 <li><a href="/products/" class="active">Market</a></li>
                                 <li class="dropdown"><a href="#">Browse<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Farm Input</a></li>
-                                        <li><a href="product-details.html">services</a></li>
-                                        <li><a href="checkout.html">New Arrivals</a></li>
-                                        <li><a href="cart.html">Top Featured</a></li>
-                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="#">Farm Input</a></li>
+                                        <li><a href="#">services</a></li>
+                                        <li><a href="#">New Arrivals</a></li>
+                                        <li><a href="#">Top Featured</a></li>
+                                        {% if request.user.is_authenticated %}
+                                        <li><a href="/logout/">Logout</a></li>
+                                        {% else %}
+                                        <li><a href="/login/">Login</a></li>
+                                        {% endif %}
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">Network<i class="fa fa-angle-down"></i></a>
@@ -239,10 +253,19 @@
                                                 </div>
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                            {% if request.user.is_authenticated%}
+                                                {% if request.user.customeruserprofile %}
+
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+
+                                                {% endif %}
+                                            {% endif %}
                                             </div>
                                         </div>
                                     </div>
+
+                                {% if request.user.is_authenticated%}
+                                    {% if request.user.customeruserprofile %}
                                     <div class="choose">
                                         <ul class="nav nav-pills nav-justified">
                                             <li>
@@ -251,6 +274,9 @@
                                             <li><a type="button" class="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
                                         </ul>
                                     </div>
+                                    {% endif %}
+                                {% endif %}
+
                                 </div>
                             </div>
                             {% endfor %}
@@ -298,16 +324,26 @@
                                                 </div>
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-                                                <a class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                            {% if request.user.is_authenticated%}
+                                                {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                                {% endif %}
+                                            {% endif %}
                                             </div>
                                         </div>
                                     </div>
+                                {% if request.user.is_authenticated%}
+                                    {% if request.user.customeruserprofile %}
                                     <div class="choose">
                                         <ul class="nav nav-pills nav-justified">
-                                            <li><a class="taps" data-productid="{{product.id}}" data-toggle="modal" data-target="#policy"><i class="fa fa-plus-square"></i>Tap</a></li>
-                                            <li><a class="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
+                                            <li>
+                                                <a type="button" id="static-tap" class="taps product-details" data-toggle="modal" data-target="#policy" data-productid="{{product.id}}" data-productslug="{{product.slug}}"><i class="fa fa-plus-square"></i>Tap</a>
+                                            </li>
+                                            <li><a type="button" class="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
                                         </ul>
                                     </div>
+                                    {% endif %}
+                                {% endif %}
                                 </div>
                             </div>
                             {% endfor %}
@@ -335,7 +371,12 @@
                                                 <img src="{{product.image.url}}" alt=""> {% endif %}
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-                                                <a class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+
+                                            {% if request.user.is_authenticated %}
+                                                {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                                {% endif %}
+                                            {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -352,7 +393,13 @@
                                                 <img src="{{product.image.url}}" alt=""> {% endif %}
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-                                                <a class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+
+                                            {% if request.user.is_authenticated%}
+                                                {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                                {% endif %}
+                                            {% endif %}
+
                                             </div>
                                         </div>
                                     </div>
@@ -369,8 +416,14 @@
                                                 <img src="{{product.image.url}}" alt=""> {% endif %}
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-                                                <a class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+
+                                            {% if request.user.is_authenticated%}
+                                                {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                                {% endif %}
+                                            {% endif %}
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -386,7 +439,11 @@
                                                 <img src="{{product.image.url}}" alt=""> {% endif %}
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-                                                <a class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                            {% if request.user.is_authenticated%}
+                                                {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                                {% endif %}
+                                            {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -411,7 +468,11 @@
                                                     <img src="{{product.image.url}}" alt=""> {% endif %}
                                                     <h2>{{product.name}}</h2>
                                                     <p>Ksh {{product.price}}</p>
-                                                    <a class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                                    {% if request.user.is_authenticated%}
+                                                {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                                {% endif %}
+                                            {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -428,7 +489,11 @@
                                                     <img src="{{product.image.url}}" alt=""> {% endif %}
                                                     <h2>{{product.name}}</h2>
                                                     <p>Ksh {{product.price}}</p>
-                                                    <a class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                                   {% if request.user.is_authenticated%}
+                                                {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
+                                                {% endif %}
+                                            {% endif %}
                                                 </div>
                                             </div>
                                         </div>
