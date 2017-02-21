@@ -282,13 +282,6 @@ def add_sacco_members_view(request, template_name="sacco-member-form.html"):
 def remove_sacco_members_view(request, pk=None, template_name="member-confirm-remove.html"):
 
 	
-	#user = request.user
-	#admin = AdminUserProfile.objects.get(user=user)
-	#sacco = admin.sacco_name
-	#sacco_name = Group.objects.get(name=sacco)
-	mkulima = get_object_or_404(User, pk=pk)
-
-
 	if not request.user.groups.filter(name='Admin').exists():
 		raise Http404
 	if mkulima.mkulimauserprofile.sacco_name != request.user.adminuserprofile.sacco_name:
@@ -308,11 +301,12 @@ def remove_sacco_members_view(request, pk=None, template_name="member-confirm-re
 @login_required(login_url='/login/')
 def sacco_members_removelist(request, template_name="member-removelist.html"):
 	
-	user = request.user
+	
 	
 	if not request.user.groups.filter(name='Admin').exists():
 		raise Http404
-		
+
+	user = request.user
 	admin = AdminUserProfile.objects.get(user=user)
 	sacco = admin.sacco_name
 	sacco_name = Group.objects.get(name=sacco)
@@ -637,6 +631,7 @@ def product_deletelist(request, template_name="product-deletelist.html"):
 
 	return render(request, template_name, {'products':products})
 
+
 @login_required(login_url='/login/')
 def orders_view(request, template_name="orders.html"):
 
@@ -646,9 +641,6 @@ def orders_view(request, template_name="orders.html"):
 	user = request.user
 	ordersobj = Order.objects.filter(owner=user).order_by('-timestamp')
 	orders = ordersobj.filter(cleared=False)
-
-
-
 
 	return render(request, template_name, {'orders':orders})
 
@@ -677,13 +669,8 @@ def logout_view(request):
 
 
 def tap_product(request):
-	
 	user = request.user
-
 	data = dict()
-	details = dict()
-
-	
 
 	if request.method=="POST":
 
@@ -715,14 +702,15 @@ def tap_product(request):
 			
 		else:
 			data['form_is_valid'] = False
+			data['form_errors'] = form.errors
+			print(data['form_errors'])
+
 	else:
 		form = OrderForm(request)
-		
-
 		product_id = request.GET['product_id']
 		form = OrderForm(request)
+		
 		taps = 0
-
 		if product_id:
 			product = Product.objects.get(id=int(product_id))
 

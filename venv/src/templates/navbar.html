@@ -28,17 +28,18 @@
                             
 
                             <a href='{% if request.user.adminuserprofile %} /adminprofile/{{request.user.id}}/edit/ {% elif request.user.mkulimauserprofile %} /mkulimaprofile/{{request.user.id}}/edit/ {% elif request.user.customeruserprofile %} /customerprofile/{{request.user.id}}/edit/ {% endif %}' class="list-group-item">
-                                <i class="demo-pli-male icon-lg icon-fw"></i> View Profile
+
+                                <i class="fa fa-user" aria-hidden="true" style="padding-right:10px;"></i> View Profile
                             </a>
 
                             <a href="#" class="list-group-item">
-                                <i class="demo-pli-gear icon-lg icon-fw"></i> Settings
+                                <i class="fa fa-wrench" aria-hidden="true" style="padding-right:10px;"></i> Settings
                             </a>
                             <a href="#" class="list-group-item">
-                                <i class="demo-pli-information icon-lg icon-fw"></i> Help
+                                <i class="fa fa-question" aria-hidden="true" style="padding-right:10px;"></i>Help
                             </a>
                             <a href="/logout/" class="list-group-item">
-                                <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
+                                <i class="fa fa-lock" aria-hidden="true" style="padding-right:10px;"></i> Logout
                             </a>
                         </div>
                     </div>
@@ -48,7 +49,7 @@
                         <!--Menu list item-->
                         
                         <li>
-                            <a href='{% if request.user.adminuserprofile %} /adminpanel/ {% elif request.user.mkulimauserprofile %} /mkulimapanel/ {% elif request.user.customeruserprofile %} /products/{{request.user.id}}/edit/ {% endif %}' class="active" data-original-title="" title="">
+                            <a href='{% if request.user.adminuserprofile %} /adminpanel/ {% elif request.user.mkulimauserprofile %} /mkulimapanel/ {% elif request.user.customeruserprofile %} /products/ {% endif %}' class="active" data-original-title="" title="">
                                 <i class="fa fa-home"></i>
                                 <span class="menu-title">
                                                 <strong>Dashboard</strong>
@@ -56,7 +57,8 @@
                             </a>
                         </li>
                         
-
+                        
+                        {% if not request.user.customeruserprofile %}
                         <!--Menu list item-->
                         <li class="active-sub active">
                             <a href="#" data-original-title="" title="">
@@ -102,10 +104,12 @@
                             <!--Submenu-->
                             <ul class="collapse" aria-expanded="false">
                                 <li><a href="#">FAQ</a></li>
-                                <li><a href="pages-lock-screen.html">Lock Screen</a></li>
+                                <li><a href="/logout/">Lock Screen</a></li>
                             </ul>
                         </li>
                         <li class="list-divider"></li>
+                        
+                        {% endif %}
                     </ul>
                 </div>
                 <div class="nano-pane" style="display: none;">

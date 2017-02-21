@@ -31,6 +31,8 @@ class AdminUserProfile(models.Model):
 	width_field = models.IntegerField(default=0)
 	#only for pic upload purposes
 	usertype = models.CharField(max_length=255, default="Admin")
+	bio = models.TextField(blank=True, null=True)
+	website = models.URLField(blank=True, null=True)
 	
 	
 	def __str__(self):
@@ -54,6 +56,8 @@ class MkulimaUserProfile(models.Model):
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
 	usertype = models.CharField(max_length=255, default="Mkulima")
+	bio = models.TextField(blank=True, null=True)
+	website = models.URLField(blank=True, null=True)	
 	
 
 

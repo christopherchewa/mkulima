@@ -82,7 +82,9 @@ $('#js-order-form').on('submit', '#demo-bvd-notempty', function(){
 
 			else{
 
-				$('#js-order-form.modal-body').html(data.html_form);
+
+				$('#js-order-form .modal-body').html(data.html_form);
+				$('#js-order-form .modal-body').html(data.form_errors);
 			}
 			
 			

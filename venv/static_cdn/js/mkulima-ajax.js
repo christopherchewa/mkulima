@@ -28,6 +28,12 @@ $('a.taps').click(function(){
 
 
 
+	
+	
+
+
+
+
 $(document).ready(function(){
 
 	$('a.trashes').click(function(){
@@ -50,8 +56,8 @@ $('#js-order-form').on('submit', '#demo-bvd-notempty', function(){
 	productid = $('a.taps').attr("data-productid");
 	$.ajax({
 
-		url: '/products/tap_product/',
-		type: 'post',
+		url: form.attr('action'),
+		type: form.attr('method'),
 		beforeSend : function(jqXHR, settings) {
         jqXHR.setRequestHeader("x-csrftoken", get_the_csrf_token_from_cookie());
     	
@@ -68,14 +74,17 @@ $('#js-order-form').on('submit', '#demo-bvd-notempty', function(){
 	
 		success: function(data){
 			
-			if (data.form_is_valid=True){
+			if (data.form_is_valid){
 				alert("Order successful!");
+				
 
 			}
 
 			else{
 
-				$('#js-order-form.modal-body').html(data.html_form);
+
+				$('#js-order-form .modal-body').html(data.html_form);
+				$('#js-order-form .modal-body').html(data.form_errors);
 			}
 			
 			

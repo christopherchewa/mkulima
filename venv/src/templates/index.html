@@ -37,9 +37,9 @@
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
                                 {% if request.user.is_authenticated %} {% if request.user.mkulimauserprofile or request.user.adminuserprofile %}
-                                <li><a href='{% if request.user.mkulimauserprofile %} /mkulimapanel/ {% elif request.user.adminuserprofile %} /adminpanel/ {% endif %}'><i class="fa fa-user"></i>Dashboard</a></li>
+                                <li><a href='{% if request.user.mkulimauserprofile %} /mkulimapanel/ {% elif request.user.adminuserprofile %} /adminpanel/ {% endif %}'><i class="fa fa-user"></i>Dashboard ( {{request.user.username}} )</a></li>
                                 {% endif %} {% if request.user.customeruserprofile %}
-                                <li><a href='/customerprofile/{{request.user.id}}/edit/'><i class="fa fa-user"></i>View Profile</a></li>
+                                <li><a href='/customerprofile/{{request.user.id}}/edit/'><i class="fa fa-user"></i>View Profile ( {{request.user.username}} )</a></li>
                                 {% endif %} {% endif %}
                                 <!--<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>-->
                                 <!--<li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>-->
@@ -112,11 +112,11 @@
                                 </li>
                                 <li class="dropdown"><a href="#">Network<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">My Networks</a></li>
-                                        <li><a href="blog-single.html">Top Rated</a></li>
+                                        <li><a href="#">My Networks</a></li>
+                                        <li><a href="#">Top Rated</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="#">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -235,14 +235,17 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             {% if product.image %}
-                                            <img src="{{product.image.url}}" alt="" /> {% endif %}
+                                            <img src="{{product.image.url}}" alt=""> 
+                                            {% endif %}
                                             <h2>{{product.name}}</h2>
                                             <p>Ksh {{product.price}}</p>
                                         </div>
                                         <div class="product-overlay">
                                             <div class="overlay-content">
                                                 <div class="user-img img-responsive">
+                                                {% if product.user.mkulimauserprofile.image %}
                                                     <img class="img-circle" src="{{product.user.mkulimauserprofile.image.url}}">
+                                                {% endif %}
                                                 </div>
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
@@ -312,7 +315,9 @@
                                         <div class="product-overlay">
                                             <div class="overlay-content">
                                                 <div class="user-img img-responsive">
+                                                {% if product.user.mkulimauserprofile.image %}
                                                     <img class="img-circle" src="{{product.user.mkulimauserprofile.image.url}}">
+                                                {% endif %}
                                                 </div>
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>

@@ -1,14 +1,11 @@
-<!DOCTYPE html> 
-{% load staticfiles %}
- {% load crispy_forms_tags %}
+<!DOCTYPE html> {% load staticfiles %}
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<!-- /Added by HTTrack -->
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Profile | Mkulima Online</title>
+    <title>Profile | Mkulima Online</title>
     <!--STYLESHEET-->
     <!--=================================================-->
     <!--Open Sans Font [ OPTIONAL ]-->
@@ -25,17 +22,10 @@
     <link href="{% static 'css/magic-check.min.css' %}" rel="stylesheet">
     <!--Font Awesome [ OPTIONAL ]-->
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-    <!--Bootstrap Validator [ OPTIONAL ]-->
-    <link href="{% static 'css/bootstrapValidator.min.css' %}" rel="stylesheet">
-    <!--Select2 [ OPTIONAL ]-->
-    <link href="{% static 'css/select2.min.css' %}" rel="stylesheet">
-
-    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
     <!--JAVASCRIPT-->
     <!--=================================================-->
     <!--Pace - Page Load Progress Par [OPTIONAL]-->
     <link href="{% static 'css/pace.min.css' %}" rel="stylesheet">
-    
     <script src="{% static 'js/pace.min.js' %}"></script>
     <!--jQuery [ REQUIRED ]-->
     <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
@@ -44,102 +34,61 @@
     <!--NiftyJS [ RECOMMENDED ]-->
     <script src="{% static 'js/nifty.min.js' %}"></script>
     <!--=================================================-->
-    <!--Bootstrap Validator [ OPTIONAL ]-->
-    <script src="{% static 'js/bootstrapValidator.min.js' %}"></script>
-    <!--Masked Input [ OPTIONAL ]-->
-    <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
-    <!--Form validation [ SAMPLE ]-->
-    <script src="{% static 'js/form-validation.js' %}"></script>
-    <!--Select2 [ OPTIONAL ]-->
-    <script src="{% static 'js/select2.min.js' %}"></script>
-
-    <script src="{% static 'js/bootbox.min.js' %}"></script>
-
-
-    <script src="{% static 'js/ui-modals.js' %}"></script>
-    <!--=================================================
-
-
-
-    =================================================-->
 </head>
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 
 <body>
-    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+    <div id="container" class="effect aside-float aside-bright mainnav-sm">
         <!--NAVBAR-->
         <!--===================================================-->
-
-
-
-       {% include 'top-navbar.html' %}
+        {% include 'top-navbar.html' %}
         <!--===================================================-->
         <!--END NAVBAR-->
         <div class="boxed">
             <!--CONTENT CONTAINER-->
             <!--===================================================-->
             <div id="content-container">
-                <!--Page Title-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <div id="page-title">
-                    <h1 class="page-header text-overflow">Profile Information</h1>
-                    <!--Searchbox-->
-                    
-                </div>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End page title-->
-                <!--Breadcrumb-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <ol class="breadcrumb">
-                    <li><a href="/products/">Home</a></li>
-                    
-                    <li class="/">View Profile</li>
-                </ol>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End breadcrumb-->
                 <!--Page content-->
                 <!--===================================================-->
                 <div id="page-content">
-                    <div class="row">
-                        <div class="col-md-3 col-lg-3">
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
+                    <div class="fixed-fluid">
+                        <div class="fixed-sm-200 fixed-lg-250 pull-sm-left">
                             <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Add Item</h3>
-                                </div>
-                                <form id="demo-bvd-notempty" action="" method="POST" class="form-horizontal" enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    <div class="panel-body">
-                                        <p class="bord-btm pad-ver text-main text-bold">Enter Item Details</p>
-                                        
-                                        {% if request.user.adminuserprofile %}
-                                        {{ userform | crispy }}
-                                        {% endif %}
+                                <!-- Simple profile -->
+                                <div class="text-center pad-all bord-btm">
+                                    <div class="pad-ver">
+                                    {% if request.user.adminuserprofile.image or request.user.mkulimauserprofile.image %}
+                                        <img src="{% if request.user.adminuserprofile %} {{request.user.adminuserprofile.image.url}} {% elif request.user.mkulimauserprofile %} {{request.user.mkulimauserprofile.image.url}} {% endif %}" class="img-lg img-border img-circle" alt="Profile Picture">
+                                    {% else %}
+                                        <img src="{% static 'img/profile-picture.jpg' %}" class="img-responsive" alt="">
+                                    {% endif %}
+                                    
+                                    </div>
+                                    <h4 class="text-lg text-overflow mar-no">{% if request.user.adminuserprofile %} {{request.user.adminuserprofile.usertype}} {% elif request.user.mkulimauserprofile %} {{request.user.mkulimauserprofile.usertype}} {% endif %}</h4>
+                                    <p class="text-sm text-muted">{{user.}}</p>
 
-                                        {% if request.user.mkulimauserprofile or  request.user.customeruserprofile %}
-                                        {{ userform | crispy }}
-                                        {{ userprofileform | crispy }}
-                                        {% endif %}
-                                       
-                                    </div>
-                                    <div class="panel-footer">
-                                        <div class="row">
-                                            <div class="col-sm-7 col-sm-offset-3">
-                                                <input class="btn btn-mint" type="submit" name="Submit" value="Save">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                                    <button class="btn btn-block btn-success ">Follow</button>
+                                </div>
+                                <p class="text-semibold text-main pad-all mar-no">About Me</p>
+                                <ul class="list-group bg-trans text-sm">
+                                    <!-- Profile Details -->
+
+                                    <li class="list-group-item list-item-sm">
+                                        <i class="fa fa-map-marker" aria-hidden="true" style="padding-right:10px;"></i>Inyenjes, Kericho
+                                    </li>
+                                    <li class="list-group-item list-item-sm text-primary text-semibold">
+                                        <a href="#" class="btn-link text-semibold">
+                                            <i class="demo-pli-internet icon-lg icon-fw"></i> http://www.mckmende.trl
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="pad-hor mar-btm">
+                                    <small class="text-muted">Bio. Insert some interesting text to let people know more about you</small>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-3 hidden-lg">
-                            <div class="clearfix">
-                            </div>
-                        </div>
+                        {% block content %} {% endblock %}
                     </div>
                 </div>
                 <!--===================================================-->
@@ -147,14 +96,9 @@
             </div>
             <!--===================================================-->
             <!--END CONTENT CONTAINER-->
-            <!--ASIDE-->
-            <!--===================================================-->
-          
-            <!--===================================================-->
-            <!--END ASIDE-->
             <!--MAIN NAVIGATION-->
             <!--===================================================-->
-          {% include 'navbar.html' %}
+            {% include 'navbar.html' %}
             <!--===================================================-->
             <!--END MAIN NAVIGATION-->
         </div>
@@ -164,12 +108,14 @@
             <!-- Visible when footer positions are fixed -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <div class="show-fixed pull-right">
-                You have <a href="#" class="text-bold text-main"><span class="label label-danger">3</span> pending action.</a>
+                You have
+                <a href="#" class="text-bold text-main"><span class="label label-danger">3</span> pending action.</a>
             </div>
             <!-- Visible when footer positions are static -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <div class="hide-fixed pull-right pad-rgt">
-                4GB of <strong>5GB</strong> Free.
+                4GB of
+                <strong>5GB</strong> Free.
             </div>
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
