@@ -68,23 +68,62 @@
                                     <h4 class="text-lg text-overflow mar-no">{% if request.user.adminuserprofile %} {{request.user.adminuserprofile.usertype}} {% elif request.user.mkulimauserprofile %} {{request.user.mkulimauserprofile.usertype}} {% endif %}</h4>
                                     <p class="text-sm text-muted">{{user.}}</p>
 
-                                    <button class="btn btn-block btn-success ">Follow</button>
+                                    <a class="btn btn-block btn-success" href='{% if request.user.adminuserprofile %} /adminprofile/{{request.user.id}}/edit/ {% elif request.user.mkulimauserprofile %} /mkulimaprofile/{{request.user.id}}/edit/ {% endif %}' >View Profile</a>
                                 </div>
                                 <p class="text-semibold text-main pad-all mar-no">About Me</p>
                                 <ul class="list-group bg-trans text-sm">
                                     <!-- Profile Details -->
 
                                     <li class="list-group-item list-item-sm">
-                                        <i class="fa fa-map-marker" aria-hidden="true" style="padding-right:10px;"></i>Inyenjes, Kericho
+                                        <i class="fa fa-map-marker" aria-hidden="true" style="padding-right:10px;"></i>
+                                        {% if request.user.adminuserprofile %}
+                                            {% if request.user.adminuserprofile.location %}
+                                                {{request.user.adminuserprofile.location}}
+                                            {% else %}
+                                                Update your location information
+                                            {% endif %}
+                                        {% elif request.user.mkulimauserprofile %}
+                                            {% if request.user.mkulimauserprofile.location %}
+                                                {{request.user.mkulimauserprofile.location}}
+                                            {% else %}
+                                                Update your location information
+                                            {% endif %}
+                                        {% endif %}
                                     </li>
                                     <li class="list-group-item list-item-sm text-primary text-semibold">
                                         <a href="#" class="btn-link text-semibold">
-                                            <i class="demo-pli-internet icon-lg icon-fw"></i> http://www.mckmende.trl
+                                             {% if request.user.adminuserprofile %}
+                                            {% if request.user.adminuserprofile.website %}
+                                                {{request.user.adminuserprofile.website}}
+                                            {% else %}
+                                                Update your website information
+                                            {% endif %}
+                                        {% elif request.user.mkulimauserprofile %}
+                                            {% if request.user.mkulimauserprofile.website %}
+                                                {{request.user.mkulimauserprofile.website}}
+                                            {% else %}
+                                                Update your website information
+                                            {% endif %}
+                                        {% endif %}
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="pad-hor mar-btm">
-                                    <small class="text-muted">Bio. Insert some interesting text to let people know more about you</small>
+                                    Bio: <small class="text-muted">
+                                         {% if request.user.adminuserprofile %}
+                                            {% if request.user.adminuserprofile.bio %}
+                                                {{request.user.adminuserprofile.bio}}
+                                            {% else %}
+                                                Update your bio
+                                            {% endif %}
+                                        {% elif request.user.mkulimauserprofile %}
+                                            {% if request.user.mkulimauserprofile.bio %}
+                                                {{request.user.mkulimauserprofile.bio}}
+                                            {% else %}
+                                                Update your bio
+                                            {% endif %}
+                                        {% endif %}
+                                    </small>
                                 </div>
                             </div>
                         </div>

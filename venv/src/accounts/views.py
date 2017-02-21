@@ -89,6 +89,7 @@ class UserEditForm(forms.ModelForm):
 		fields = ['username','email']
 
 
+
 class NewSaccoForm(forms.ModelForm):
 
 	class Meta:
@@ -458,7 +459,7 @@ def mkulima_panel(request, template_name="mkulima-panel.html"):
 	wakulimaobj = MkulimaUserProfile.objects.all()
 
 	user = request.user
-	orders = Order.objects.filter(owner=user).order_by('-timestamp')[:8]
+	orders = Order.objects.filter(owner=user).order_by('cleared')[:8]
 
 	paginator = Paginator(wakulimaobj, 6)
 	page_request_var = "page"
@@ -648,15 +649,24 @@ def orders_view(request, template_name="orders.html"):
 @login_required(login_url='/login/')
 def clear_order(request, pk=None, template_name="order-confirm-clear.html"):
 
+
+	if not request.user.groups.filter(name='Mkulima').exists():
+		raise Http404
+
 	order = get_object_or_404(Order, pk=pk)
 	if request.method == 'POST':
-		order.cleared = True
+		
 		product = Product.objects.get(id=order.product.id)
-		new_val = product.quantity - order.quantity
-		product.quantity = new_val
-		product.save()
-		order.save()
-		return redirect('/orders/')
+
+		if order.quantity > product.quantity:
+			print("More quantity ordered than is available")
+		else:
+			new_val = product.quantity - order.quantity
+			product.quantity = new_val
+			order.cleared = True
+			product.save()
+			order.save()
+			return redirect('/orders/')
 
 	return render(request, template_name, {'order':order})
 
@@ -667,8 +677,12 @@ def logout_view(request):
 
 
 
-
+@login_required(login_url='/login/')
 def tap_product(request):
+
+	if not request.user.groups.filter(name='Customer').exists():
+		raise Http404
+
 	user = request.user
 	data = dict()
 
@@ -730,9 +744,12 @@ def tap_product(request):
 	return JsonResponse(data)
 	
 
-
+@login_required(login_url='/login/')
 def trash_product(request):
 	
+	if not request.user.groups.filter(name='Customer').exists():
+		raise Http404
+
 
 	product_id = None
 	if request.method=="GET":

@@ -29,10 +29,12 @@ class AdminUserProfile(models.Model):
 	image = models.ImageField(null=True, blank=True, upload_to=profile_upload_location, width_field='width_field', height_field='height_field')
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
-	#only for pic upload purposes
+	#usertype - only for pic upload purposes and some if statements in some views
 	usertype = models.CharField(max_length=255, default="Admin")
-	bio = models.TextField(blank=True, null=True)
+	#
+	location = models.CharField(max_length=255, blank=True, null=True)
 	website = models.URLField(blank=True, null=True)
+	bio = models.TextField(blank=True, null=True)
 	
 	
 	def __str__(self):
@@ -56,8 +58,10 @@ class MkulimaUserProfile(models.Model):
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
 	usertype = models.CharField(max_length=255, default="Mkulima")
-	bio = models.TextField(blank=True, null=True)
+	location = models.CharField(max_length=255, blank=True, null=True)
 	website = models.URLField(blank=True, null=True)	
+	bio = models.TextField(blank=True, null=True)
+	
 	
 
 

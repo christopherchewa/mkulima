@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Mkulima Online</title>
+    <!--STYLESHEET-->
+    <!--=================================================-->
+    <!--Open Sans Font [ OPTIONAL ]-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="{% static 'css/nifty.min.css' %}" rel="stylesheet">
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <link href="{% static 'css/nifty-demo-icons.min.css' %}" rel="stylesheet">
+    <!--Magic Checkbox [ OPTIONAL ]-->
+    <link href="{% static 'css/magic-check.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/pace.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mycss.css' %}" rel="stylesheet">
+    <script src="{% static 'js/pace.min.js' %}"></script>
+    <!--jQuery [ REQUIRED ]-->
+    <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="{% static 'js/nifty.min.js' %}"></script>
+    <!--=================================================-->
+    <!--Background Image [ DEMONSTRATION ]-->
+    <script src="{% static 'js/demo/bg-images.js' %}"></script>
+    <!--=================================================
+
+    REQUIRED
+    You must include this in your project.
+
+
+    RECOMMENDED
+    This category must be included but you may modify which plugins or components which should be included in your project.
+
+
+    OPTIONAL
+    Optional plugins. You may choose whether to include it in your project or not.
+
+
+    
+    =================================================-->
+<style>
+
+.cls-container
+{
+background:url('{% static "img/bg-img-2.jpg" %}') no-repeat center center fixed !important;
+background-size:cover !important;
+webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+}
+
+</style>
+
+</head>
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+
+<body class=" pace-done">
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <div id="container" class="cls-container">
+        <!-- BACKGROUND IMAGE -->
+        <!--===================================================-->
+        <div id="bg-overlay"></div>
+        <!-- REGISTRATION FORM -->
+        <!--===================================================-->
+        <div class="cls-content" id="bg-overlay">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!--===================================================-->
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+        <footer id="footer">
+            <!-- Visible when footer positions are fixed -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="show-fixed pull-right">
+                You have <a href="#" class="text-bold text-main"><span class="label label-danger">3</span> pending action.</a>
+            </div>
+            <!-- Visible when footer positions are static -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <p class="pad-lft">&#0169; 2016 Mkulima-Online</p>
+        </footer>
+</body>
+
+</html>
