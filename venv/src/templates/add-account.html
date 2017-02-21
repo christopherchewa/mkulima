@@ -25,16 +25,17 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/u332-8.png" alt="Mkulima Online" /></a>
+							<a href="products"><img src="{% static 'img/mkulimalogo.jpg' %}" alt="Mkulima Leo" /></a>
 						</div>
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								{% if request.user.is_authenticated %}
+								<li><a href=/logout/><i class="fa fa-lock"></i> Logout</a></li>
+								{% else %}
+								<li><a href=/login/><i class="fa fa-lock"></i> Login</a></li>
+								{% endif %}
 							</ul>
 						</div>
 					</div>
@@ -49,7 +50,7 @@
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
 								<li><a href="#"><i class="fa fa-phone"></i> +254 701 188 821</a></li>
-								<li><a href="https://www.mkulima-online.com"><i class="fa fa-envelope"></i> info@mkulima-online.com</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> info@mkulima-online.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -67,36 +68,7 @@
 			</div>
 		</div><!--/header_top-->
 	
-		<div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-9">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html">Market</a></li>
-								<li><a href="#">Accounts <i class="fa fa-angle-right"></i></a>
-                                </li> 
-								<li><a href="#"  class="active">Create Account <i class="fa fa-angle-right"></i></a>
-                                </li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header-bottom-->
+		<!--/header-bottom-->
 	</header><!--/header-->
 	
 	<section id="BODY">
@@ -155,18 +127,68 @@
             <div class="col-md-1"></div>
 		</div>
 	</section>
+	   <footer id="footer">
+        <!--Footer-->
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Mkulima Info</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Online Help</a></li>
+                                <li><a href="#">FAQ’s</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Shop Quick</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Farm Input</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Discounts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Policies</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Refund Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>About mkulima online</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Information</a></li>
+                                <li><a href="#">Copyright</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="address">
+                            <img src="{% static 'img/map.png' %}" alt="" />
+                            <p>3134 Muindi Mbingu, Mombasa(KENYA)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left">Copyright © 2016 mkulima online.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 	
-	<footer id="footer"><!--Footer-->
-		
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row">
-					<p class="pull-left">Copyright © 2017 mkulima online.</p>
-				</div>
-			</div>
-		</div>
-		
-	</footer><!--/Footer-->
+	<!--/Footer-->
 	
 
   

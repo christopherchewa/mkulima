@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <nav id="mainnav-container">
     <div id="mainnav">
         <!--Menu-->
@@ -11,7 +12,9 @@
                         <div class="profile-wrap">
                             <div class="pad-btm">
                                 <span class="label label-success pull-right">Hello</span>
-                                <img class="img-circle img-sm img-border" src="img/profile-photos/1.png" alt="Profile Picture">
+                                 {% if request.user.adminuserprofile.image or request.user.mkulimauserprofile.image %}
+                                <img class="img-circle img-sm img-border" src="{% if request.user.adminuserprofile %} {{request.user.adminuserprofile.image.url}} {% elif request.user.mkulimauserprofile %} {{request.user.mkulimauserprofile.image.url}} {% endif %}" alt="Profile Picture">
+                                {% endif %}
                             </div>
                             <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
                                 <span class="pull-right dropdown-toggle">
@@ -24,7 +27,7 @@
                         <div id="profile-nav" class="collapse list-group bg-trans">
                             
 
-                            <a href='{% if request.user.adminuserprofile %} /adminprofile/{{request.user.id}}/edit/ {% elif request.user.mkulimauserprofile %} /mkulimaprofile/{{request.user.id}}/edit/ {% endif %}' class="list-group-item">
+                            <a href='{% if request.user.adminuserprofile %} /adminprofile/{{request.user.id}}/edit/ {% elif request.user.mkulimauserprofile %} /mkulimaprofile/{{request.user.id}}/edit/ {% elif request.user.customeruserprofile %} /customerprofile/{{request.user.id}}/edit/ {% endif %}' class="list-group-item">
                                 <i class="demo-pli-male icon-lg icon-fw"></i> View Profile
                             </a>
 
@@ -45,7 +48,7 @@
                         <!--Menu list item-->
                         
                         <li>
-                            <a href='{% if request.user.adminuserprofile %} /adminpanel/ {% elif request.user.mkulimauserprofile %} /mkulimapanel/ {% endif %}' class="active" data-original-title="" title="">
+                            <a href='{% if request.user.adminuserprofile %} /adminpanel/ {% elif request.user.mkulimauserprofile %} /mkulimapanel/ {% elif request.user.customeruserprofile %} /products/{{request.user.id}}/edit/ {% endif %}' class="active" data-original-title="" title="">
                                 <i class="fa fa-home"></i>
                                 <span class="menu-title">
                                                 <strong>Dashboard</strong>
@@ -64,7 +67,7 @@
                             <!--Submenu-->
                             <ul class="collapse in" aria-expanded="false">
 
-                                <li><a href='{% if request.user.adminuserprofile %} /adminpanel/members/ {% elif request.user.mkulimauserprofile %} /products/editlist/ {% endif %}'>My Listings</a></li>
+                                <li><a href='{% if request.user.adminuserprofile %} /adminpanel/removelist/ {% elif request.user.mkulimauserprofile %} /products/editlist/ {% endif %}'>My Listings</a></li>
 
                                 <li class=""><a href='{% if request.user.adminuserprofile %} /adminpanel/addmember/ {% elif request.user.mkulimauserprofile %} /products/create/ {% endif %}'>Add Listing</a></li>
 
@@ -76,14 +79,13 @@
                         {% if request.user.mkulimauserprofile %}
                         <li>
                             <a href="#" data-original-title="" title="">
-                                <i class="fa fa-balance-scale"></i>
+                                <i class="fa fa-cogs" aria-hidden="true"></i>
                                 <span class="menu-title">Warehouse</span>
                                 <i class="arrow"></i>
                             </a>
                             <!--Submenu-->
                             <ul class="collapse" aria-expanded="false">
-                                <li><a href="/orders/">Inventory Report</a></li>
-                                <li><a href="#">Manage Inventory</a></li>
+                                <li><a href="/orders/">Order Clearance</a></li>
                             </ul>
                         </li>
                         {% endif %}
@@ -92,7 +94,8 @@
                         <!--Menu list item-->
                         <li>
                             <a href="#" data-original-title="" title="">
-                                <i class="fa fa-sliders"></i>
+                                <i class="fa fa-wrench" aria-hidden="true"></i>
+
                                 <span class="menu-title">Tools</span>
                                 <i class="arrow"></i>
                             </a>

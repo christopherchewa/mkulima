@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-{% load staticfiles %}
+<!DOCTYPE html> {% load staticfiles %}
 <html lang="en">
-
-
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile | Mkulima Online</title>
-
-
     <!--STYLESHEET-->
     <!--=================================================-->
     <!--Open Sans Font [ OPTIONAL ]-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-
-
     <!--Bootstrap Stylesheet [ REQUIRED ]-->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <!--Nifty Stylesheet [ REQUIRED ]-->
@@ -28,12 +22,10 @@
     <link href="{% static 'css/magic-check.min.css' %}" rel="stylesheet">
     <!--Font Awesome [ OPTIONAL ]-->
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-
     <!--JAVASCRIPT-->
     <!--=================================================-->
     <!--Pace - Page Load Progress Par [OPTIONAL]-->
-<link href="{% static 'css/pace.min.css' %}" rel="stylesheet">
-    
+    <link href="{% static 'css/pace.min.css' %}" rel="stylesheet">
     <script src="{% static 'js/pace.min.js' %}"></script>
     <!--jQuery [ REQUIRED ]-->
     <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
@@ -41,17 +33,9 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!--NiftyJS [ RECOMMENDED ]-->
     <script src="{% static 'js/nifty.min.js' %}"></script>
-
-
     <!--=================================================-->
-
     <!--Panel [ SAMPLE ]-->
-    
-
     <!--Icons [ SAMPLE ]-->
-    
-
-
     <!--=================================================
 
     REQUIRED
@@ -77,39 +61,31 @@
     Detailed information and more samples can be found in the document.
 
     =================================================-->
-
-
 </head>
-
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+
 <body>
     <div id="container" class="effect aside-float aside-bright mainnav-sm">
-
         <!--NAVBAR-->
         <!--===================================================-->
-       {% include 'top-navbar.html' %}
+        {% include 'top-navbar.html' %}
         <!--===================================================-->
         <!--END NAVBAR-->
-
         <div class="boxed">
-
             <!--CONTENT CONTAINER-->
             <!--===================================================-->
             <div id="content-container">
-
-
                 <!--Page content-->
                 <!--===================================================-->
                 <div id="page-content">
-
                     <div class="fixed-fluid">
                         <div class="fixed-sm-200 fixed-lg-250 pull-sm-left">
                             <div class="panel">
                                 <!-- Simple profile -->
                                 <div class="text-center pad-all bord-btm">
                                     <div class="pad-ver">
-                                        <img src="img/profile-photos/1.png" class="img-lg img-border img-circle" alt="Profile Picture">
+                                        <img src="{% if request.user.adminuserprofile %} {{request.user.adminuserprofile.image.url}} {% elif request.user.mkulimauserprofile %} {{request.user.mkulimauserprofile.image.url}} {% endif %}" class="img-lg img-border img-circle" alt="Profile Picture">
                                     </div>
                                     <h4 class="text-lg text-overflow mar-no">{{user.username}}</h4>
                                     <p class="text-sm text-muted">Mkulima</p>
@@ -117,7 +93,6 @@
                                 </div>
                                 <p class="text-semibold text-main pad-all mar-no">About Me</p>
                                 <ul class="list-group bg-trans text-sm">
-
                                     <!-- Profile Details -->
                                     <li class="list-group-item list-item-sm">
                                         <i class="demo-pli-map-marker-2 icon-lg icon-fw"></i> Inyenjes, Kericho
@@ -133,10 +108,9 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="fluid">
                             <div class="row">
-                            <!--<div class="bg-trans-light pad-all mar-btm clearfix hidden-xs">
+                                <!--<div class="bg-trans-light pad-all mar-btm clearfix hidden-xs">
                                 <hr class="new-section-xs bord-no">
                                 <div class="col-md-7">
                                     <div class="row text-center mar-btm">
@@ -164,487 +138,206 @@
                                     <button class="btn btn-sm btn-success">Edit Profile</button>
                                 </div>
                             </div>-->
-
-
-                            <div class="col-lg-12 pull-lg-left">
-                                <div class="row">
-                                    <div class="">
-                                        <div class="clearfix">
+                                <div class="col-lg-12 pull-lg-left">
+                                    <div class="row">
+                                        <div class="">
+                                            <div class="clearfix">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!--Tile-->
-                                    <!--===================================================-->
-                                    <a href= "/products/create/">
-                                        <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
-                                        <div class="media-left">
-                                            <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
+                                        <!--Tile-->
+                                        <!--===================================================-->
+                                        <a href="/products/create/">
+                                            <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
+                                                <div class="media-left">
+                                                    <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
                                                 <i class="ti-plus icon-2x"></i>
                                             </span>
-                                        </div>
-                                        <div class="media-body">
-                                            <p class="text-2x mar-no text-semibold">Add</p>
-                                            <p class="text-muted mar-no">Add new item</p>
-                                        </div>
-                                        </div>
-                                    </a>
-                                    <!--===================================================-->
-                                    <!--Tile-->
-                                    <!--===================================================-->
-                                    <a href="/products/editlist/">
-                                        <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
-                                        <div class="media-left">
-                                            <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
+                                                </div>
+                                                <div class="media-body">
+                                                    <p class="text-2x mar-no text-semibold">Add</p>
+                                                    <p class="text-muted mar-no">Add new item</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!--===================================================-->
+                                        <!--Tile-->
+                                        <!--===================================================-->
+                                        <a href="/products/editlist/">
+                                            <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
+                                                <div class="media-left">
+                                                    <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
                                                 <i class="ti-pencil-alt icon-2x"></i>
                                             </span>
-                                        </div>
-                                        <div class="media-body">
-                                            <p class="text-2x mar-no text-semibold">Edit</p>
-                                            <p class="text-muted mar-no">Change exising item</p>
-                                        </div>
-                                        </div>
-                                    </a>
-                                    <!--===================================================-->
-                                    <!--Tile-->
-                                    <!--===================================================-->
-                                    <a href="/products/deletelist/">
-                                        <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
-                                        <div class="media-left">
-                                            <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
+                                                </div>
+                                                <div class="media-body">
+                                                    <p class="text-2x mar-no text-semibold">Edit</p>
+                                                    <p class="text-muted mar-no">Change exising item</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!--===================================================-->
+                                        <!--Tile-->
+                                        <!--===================================================-->
+                                        <a href="/products/deletelist/">
+                                            <div class="col-md-4 col-lg-4 col-sm-10 panel media middle pad-all">
+                                                <div class="media-left">
+                                                    <span class="icon-wrap icon-wrap-sm icon-circle bg-success">
                                                 <i class="ti-trash icon-2x"></i>
                                             </span>
-                                        </div>
-                                        <div class="media-body">
-                                            <p class="text-2x mar-no text-semibold">Delete</p>
-                                            <p class="text-muted mar-no">Delete an existing item</p>
-                                        </div>
-                                        </div>
-                                    </a>
-                                    <!--===================================================-->
+                                                </div>
+                                                <div class="media-body">
+                                                    <p class="text-2x mar-no text-semibold">Delete</p>
+                                                    <p class="text-muted mar-no">Delete an existing item</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!--===================================================-->
+                                    </div>
                                 </div>
                             </div>
-                            </div>
-
                             <div class="fixed-fluid">
                                 <div class="row">
-                                <div class="col-md-7 col-lg-7">
-                                    <div class="panel">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">Account Activity</h3>
-                                        </div>
-
-                                        <!--Data Table-->
-                                        <!--===================================================-->
-                                        <div class="panel-body">
-                                            <div class="pad-btm form-inline">
-                                                <div class="row">
-                                                    <div class="col-sm-6 col-md-5 col-lg-5 table-toolbar-left hidden-xs">
-                                                        <button id="demo-btn-addrow" class="btn btn-purple"><i class="demo-pli-add"></i> Add</button>
-                                                        <button class="btn btn-default hidden-md"><i class="demo-pli-printer"></i></button>
-                                                        <div class="btn-group hidden-md hidden-lg">
-                                                            <button class="btn btn-default"><i class="demo-pli-exclamation-circle"></i></button>
-                                                            <button class="btn btn-default"><i class="demo-pli-recycling"></i></button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6 col-md-7 table-toolbar-right">
-                                                        <div class="form-group">
-                                                            <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
-                                                        </div>
-                                                        <div class="btn-group hidden-md">
-                                                            <button class="btn btn-default  hidden-lg"><i class="demo-pli-download-from-cloud"></i></button>
-                                                            <div class="btn-group">
-                                                                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                                                    <i class="demo-pli-gear"></i>
-                                                                    <span class="caret"></span>
-                                                                </button>
-                                                                <ul role="menu" class="dropdown-menu dropdown-menu-right">
-                                                                    <li>
-                                                                        <a href="#">Most Recent</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="#">All Activity</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="table-responsive">
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-center">Invoice</th>
-                                                            <th>User</th>
-                                                            <th>Order date</th>
-                                                            <th>Amount</th>
-                                                            <th>Status</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <a class="btn-link" href="#"> Order #53431</a>
-                                                            </td>
-                                                            <td>Steve N. Horton</td>
-                                                            <td>
-                                                                <span class="text-muted"><i class="demo-pli-clock"></i> Oct 22, 2014</span>
-                                                            </td>
-                                                            <td>$45.00</td>
-                                                            <td>
-                                                                <div class="label label-table label-success">Paid</div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <a class="btn-link" href="#"> Order #53432</a>
-                                                            </td>
-                                                            <td>Charles S Boyle</td>
-                                                            <td>
-                                                                <span class="text-muted"><i class="demo-pli-clock"></i> Oct 24, 2014</span>
-                                                            </td>
-                                                            <td>$245.30</td>
-                                                            <td>
-                                                                <div class="label label-table label-info">Shipped</div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <a class="btn-link" href="#"> Order #53433</a>
-                                                            </td>
-                                                            <td>Lucy Doe</td>
-                                                            <td>
-                                                                <span class="text-muted"><i class="demo-pli-clock"></i> Oct 24, 2014</span>
-                                                            </td>
-                                                            <td>$38.00</td>
-                                                            <td>
-                                                                <div class="label label-table label-info">Shipped</div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="hidden-md hidden-lg">
-                                                            <td>
-                                                                <a class="btn-link" href="#"> Order #53434</a>
-                                                            </td>
-                                                            <td>Teresa L. Doe</td>
-                                                            <td>
-                                                                <span class="text-muted"><i class="demo-pli-clock"></i> Oct 15, 2014</span>
-                                                            </td>
-                                                            <td>$77.99</td>
-                                                            <td>
-                                                                <div class="label label-table label-info">Shipped</div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="hidden-md hidden-lg">
-                                                            <td>
-                                                                <a class="btn-link" href="#"> Order #53435</a>
-                                                            </td>
-                                                            <td>Teresa L. Doe</td>
-                                                            <td>
-                                                                <span class="text-muted"><i class="demo-pli-clock"></i> Oct 12, 2014</span>
-                                                            </td>
-                                                            <td>$18.00</td>
-                                                            <td>
-                                                                <div class="label label-table label-success">Paid</div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <!--===================================================-->
-                                        <!--End Data Table-->
-
-                                    </div>
-                                </div>
-                                <div class="col-md-5 pull-lg-right pull-sm-left">
-                                    <div class="col-sm-7 col-md-12 panel">
-                                        <div class="panel-heading">
-                                            <div class="panel-control">
-                                                <button class="demo-panel-ref-btn btn btn-default" data-target="#demo-panel-ref" data-toggle="panel-overlay">
-                                                    <i class="demo-psi-repeat-2 icon-fw"></i> Refresh
-                                                </button>
-                                                <div class="btn-group hidden-sm hidden-md">
-                                                    <button data-toggle="dropdown" class="dropdown-toggle btn">
-                                                        <i class="caret"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu dropdown-menu-right">
-                                                        <li>
-                                                            <a href="#">Recent</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">View All</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <h3 class="panel-title">My Network</h3>
-                                        </div>
-
-                                        <div class="panel-body">
-                                            <div class="list-group bg-trans">
-                                            {% for mkulima in wakulima %}
-                                                <a href="#" class="list-group-item">
-                                                    <div class="media-left pos-rel">
-                                                        <img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture">
-                                                        <i class="badge badge-success badge-stat badge-icon pull-left"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <p class="mar-no">{{mkulima.user.username}}</p>
-                                                        {% if mkulima %}
-                                                        <small class="text-muted"><b>Sacco Name: </b>{{mkulima.sacco_name}}</small>
-                                                        {% endif %}
-                                                    </div>
-                                                </a>
-                                            {% endfor %}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel hidden-md hidden-xs hidden-lg">
-                                        <div class="pull-sm-right">
+                                    <div class="col-md-7 col-lg-7">
+                                        <div class="panel">
                                             <div class="panel-heading">
-                                                 <h3 class="panel-title">My Lists</h3>
+                                                <h3 class="panel-title">Account Activity</h3>
+                                            </div>
+                                            <!--Data Table-->
+                                            <!--===================================================-->
+                                            <div class="panel-body">
+                                                <div class="pad-btm form-inline">
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Id</th>
+                                                                <th>Timestamp</th>
+                                                                <th>Customer</th>
+                                                                <th>Product/Service</th>
+                                                                <th>Quantity</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% for order in orders %}
+                                                            <tr>
+                                                                <td>{{order.id}}</td>
+                                                                <td>
+                                                                    <span class="text-muted"><i class="fa fa-clock-o" aria-hidden="true"></i>  {{order.timestamp}}</span>
+                                                                </td>
+                                                                <td>{{order.customer.username}}</td>
+                                                                <td style="text-align:center;">{{order.product.name}}</td>
+                                                                <td>{{order.quantity}}</td>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                            {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                    <div class="pull-right">
+                                                        <a href="/orders/">View More <i class="fa fa-forward" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--===================================================-->
+                                            <!--End Data Table-->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 pull-lg-right pull-sm-left">
+                                        <div class="col-sm-7 col-md-12 panel">
+                                            <div class="panel-heading">
+                                                <div class="panel-control">
+                                                </div>
+                                                <h3 class="panel-title">My Network (Wakulima)</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="list-group bg-trans">
+                                                    {% for mkulima in wakulima %}
+                                                    <a href="#" class="list-group-item">
+                                                        <div class="media-left pos-rel">
+                                                        
+                                                            <img class="img-circle img-xs" src="{% if mkulima.image %}{{mkulima.image.url}}{% endif %}" alt="{% if not mkulima.image %}Profile Picture{% endif %}">
+                                                        
+                                                            <i class="badge badge-success badge-stat badge-icon pull-left"></i>
+                                                        
+                                                        
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <p class="mar-no">{{mkulima.user.username}}</p>
+                                                            {% if mkulima %}
+                                                            <small class="text-muted"><b>Sacco Name: </b>{{mkulima.sacco_name}}</small> 
+                                                            {% endif %}
+                                                        </div>
+                                                    </a>
+                                                    {% endfor %}
+                                                </div>
+                                                <div class="pagination">
+                                                    <span class="step-links">
+
+                                                        {% if wakulima.has_previous %}
+                                                            <a href="?{{ page_request_var }}={{wakulima.previous_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Previous</a>
+                                                        {% endif %}
+        
+
+                                                        <span class="current">
+                                                            Page {{ wakulima.number }} of {{wakulima.paginator.num_pages}}
+                                                        </span> 
+
+                                                        {% if wakulima.has_next %}
+                                                        <a href="?{{ page_request_var }}={{wakulima.next_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Next</a>
+                                                        {% endif %}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel hidden-md hidden-xs hidden-lg">
+                                            <div class="pull-sm-right">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">My Lists</h3>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!--===================================================-->
                 <!--End page content-->
-
-
             </div>
             <!--===================================================-->
             <!--END CONTENT CONTAINER-->
-            
-            
             <!--ASIDE-->
             <!--===================================================-->
-            <aside id="aside-container">
-                <div id="aside">
-                    <div class="nano">
-                        <div class="nano-content">
-                            
-                            <!--Nav tabs-->
-                            <!--================================-->
-                            <ul class="nav nav-tabs nav-justified">
-                                <li class="active">
-                                    <a href="#demo-asd-tab-1" data-toggle="tab">
-                                        <i class="ti-rss-alt "></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#demo-asd-tab-2" data-toggle="tab">
-                                        <i class="demo-pli-information icon-fw"></i> Report
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#demo-asd-tab-3" data-toggle="tab">
-                                        <i class="demo-pli-wrench icon-fw"></i> Settings
-                                    </a>
-                                </li>
-                            </ul>
-                            <!--================================-->
-                            <!--End nav tabs-->
-
-
-
-                            <!-- Tabs Content -->
-                            <!--================================-->
-                            <div class="tab-content">
-
-                                <!--First tab (Contact list)-->
-                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                                <div class="tab-pane fade in active" id="demo-asd-tab-1">
-                                    <br>
-                                    <p class="pad-hor text-semibold text-main">
-                                        <span class="pull-right badge badge-success">Offline</span> Recent Contacts
-                                    </p>
-
-                                    <!--Works-->
-                                    <div class="list-group bg-trans">
-                                        <a href="#" class="list-group-item">
-                                            <span class="badge badge-purple badge-icon badge-fw pull-left"></span> Joey K. Githae
-                                        </a>
-                                        <a href="#" class="list-group-item">
-                                            <span class="badge badge-info badge-icon badge-fw pull-left"></span> Andrew Bosco
-                                        </a>
-                                        <a href="#" class="list-group-item">
-                                            <span class="badge badge-success badge-icon badge-fw pull-left"></span> John Juma
-                                        </a>
-                                        <a href="#" class="list-group-item">
-                                            <span class="badge badge-danger badge-icon badge-fw pull-left"></span> Susan Sum
-                                        </a>
-                                    </div>
-
-
-                                    <hr>
-                                    <p class="pad-hor mar-top text-semibold text-main">News</p>
-
-                                    <div class="pad-hor">
-                                        <p class="text-muted">Mkulima Online will be under maintainence during the
-                                            <a data-title="45%" class="add-tooltip text-semibold" href="#">Period of</a>: 20/04/17 until 30/04/17.
-                                        </p>
-                                        <small class="text-muted"><em>Last Update : Dec 12, 2016</em></small>
-                                    </div>
-
-
-                                </div>
-                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                                <!--End first tab (Contact list)-->
-
-
-                                <!--Second tab (Custom layout)-->
-                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                                <div class="tab-pane fade" id="demo-asd-tab-2">
-                                    <hr>
-                                    <p class="pad-hor text-semibold text-main">Additional Actions</p>
-
-                                    <!--Simple Menu-->
-                                    <div class="list-group bg-trans">
-                                        <a href="#" class="list-group-item"><i class="demo-pli-information icon-lg icon-fw"></i> Service Information</a>
-                                        <a href="#" class="list-group-item"><i class="demo-pli-mine icon-lg icon-fw"></i> Report Misconduct</a>
-                                        <a href="#" class="list-group-item"><i class="demo-pli-credit-card-2 icon-lg icon-fw"></i> Payment Issue</a>
-                                        <a href="#" class="list-group-item"><i class="demo-pli-support icon-lg icon-fw"></i> Note Center</a>
-                                    </div>
-
-
-                                    <hr>
-
-                                    <div class="text-center">
-                                        <div><i class="demo-pli-old-telephone icon-3x"></i></div>
-                                        Questions?
-                                        <p class="text-lg text-semibold text-main"> (020) 0204-51434 </p>
-                                        <small><em>We are here 24/7</em></small>
-                                    </div>
-                                </div>
-                                <!--End second tab (Custom layout)-->
-                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-
-                                <!--Third tab (Settings)-->
-                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                                <div class="tab-pane fade" id="demo-asd-tab-3">
-                                    <ul class="list-group bg-trans">
-                                        <li class="pad-top list-header">
-                                            <p class="text-semibold text-main mar-no">Account Settings</p>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="pull-right">
-                                                <input class="toggle-switch" id="demo-switch-1" type="checkbox">
-                                                <label for="demo-switch-1"></label>
-                                            </div>
-                                            <p class="mar-no">Deactivate my account</p>
-                                            <small class="text-muted">Are you sure you want to deactivate your account ?</small>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="pull-right">
-                                                <input class="toggle-switch" id="demo-switch-2" type="checkbox" checked>
-                                                <label for="demo-switch-2"></label>
-                                            </div>
-                                            <p class="mar-no">Quiet mode</p>
-                                            <small class="text-muted">Appear to your network as offline.</small>
-                                        </li>
-                                    </ul>
-
-
-                                    <hr>
-
-                                    <ul class="list-group pad-btm bg-trans">
-                                        <li class="list-header"><p class="text-semibold text-main mar-no">Public Settings</p></li>
-                                        <li class="list-group-item">
-                                            <div class="pull-right">
-                                                <input class="toggle-switch" id="demo-switch-4" type="checkbox" checked>
-                                                <label for="demo-switch-4"></label>
-                                            </div>
-                                            Mkulima Newsletter
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="pull-right">
-                                                <input class="toggle-switch" id="demo-switch-5" type="checkbox" checked>
-                                                <label for="demo-switch-5"></label>
-                                            </div>
-                                            Send Automatic Feedback
-                                        </li>
-                                    </ul>
-
-
-
-                                    <hr>
-
-                                    <p class="pad-hor text-semibold text-main mar-no">Account History</p>
-                                    <div class="pad-all">
-                                        <p>Successfull Taps</p>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar progress-bar-success" style="width: 65%;"><span class="sr-only">65%</span></div>
-                                        </div>
-                                        <small class="text-muted">65% Completed</small>
-                                    </div>
-                                    <div class="pad-hor">
-                                        <p>Unsuccessful Taps</p>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar progress-bar-danger" style="width: 15%;"><span class="sr-only">15%</span></div>
-                                        </div>
-                                        <small class="text-muted">6/23 Trash</small>
-                                    </div>
-
-                                </div>
-                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                                <!--Third tab (Settings)-->
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+         
             <!--===================================================-->
             <!--END ASIDE-->
-            
-            
             <!--MAIN NAVIGATION-->
             <!--===================================================-->
-           {% include 'navbar.html' %}
-           
+            {% include 'navbar.html' %}
             <!--===================================================-->
             <!--END MAIN NAVIGATION-->
-
         </div>
-
-
-
         <!-- FOOTER -->
         <!--===================================================-->
         <footer id="footer">
-
             <!-- Visible when footer positions are fixed -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <div class="show-fixed pull-right">
                 You have
                 <a href="#" class="text-bold text-main"><span class="label label-danger">3</span> pending action.</a>
             </div>
-
-
-
             <!-- Visible when footer positions are static -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <div class="hide-fixed pull-right pad-rgt">
                 4GB of
                 <strong>5GB</strong> Free.
             </div>
-
-
-
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
             <p class="pad-lft">&#0169; 2016 Mkulima-Online</p>
-
-
-
         </footer>
         <!--===================================================-->
         <!-- END FOOTER -->
@@ -654,15 +347,9 @@
             <i class="pci-chevron chevron-up"></i>
         </button>
         <!--===================================================-->
-
-
-
     </div>
     <!--===================================================-->
     <!-- END OF CONTAINER -->
-    
-
-
 </body>
 
 </html>

@@ -16,6 +16,10 @@ urlpatterns = [
 	#ajax / customer
 	url(r'^products/tap_product/$', views.tap_product, name='tap_product'),
 	url(r'^products/trash_product/$', views.trash_product, name='trash_product'),
+
+	url(r'^orders/$', views.orders_view, name='orders'),
+	url(r'^orders/(?P<pk>\d+)/clear/$', views.clear_order, name='clear_order'),
+
 	
 
 	#admin
@@ -23,8 +27,7 @@ urlpatterns = [
 	url(r'^adminpanel/$', views.admin_panel, name='admin-panel'),
 	url(r'^adminpanel/addmember/$', views.add_sacco_members_view, name='add-member'),
 	url(r'^adminpanel/removelist/$', views.sacco_members_removelist, name='remove-list'),
-	#to do
-	#url(r'^adminpanel/members/$', views.sacco_members_list, name='members-list'),
+	
 	
 	
 	
@@ -40,7 +43,7 @@ urlpatterns = [
  	url(r'^products/(?P<slug>[\w-]+)/edit/$', views.edit_product_view, name = 'product-edit'),
  	url(r'^products/(?P<slug>[\w-]+)/delete/$', views.delete_product_view, name = 'product-delete'),
  	url(r'^mkulimapanel/$', views.mkulima_panel, name = 'mkulima-panel'),
-	url(r'^orders/$', views.orders_view, name='orders'),
+	
  	
 ]
 

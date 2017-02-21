@@ -1,103 +1,101 @@
-{% extends 'base-tables-panels.html' %}
-{% load staticfiles %} 
-{% load crispy_forms_tags %}
-
-{% block content %}
-                <div id="page-title">
-                    <h1 class="page-header text-overflow">Orders List</h1>
-                    <!--Searchbox-->
-                    
+{% extends 'base-tables-panels.html' %} {% load staticfiles %} {% load crispy_forms_tags %} {% block content %}
+<div id="page-title">
+    <h1 class="page-header text-overflow">Orders List</h1>
+    <!--Searchbox-->
+</div>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--End page title-->
+<!--Breadcrumb-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/mkulimapanel/">Dashboard</a></li>
+    <li><a href="/product/editlist/">Warehouse</a></li>
+    <li class="/orders/">Orders Clearance</li>
+</ol>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--End breadcrumb-->
+<!--Page content-->
+<!--===================================================-->
+<div id="page-content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Order Status</h3>
                 </div>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End page title-->
-                <!--Breadcrumb-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <ol class="breadcrumb">
-                    <li><a href="/mkulimapanel/">Dashboard</a></li>
-                    <li><a href="#">Warehouse</a></li>
-                    <li class="active">Inventory Report</li>
-                </ol>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End breadcrumb-->
-                <!--Page content-->
+                <!--Data Table-->
                 <!--===================================================-->
-                <div id="page-content">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Order Status</h3>
+                <div class="panel-body">
+                    <div class="pad-btm form-inline">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-offset-6 table-toolbar-right">
+                                <div class="form-group">
+                                    <input type="text" autocomplete="off" class="form-control" placeholder="Search" id="demo-input-search2">
                                 </div>
-                                <!--Data Table-->
-                                <!--===================================================-->
-                                <div class="panel-body">
-                                    <div class="pad-btm form-inline">
-                                        <div class="row">
-                                            <div class="col-sm-6 col-xs-offset-6 table-toolbar-right">
-                                                <div class="form-group">
-                                                    <input type="text" autocomplete="off" class="form-control" placeholder="Search" id="demo-input-search2">
-                                                </div>
-                                                <div class="btn-group">
-                                                    <button class="btn btn-default"><i class="demo-pli-download-from-cloud"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Customer</th>
-                                                    <th>Product</th>
-                                                    <th>Quantity</th>
-                                                    <th>Time of order</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            {% for order in orders %}
-                                                <tr>
-                                                    <td>{{order.customer}}</td>
-                                                    <td>{{order.product.name}}</td>
-                                                    <td>{{order.quantity}}</td>
-                                                    <td><span class="text-muted">{{order.timestamp}}</span></td>
-                                                </tr>
-                                            {% endfor %}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <hr>
-                                    <div class="pull-right">
-                                        <ul class="pagination text-nowrap mar-no">
-                                            <li class="page-pre disabled">
-                                                <a href="#">&lt;</a>
-                                            </li>
-                                            <li class="page-number active">
-                                                <span>1</span>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">2</a>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">3</a>
-                                            </li>
-                                            <li>
-                                                <span>...</span>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">9</a>
-                                            </li>
-                                            <li class="page-next">
-                                                <a href="#">&gt;</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-default"><i class="demo-pli-download-from-cloud"></i></button>
                                 </div>
-                                <!--===================================================-->
-                                <!--End Data Table-->
                             </div>
                         </div>
                     </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Time of order</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                <tr>
+                                    <td>{{order.customer}}</td>
+                                    <td>{{order.product.name}}</td>
+                                    <td>{{order.quantity}}</td>
+                                    <td><span class="text-muted">{{order.timestamp}}</span></td>
+
+                                    <td><a href="/orders/{{order.id}}/clear/" class="btn btn-mint">CLEAR</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    <div class="pull-right">
+                        <ul class="pagination text-nowrap mar-no">
+                            <li class="page-pre disabled">
+                                <a href="#">&lt;</a>
+                            </li>
+                            <li class="page-number active">
+                                <span>1</span>
+                            </li>
+                            <li class="page-number">
+                                <a href="#">2</a>
+                            </li>
+                            <li class="page-number">
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <span>...</span>
+                            </li>
+                            <li class="page-number">
+                                <a href="#">9</a>
+                            </li>
+                            <li class="page-next">
+                                <a href="#">&gt;</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <!--===================================================-->
-                <!--End page content-->
+                <!--End Data Table-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--===================================================-->
+<!--End page content-->
 {% endblock %}

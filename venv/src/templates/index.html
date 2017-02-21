@@ -1,5 +1,4 @@
-<!DOCTYPE html> {% load staticfiles %} 
-{% load crispy_forms_tags %}
+<!DOCTYPE html> {% load staticfiles %} {% load crispy_forms_tags %}
 <html lang="en">
 
 <head>
@@ -7,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | mkulima online</title>
+    <title>Home | mkulima leo</title>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/animate.css' %}" rel="stylesheet">
@@ -31,24 +30,18 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="/products/"><img src="{% static 'img/u332-8.png' %}" alt="Mkulima Online" /></a>
+                            <a href="/products/"><img src="{% static 'img/mkulima-l.jpg' %}" alt="Mkulima Leo"/></a>
                         </div>
                     </div>
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                        {% if request.user.is_authenticated %}
-                            {% if request.user.mkulimauserprofile or request.user.adminuserprofile %}
+                                {% if request.user.is_authenticated %} {% if request.user.mkulimauserprofile or request.user.adminuserprofile %}
                                 <li><a href='{% if request.user.mkulimauserprofile %} /mkulimapanel/ {% elif request.user.adminuserprofile %} /adminpanel/ {% endif %}'><i class="fa fa-user"></i>Dashboard</a></li>
-                            {% endif %}
-
-                            {% if request.user.customeruserprofile %}
+                                {% endif %} {% if request.user.customeruserprofile %}
                                 <li><a href='/customerprofile/{{request.user.id}}/edit/'><i class="fa fa-user"></i>View Profile</a></li>
-                            {% endif %}
-
-                        {% endif %}
-                                
-                                  <!--<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>-->
+                                {% endif %} {% endif %}
+                                <!--<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>-->
                                 <!--<li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>-->
                                 {% if request.user.is_authenticated %}
                                 <li><a href="/logout/"><i class="fa fa-lock"></i> Logout</a></li>
@@ -149,11 +142,11 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            Farm Input
-                                        </a>
-                                    </h4>
+                                            <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                Farm Input
+                                            </a>
+                                        </h4>
                                 </div>
                                 <div id="sportswear" class="panel-collapse collapse">
                                     <div class="panel-body">
@@ -169,11 +162,11 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#mens">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            Services
-                                        </a>
-                                    </h4>
+                                            <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                Services
+                                            </a>
+                                        </h4>
                                 </div>
                                 <div id="mens" class="panel-collapse collapse">
                                     <div class="panel-body">
@@ -249,23 +242,16 @@
                                         <div class="product-overlay">
                                             <div class="overlay-content">
                                                 <div class="user-img img-responsive">
-                                                    <img class="img-circle" src="images/users/1.jpg">
+                                                    <img class="img-circle" src="{{product.user.mkulimauserprofile.image.url}}">
                                                 </div>
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-                                            {% if request.user.is_authenticated%}
-                                                {% if request.user.customeruserprofile %}
-
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
-
-                                                {% endif %}
-                                            {% endif %}
+                                                {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
-
-                                {% if request.user.is_authenticated%}
-                                    {% if request.user.customeruserprofile %}
+                                    {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
                                     <div class="choose">
                                         <ul class="nav nav-pills nav-justified">
                                             <li>
@@ -274,9 +260,7 @@
                                             <li><a type="button" class="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
                                         </ul>
                                     </div>
-                                    {% endif %}
-                                {% endif %}
-
+                                    {% endif %} {% endif %}
                                 </div>
                             </div>
                             {% endfor %}
@@ -291,13 +275,21 @@
                                         <h3 class="modal-title js-product-name" id="modalLabel"> </h3>
                                     </div>
                                     <div class="modal-body">
-                                        <p id="js-product-price"></p>
-                                        <br>
-                                        <p id="js-product-description"></p>
-                                        <hr>
-                                        {% include "order-form.html" with form=form %}
+
+                                        <div class="row">
+                                        <p>Price: Kshs. </p>  <p id="js-product-price"></p>
+                                        </div>
+
+                                        <div class="row">
+                                        <p>Descrition<small>(Optional)</small>:</p>  <p id="js-product-description"></p>
+                                        </div>
+
+                                        <div class="row">
+                                        <p>Quantity</p>  <p id="js-product-quantity"></p>
+                                        </div>
+
+                                        <hr> {% include "order-form.html" with form=form %}
                                     </div>
-                                   
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">
                                             Close
@@ -320,20 +312,16 @@
                                         <div class="product-overlay">
                                             <div class="overlay-content">
                                                 <div class="user-img img-responsive">
-                                                    <img class="img-circle" src="images/users/1.jpg">
+                                                    <img class="img-circle" src="{{product.user.mkulimauserprofile.image.url}}">
                                                 </div>
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-                                            {% if request.user.is_authenticated%}
-                                                {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
-                                                {% endif %}
-                                            {% endif %}
+                                                {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
-                                {% if request.user.is_authenticated%}
-                                    {% if request.user.customeruserprofile %}
+                                    {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
                                     <div class="choose">
                                         <ul class="nav nav-pills nav-justified">
                                             <li>
@@ -342,8 +330,7 @@
                                             <li><a type="button" class="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
                                         </ul>
                                     </div>
-                                    {% endif %}
-                                {% endif %}
+                                    {% endif %} {% endif %}
                                 </div>
                             </div>
                             {% endfor %}
@@ -371,12 +358,8 @@
                                                 <img src="{{product.image.url}}" alt=""> {% endif %}
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-
-                                            {% if request.user.is_authenticated %}
-                                                {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
-                                                {% endif %}
-                                            {% endif %}
+                                                {% if request.user.is_authenticated %} {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -393,13 +376,8 @@
                                                 <img src="{{product.image.url}}" alt=""> {% endif %}
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-
-                                            {% if request.user.is_authenticated%}
-                                                {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
-                                                {% endif %}
-                                            {% endif %}
-
+                                                {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -416,14 +394,9 @@
                                                 <img src="{{product.image.url}}" alt=""> {% endif %}
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-
-                                            {% if request.user.is_authenticated%}
-                                                {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
-                                                {% endif %}
-                                            {% endif %}
+                                                {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -439,11 +412,8 @@
                                                 <img src="{{product.image.url}}" alt=""> {% endif %}
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
-                                            {% if request.user.is_authenticated%}
-                                                {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
-                                                {% endif %}
-                                            {% endif %}
+                                                {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -468,11 +438,8 @@
                                                     <img src="{{product.image.url}}" alt=""> {% endif %}
                                                     <h2>{{product.name}}</h2>
                                                     <p>Ksh {{product.price}}</p>
-                                                    {% if request.user.is_authenticated%}
-                                                {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
-                                                {% endif %}
-                                            {% endif %}
+                                                    {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
+                                                    <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -489,11 +456,8 @@
                                                     <img src="{{product.image.url}}" alt=""> {% endif %}
                                                     <h2>{{product.name}}</h2>
                                                     <p>Ksh {{product.price}}</p>
-                                                   {% if request.user.is_authenticated%}
-                                                {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a>
-                                                {% endif %}
-                                            {% endif %}
+                                                    {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
+                                                    <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -574,10 +538,11 @@
             </div>
         </div>
     </footer>
-    <!--/Footer-->
-    
+
+
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script type="text/javascript"> window.csrftoken = "{{ csrf_token }}"; </script>
     <script src="{% static 'js/mkulima-ajax.js' %}"></script>
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
@@ -587,3 +552,4 @@
 </body>
 
 </html>
+<!--/Footer-->

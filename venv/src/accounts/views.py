@@ -10,6 +10,9 @@ from django.template.loader import render_to_string
 import json
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q
+
 
 from django.contrib.auth import (
 	authenticate, 
@@ -29,6 +32,9 @@ from .models import (
 
 
 User = get_user_model()
+
+
+
 
 class UserLoginForm(forms.Form):
 	username = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Username'}), max_length=255, required=True, label='')
@@ -130,24 +136,46 @@ class ProductForm(forms.ModelForm):
 		model = Product
 		fields = ['name', 'price','description','image','quantity']
 
+
 class OrderForm(forms.ModelForm):
-    
-    def __init__(self, *args, **kwargs):
-        self.helper = FormHelper()
-        self.helper.form_id = 'demo-bvd-notempty'
-        self.helper.form_class = 'form-horizontal order-form'
-        self.helper.form_method = 'post'
-        self.helper.form_action = 'tap_product'
+	
 
-        self.helper.add_input(Submit('submit', 'Submit'))
-        
+	def __init__(self, request, *args, **kwargs):
+		self.request = request
+		self.helper = FormHelper()
+		self.helper.form_id = 'demo-bvd-notempty'
+		self.helper.form_class = 'form-horizontal order-form'
+		self.helper.form_method = 'post'
+		self.helper.form_action = 'tap_product'
+		
+		self.helper.add_input(Submit('submit', 'Submit'))
 
-        super(OrderForm, self).__init__(*args, **kwargs)
+		super(OrderForm, self).__init__(*args, **kwargs)
+
+	class Meta:
+		model = Order
+		exclude = ['customer','product','owner','timestamp','cleared']
+
+	def clean_quantity(self):
+
+		product_id_q = None
+		try:
+			product_id_q = self.request.session.get('product_id_ref')
+		except:
+			product_id_q = None
+
+		quantity = self.cleaned_data.get('quantity')
+		product = Product.objects.get(id=product_id_q)
+		product_quantity = product.quantity
+		print("form quantity is :", quantity)
+		print("product quantity is :",product_quantity)
 
 
-    class Meta:
-    	model = Order
-    	exclude = ['customer','product','owner','timestamp']
+		if quantity > product_quantity:
+			raise forms.ValidationError("value of inventory exceeded. Please reduce the amount")
+			
+
+		return quantity
 
    
 
@@ -253,19 +281,25 @@ def add_sacco_members_view(request, template_name="sacco-member-form.html"):
 @login_required(login_url='/login/')
 def remove_sacco_members_view(request, pk=None, template_name="member-confirm-remove.html"):
 
+	
+	#user = request.user
+	#admin = AdminUserProfile.objects.get(user=user)
+	#sacco = admin.sacco_name
+	#sacco_name = Group.objects.get(name=sacco)
 	mkulima = get_object_or_404(User, pk=pk)
-	user = request.user
-	admin = AdminUserProfile.objects.get(user=user)
-	sacco = admin.sacco_name
-	sacco_name = Group.objects.get(name=sacco)
 
-	if not request.user.groups.filter(name=sacco_name).exists() and not request.user.groups.filter(name='Admin').exists():
+
+	if not request.user.groups.filter(name='Admin').exists():
+		raise Http404
+	if mkulima.mkulimauserprofile.sacco_name != request.user.adminuserprofile.sacco_name:
 		raise Http404
 
-	
 
 	if request.method == 'POST':
+
 		mkulima.is_active = False
+		
+
 		mkulima.save()
 		return redirect('/adminpanel/removelist/')
 
@@ -273,24 +307,18 @@ def remove_sacco_members_view(request, pk=None, template_name="member-confirm-re
 
 @login_required(login_url='/login/')
 def sacco_members_removelist(request, template_name="member-removelist.html"):
-
-
+	
+	user = request.user
+	
 	if not request.user.groups.filter(name='Admin').exists():
 		raise Http404
 		
-	user = request.user
 	admin = AdminUserProfile.objects.get(user=user)
 	sacco = admin.sacco_name
+	sacco_name = Group.objects.get(name=sacco)
 	members = MkulimaUserProfile.objects.filter(sacco_name=sacco)
 
-
-	adminobject = AdminUserProfile.objects.get(user=user)
-	sacco_name = str(adminobject.sacco_name)
-	usertype = str(adminobject.usertype)
-
-
-
-	return render(request, template_name, {'members':members, 'sacco_name':sacco_name, 'usertypeadmin':usertype})
+	return render(request, template_name, {'members':members})
 
 
 
@@ -433,23 +461,68 @@ def mkulima_panel(request, template_name="mkulima-panel.html"):
 	if not request.user.groups.filter(name='Mkulima').exists():
 		raise Http404
 
-	wakulima = MkulimaUserProfile.objects.all()
+	wakulimaobj = MkulimaUserProfile.objects.all()
 
-	
+	user = request.user
+	orders = Order.objects.filter(owner=user).order_by('-timestamp')[:8]
 
-	return  render(request, template_name, {'wakulima':wakulima})
+	paginator = Paginator(wakulimaobj, 6)
+	page_request_var = "page"
+	page = request.GET.get(page_request_var)
+	page = request.GET.get('page')
+
+	try:
+		wakulima = paginator.page(page)
+	except PageNotAnInteger:
+		wakulima = paginator.page(1)
+	except EmptyPage:
+		wakulima = paginator.page(paginator.num_pages)
+
+
+
+	return render(request, template_name, {'wakulima':wakulima, 'orders':orders, 'page_request_var':page_request_var})
 
 @login_required(login_url='/login/')
 def admin_panel(request, template_name="admin-panel.html"):
 
 	if not request.user.groups.filter(name='Admin').exists():
 		raise Http404
+
+	sacco_name = request.user.adminuserprofile.sacco_name
+	membersobj = MkulimaUserProfile.objects.filter(sacco_name=sacco_name)
+	
+	paginator = Paginator(membersobj, 6)
+	page_request_var = "page"
+	page = request.GET.get(page_request_var)
+	page = request.GET.get('page')
+
+	try:
+		members = paginator.page(page)
+	except PageNotAnInteger:
+		members = paginator.page(1)
+	except EmptyPage:
+		members = paginator.page(paginator.num_pages)
+
 		
-	admins = AdminUserProfile.objects.all()
+	admins_obj = AdminUserProfile.objects.all()
+	adminsobj = admins_obj.exclude(id=request.user.adminuserprofile.id)
+
+	paginator = Paginator(adminsobj, 4)
+	page_request_var = "page"
+	page = request.GET.get(page_request_var)
+	page = request.GET.get('page')
+
+	try:
+		admins = paginator.page(page)
+	except PageNotAnInteger:
+		admins = paginator.page(1)
+	except EmptyPage:
+		admins = paginator.page(paginator.num_pages)
 
 
 
-	return  render(request, template_name, {'admins':admins,})
+
+	return render(request, template_name, {'admins':admins, 'members':members,'page_request_var':page_request_var})
 
 
 
@@ -571,10 +644,29 @@ def orders_view(request, template_name="orders.html"):
 		raise Http404
 
 	user = request.user
-	orders = Order.objects.filter(owner=user).order_by('-timestamp')
+	ordersobj = Order.objects.filter(owner=user).order_by('-timestamp')
+	orders = ordersobj.filter(cleared=False)
+
+
+
 
 	return render(request, template_name, {'orders':orders})
 
+
+@login_required(login_url='/login/')
+def clear_order(request, pk=None, template_name="order-confirm-clear.html"):
+
+	order = get_object_or_404(Order, pk=pk)
+	if request.method == 'POST':
+		order.cleared = True
+		product = Product.objects.get(id=order.product.id)
+		new_val = product.quantity - order.quantity
+		product.quantity = new_val
+		product.save()
+		order.save()
+		return redirect('/orders/')
+
+	return render(request, template_name, {'order':order})
 
 
 def logout_view(request):
@@ -586,50 +678,50 @@ def logout_view(request):
 
 def tap_product(request):
 	
-	
-	today = timezone.now()
 	user = request.user
+
 	data = dict()
-
-	product_id = None
-	try:
-		product_id = request.session['product_id_ref']
-	except:
-		product_id = None
-	
+	details = dict()
 
 	
+
 	if request.method=="POST":
-		form = OrderForm(request.POST)
-		
-		
 
+		product_id_obj = None
+		try:
+			product_id_obj = request.session['product_id_ref']
+			product = Product.objects.get(id=product_id_obj)
+		except:
+			product_id_obj = None
+
+		form = OrderForm(request, request.POST)
 		if form.is_valid():
 
+			quantity = form.cleaned_data.get('quantity')
 			order = form.save(commit=False)
-			product = Product.objects.get(id=product_id)
 
 			customer = User.objects.get(id=user.id)
-			
 			owner = User.objects.get(username=product.user.username)
-			
+
 			order.customer = customer
 			order.product = product
 			order.owner = owner
+			order.quantity = quantity
+			
 			order.save()
+
 			data['form_is_valid'] = True
+			
+			
 		else:
 			data['form_is_valid'] = False
-
-
-	if request.method=="GET":
+	else:
+		form = OrderForm(request)
 		
+
 		product_id = request.GET['product_id']
-		
-		form = OrderForm()
-		data['html_form'] = render_to_string('order-form.html', {'form':form}, request=request)
+		form = OrderForm(request)
 		taps = 0
-
 
 		if product_id:
 			product = Product.objects.get(id=int(product_id))
@@ -641,15 +733,13 @@ def tap_product(request):
 				data['name'] = product.name
 				data['price'] = product.price
 				data['description'] = product.description
+				data['quantity'] = product.quantity
 				
-				
 
-
-	
+	data['html_form'] = render_to_string('order-form.html', {'form':form}, request=request)
 	
 
-			
-	return JsonResponse(data, safe=False)
+	return JsonResponse(data)
 	
 
 
@@ -674,6 +764,13 @@ def trash_product(request):
 	
 
 	return HttpResponse(trashes)
+
+
+
+
+
+
+
 
 
 

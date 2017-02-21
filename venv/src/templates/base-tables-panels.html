@@ -30,23 +30,7 @@
     <!--JAVASCRIPT-->
     <!--=================================================-->
     <!--Pace - Page Load Progress Par [OPTIONAL]-->
-    <link href="{% static 'css/pace.min.css' %}" rel="stylesheet">
-    <script src="{% static 'js/pace.min.js' %}"></script>
-    <!--jQuery [ REQUIRED ]-->
-    <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
-    <!--BootstrapJS [ RECOMMENDED ]-->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!--NiftyJS [ RECOMMENDED ]-->
-    <script src="{% static 'js/nifty.min.js' %}"></script>
-    <!--=================================================-->
-    <!--Bootstrap Validator [ OPTIONAL ]-->
-    <script src="{% static 'js/bootstrapValidator.min.js' %}"></script>
-    <!--Masked Input [ OPTIONAL ]-->
-    <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
-    <!--Form validation [ SAMPLE ]-->
-    <script src="{% static 'js/form-validation.js' %}"></script>
-    <!--Select2 [ OPTIONAL ]-->
-    <script src="{% static 'js/select2.min.js' %}"></script>
+    
     <!--=================================================
 
 
@@ -69,14 +53,12 @@
             <div id="content-container">
                 <!--Page Title-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                {% block content %}
-                {% endblock %}
-           </div>
+                {% block content %} {% endblock %}
+            </div>
             <!--===================================================-->
             <!--END CONTENT CONTAINER-->
             <!--ASIDE-->
             <!--===================================================-->
-            
             <!--===================================================-->
             <!--END ASIDE-->
             <!--MAIN NAVIGATION-->
@@ -95,7 +77,6 @@
             </div>
             <!-- Visible when footer positions are static -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -112,6 +93,28 @@
     </div>
     <!--===================================================-->
     <!-- END OF CONTAINER -->
+    
+    
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'js/mkulima-ajax.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    
+    <link href="{% static 'css/pace.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/pace.min.js' %}"></script>
+    <!--jQuery [ REQUIRED ]-->
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="{% static 'js/nifty.min.js' %}"></script>
+    <!--=================================================-->
+    <!--Bootstrap Validator [ OPTIONAL ]-->
+    <script src="{% static 'js/bootstrapValidator.min.js' %}"></script>
+    <!--Masked Input [ OPTIONAL ]-->
+    <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
+    <!--Form validation [ SAMPLE ]-->
+    <script src="{% static 'js/form-validation.js' %}"></script>
+    <!--Select2 [ OPTIONAL ]-->
+    <script src="{% static 'js/select2.min.js' %}"></script>
 </body>
 
 </html>

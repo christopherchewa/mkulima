@@ -102,6 +102,7 @@ class Order(models.Model):
 	owner = models.ForeignKey(User, related_name='owner')
 	quantity = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(1000), MinValueValidator(1)])
 	timestamp = models.DateTimeField(default=timezone.now)
+	cleared = models.BooleanField(default=False)
 	
 
 	def __str__(self):
