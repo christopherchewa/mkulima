@@ -86,19 +86,8 @@
                                                             {% endfor %}
                                                         </tbody>
                                                     </table>
-                                                    <div class="pagination">
-                                                        <span class="step-links">
-
-                                                        {% if members.has_previous %}
-                                                            <a href="?{{ page_request_var }}={{members.previous_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Previous</a>
-                                                        {% endif %}
-        
-
-                                                        <span class="current">
-                                                            Page {{ members.number }} of {{members.paginator.num_pages}}
-                                                        </span> {% if members.has_next %}
-                                                        <a href="?{{ page_request_var }}={{members.next_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Next</a> {% endif %}
-                                                        </span>
+                                                   <div class="pull-right">
+                                                <a href="/adminpanel/removelist/">View More <i class="fa fa-forward" aria-hidden="true"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -139,7 +128,7 @@
                                                         <span class="current">
                                                             Page {{ admins.number }} of {{admins.paginator.num_pages}}
                                                         </span> {% if admins.has_next %}
-                                                    <a href="?{{ page_request_var }}={{admins.next_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Next</a> {% endif %}
+                                                    <a href="?{{ page_request_var }}={{admins.next_page_number}}{% if request.GET.q %}&a={{ request.GET.q }}{% endif %}">Next</a> {% endif %}
                                                     </span>
                                                 </div>
                                             </div>

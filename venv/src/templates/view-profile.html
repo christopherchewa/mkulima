@@ -109,12 +109,12 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Add Item</h3>
+                                    <h3 class="panel-title">Edit Details</h3>
                                 </div>
                                 <form id="demo-bvd-notempty" action="" method="POST" class="form-horizontal" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <div class="panel-body">
-                                        <p class="bord-btm pad-ver text-main text-bold">Enter Item Details</p>
+                                        <p class="bord-btm pad-ver text-main text-bold">Edit Profile Details</p>
                                         
                                         {% if request.user.adminuserprofile %}
                                         {{ userform | crispy }}

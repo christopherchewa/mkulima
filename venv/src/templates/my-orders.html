@@ -8,9 +8,8 @@
 <!--Breadcrumb-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <ol class="breadcrumb">
-    <li><a href="/mkulimapanel/">Dashboard</a></li>
-    <li><a href="/product/editlist/">Warehouse</a></li>
-    <li class="active">Orders Clearance</li>
+    <li><a href="/products/">Dashboard</a></li>    
+    <li class="active">Check Orders Made</li>
 </ol>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--End breadcrumb-->
@@ -44,22 +43,32 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Customer</th>
+                                    <th>Order ID</th>
+                                    <th>Owner</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
+                                    
                                     <th>Product</th>
                                     <th>Quantity</th>
                                     <th>Time of order</th>
-                                    <th></th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for order in orders %}
                                 <tr>
-                                    <td>{{order.customer}}</td>
+                                    <td style="text-align:center;">{{order.id}}</td>
+                                    <td><small>{{order.owner.first_name}} {{order.owner.last_name}}</small></td>
+                                    <td>{{order.owner.email}}</td>
+                                    <td><small>{{order.owner.mkulimauserprofile.phonenumber}}</small></td>
                                     <td>{{order.product.name}}</td>
-                                    <td>{{order.quantity}}</td>
+                                    <td style="text-align:center;">{{order.quantity}}</td>
                                     <td><span class="text-muted">{{order.timestamp}}</span></td>
-
-                                    <td><a href="/orders/{{order.id}}/clear/" class="btn btn-mint">CLEAR</a></td>
+                                    {% if order.cleared %}
+                                    <td>Cleared</td>
+                                    {% else %}
+                                    <td>Pending</td>
+                                    {% endif %}
                                 </tr>
                                 {% endfor %}
                             </tbody>

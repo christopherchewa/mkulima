@@ -19,6 +19,11 @@ $('a.taps').click(function(){
 	    $('#js-product-price').html(data.price);
 	    $('#js-product-quantity').html(data.quantity);
 		$('#js-product-description').html(data.description);
+		$('#js-product-owner').html(data.owner);
+		$('#js-owner-contact').html(data.contact);
+		$('#js-owner-email').html(data.email);
+		$('#js-owner-location').html(data.location);
+
 
 	  }
 
@@ -49,44 +54,31 @@ $(document).ready(function(){
 
 
 
-$('#js-order-form').on('submit', '#demo-bvd-notempty', function(){
-	var form = $(this)
-	var token = $('input[name="csrfmiddlewaretoken"]').prop('value');
-	var productid;
-	productid = $('a.taps').attr("data-productid");
+$('body').on('submit', '#demo-bvd-notempty', function(){
+	var form = $(this);
+	
+	
 	$.ajax({
 
 		url: form.attr('action'),
 		type: form.attr('method'),
-		beforeSend : function(jqXHR, settings) {
-        jqXHR.setRequestHeader("x-csrftoken", get_the_csrf_token_from_cookie());
-    	
-    	},
-
-		data: { 
-
-			product_id : {'product_id': productid},
-		 	form : form.serialize(),
-		 	csrfmiddlewaretoken: {'csrfmiddlewaretoken': token},
-		},
-
-		dataType: 'json',
-	
+		data: form.serialize(),
+		
 		success: function(data){
 			
 			if (data.form_is_valid){
-				alert("Order successful!");
+				console.log('Good work my boy!');
+				$('#modal-tap').modal('hide');
+				$('#modal-success').modal('show');
 				
-
 			}
 
 			else{
 
-
-				$('#js-order-form .modal-body').html(data.html_form);
-				$('#js-order-form .modal-body').html(data.form_errors);
+				$('#js-order-form').html(data.html_form);
+				
+		
 			}
-			
 			
 		}
 	});

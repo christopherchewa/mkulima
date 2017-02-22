@@ -58,7 +58,7 @@
                         </li>
                         
                         
-                        {% if not request.user.customeruserprofile %}
+                        
                         <!--Menu list item-->
                         <li class="active-sub active">
                             <a href="#" data-original-title="" title="">
@@ -68,6 +68,11 @@
                             </a>
                             <!--Submenu-->
                             <ul class="collapse in" aria-expanded="false">
+                            {% if request.user.customeruserprofile %}
+                            <li><a href='/products/myorders/'>My Listings</a></li>
+
+                            {% endif %}
+                            {% if not request.user.customeruserprofile %}
 
                                 <li><a href='{% if request.user.adminuserprofile %} /adminpanel/removelist/ {% elif request.user.mkulimauserprofile %} /products/editlist/ {% endif %}'>My Listings</a></li>
 
@@ -108,8 +113,8 @@
                             </ul>
                         </li>
                         <li class="list-divider"></li>
-                        
                         {% endif %}
+                        
                     </ul>
                 </div>
                 <div class="nano-pane" style="display: none;">

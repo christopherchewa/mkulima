@@ -12,7 +12,7 @@
     <link href="{% static 'css/animate.css' %}" rel="stylesheet">
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
-    <link href="{% static 'css/mycss.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mycss.css' %}" rel="stylesheet"> {% block meta %} {% endblock %}
     <!--[if lt IE 9]>
     
 
@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="/products/"><img src="{% static 'img/mkulima-l.jpg' %}" alt="Mkulima Leo"/></a>
+                            <a href="/products/"><img src="{% static 'img/mkulima-l.jpg' %}" alt="Mkulima Leo" /></a>
                         </div>
                     </div>
                     <div class="col-sm-8">
@@ -122,11 +122,7 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="search_box pull-right">
-
                             <input type="text" placeholder="Search" /><a href=""><i class="fa fa-search" aria-hidden="true" style="padding-left:5px;"></i></a>
-
-
-                        
                         </div>
                     </div>
                 </div>
@@ -239,22 +235,20 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             {% if product.image %}
-                                            <img src="{{product.image.url}}" alt=""> 
-                                            {% endif %}
+                                            <img src="{{product.image.url}}" alt=""> {% endif %}
                                             <h2>{{product.name}}</h2>
                                             <p>Ksh {{product.price}}</p>
                                         </div>
                                         <div class="product-overlay">
                                             <div class="overlay-content">
                                                 <div class="user-img img-responsive">
-                                                {% if product.user.mkulimauserprofile.image %}
-                                                    <img class="img-circle" src="{{product.user.mkulimauserprofile.image.url}}">
-                                                {% endif %}
+                                                    {% if product.user.mkulimauserprofile.image %}
+                                                    <img class="img-circle" src="{{product.user.mkulimauserprofile.image.url}}"> {% endif %}
                                                 </div>
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
                                                 {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#modal-tap"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -262,9 +256,9 @@
                                     <div class="choose">
                                         <ul class="nav nav-pills nav-justified">
                                             <li>
-                                                <a type="button" id="static-tap" class="taps product-details" data-toggle="modal" data-target="#policy" data-productid="{{product.id}}" data-productslug="{{product.slug}}"><i class="fa fa-plus-square"></i>Tap</a>
+                                                <a type="button" id="static-tap" class="taps product-details" data-toggle="modal" data-target="#modal-tap" data-productid="{{product.id}}" data-productslug="{{product.slug}}"><i class="fa fa-plus-square"></i>Tap</a>
                                             </li>
-                                            <li><a type="button" class="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
+                                            <li><a type="button" class="trashes" data-toggle="modal" data-target="#modal-trash" data-productid="{{product.id}}" data-toggle="modal" data-target="#modal-trash"><i class="fa fa-bitbucket"></i>Trash</a></li>
                                         </ul>
                                     </div>
                                     {% endif %} {% endif %}
@@ -272,7 +266,7 @@
                             </div>
                             {% endfor %}
                         </div>
-                        <div class="modal" id="policy" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+                        <div class="modal" id="modal-tap" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -282,26 +276,114 @@
                                         <h3 class="modal-title js-product-name" id="modalLabel"> </h3>
                                     </div>
                                     <div class="modal-body">
-
                                         <div class="row">
-                                        <p>Price: Kshs. </p>  <p id="js-product-price"></p>
+                                            <div class="col-xs-4">
+                                                <p>Price: Kshs. </p>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <p id="js-product-price"></p>
+                                            </div>
                                         </div>
-
                                         <div class="row">
-                                        <p>Descrition<small>(Optional)</small>:</p>  <p id="js-product-description"></p>
+                                            <div class="col-xs-4">
+                                                <p>Descrition<small>(Optional)</small>:</p>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <p id="js-product-description"></p>
+                                            </div>
                                         </div>
-
                                         <div class="row">
-                                        <p>Quantity</p>  <p id="js-product-quantity"></p>
+                                            <div class="col-xs-4">
+                                                <p>Quantity</p>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <p id="js-product-quantity"></p>
+                                            </div>
                                         </div>
-
-                                        <hr> {% include "order-form.html" with form=form %}
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <p>Mkulima</p>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <p id="js-product-owner"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <p>Contact</p>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <p id="js-owner-contact"></p>
+                                                <p id="js-owner-email"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <p>Location</p>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <p id="js-owner-location"></p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="modal-body" id="js-order-form">
+                                            {% include "order-form.html" with form=form %}
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                                            Close
-                                        </button>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="modal" id="modal-trash" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        
+                                    </div>
+                                    <div class="modal-body">
+                                    <div class="row">
+                                    	<div class="col-xs-1 col-xs-push-3">
+                                    		<i class="fa fa-2x fa-exclamation-triangle" aria-hidden="true" style="color:#5A895A;"></i>
+                                    	</div>
+                                    	<div class="col-xs-6 col-xs-push-3">
+                                    		<h5>You have disliked this item </h5>
+                                    	</div>
+                                    </div>
+                                        
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                                 <div class="modal" id="modal-success" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        
+                                    </div>
+                                    <div class="modal-body">
+                                    <div class="row">
+                                    	<div class="col-xs-1 col-xs-push-3">
+                                    		<i class="fa fa-2x fa-check" aria-hidden="true" style="color:#5A895A;"></i>
+                                    	</div>
+                                    	<div class="col-xs-6 col-xs-push-3">
+                                    		<h5>Successfully Ordered !</h5>
+                                    	</div>
+                                    </div>
+                                        
+                                        
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -319,14 +401,13 @@
                                         <div class="product-overlay">
                                             <div class="overlay-content">
                                                 <div class="user-img img-responsive">
-                                                {% if product.user.mkulimauserprofile.image %}
-                                                    <img class="img-circle" src="{{product.user.mkulimauserprofile.image.url}}">
-                                                {% endif %}
+                                                    {% if product.user.mkulimauserprofile.image %}
+                                                    <img class="img-circle" src="{{product.user.mkulimauserprofile.image.url}}"> {% endif %}
                                                 </div>
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
                                                 {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#modal-tap"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -334,9 +415,9 @@
                                     <div class="choose">
                                         <ul class="nav nav-pills nav-justified">
                                             <li>
-                                                <a type="button" id="static-tap" class="taps product-details" data-toggle="modal" data-target="#policy" data-productid="{{product.id}}" data-productslug="{{product.slug}}"><i class="fa fa-plus-square"></i>Tap</a>
+                                                <a type="button" id="static-tap" class="taps product-details" data-toggle="modal" data-target="#modal-tap" data-productid="{{product.id}}" data-productslug="{{product.slug}}"><i class="fa fa-plus-square"></i>Tap</a>
                                             </li>
-                                            <li><a type="button" class="trashes" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
+                                            <li><a type="button" class="trashes" data-toggle="modal" data-target="#modal-trash" data-productid="{{product.id}}"><i class="fa fa-bitbucket"></i>Trash</a></li>
                                         </ul>
                                     </div>
                                     {% endif %} {% endif %}
@@ -368,7 +449,7 @@
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
                                                 {% if request.user.is_authenticated %} {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#modal-tap"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -386,7 +467,7 @@
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
                                                 {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#modal-tap"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -404,7 +485,7 @@
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
                                                 {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#modal-tap"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -422,7 +503,7 @@
                                                 <h2>{{product.name}}</h2>
                                                 <p>Ksh {{product.price}}</p>
                                                 {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
-                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
+                                                <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#modal-tap"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -448,7 +529,7 @@
                                                     <h2>{{product.name}}</h2>
                                                     <p>Ksh {{product.price}}</p>
                                                     {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
-                                                    <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
+                                                    <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#modal-tap"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -466,7 +547,7 @@
                                                     <h2>{{product.name}}</h2>
                                                     <p>Ksh {{product.price}}</p>
                                                     {% if request.user.is_authenticated%} {% if request.user.customeruserprofile %}
-                                                    <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#policy"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
+                                                    <a type="button" class="taps btn btn-default add-to-cart" data-productid="{{product.id}}" data-productslug="{{product.slug}}" data-toggle="modal" data-target="#modal-tap"><i class="fa fa-shopping-cart"></i>Tap</a> {% endif %} {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -547,14 +628,10 @@
             </div>
         </div>
     </footer>
-
-
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
-    <script type="text/javascript"> window.csrftoken = "{{ csrf_token }}"; </script>
     <script src="{% static 'js/mkulima-ajax.js' %}"></script>
-    <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>

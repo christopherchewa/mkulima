@@ -10,6 +10,11 @@ from django.template.loader import render_to_string
 import json
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from crispy_forms.utils import render_crispy_form
+
+from django.template.context_processors import csrf
+
+
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
@@ -148,6 +153,7 @@ class OrderForm(forms.ModelForm):
 		self.helper.form_class = 'form-horizontal order-form'
 		self.helper.form_method = 'post'
 		self.helper.form_action = 'tap_product'
+		
 		
 		self.helper.add_input(Submit('submit', 'Submit'))
 
@@ -311,9 +317,31 @@ def sacco_members_removelist(request, template_name="member-removelist.html"):
 	admin = AdminUserProfile.objects.get(user=user)
 	sacco = admin.sacco_name
 	sacco_name = Group.objects.get(name=sacco)
-	members = MkulimaUserProfile.objects.filter(sacco_name=sacco)
+	membersobj = MkulimaUserProfile.objects.filter(sacco_name=sacco)
 
-	return render(request, template_name, {'members':members})
+	query = request.GET.get("q")
+	if query:
+		membersobj = membersobj.filter(
+			Q(user__email__icontains=query) | 
+			Q(user__username__icontains=query) |
+			Q(user__first_name__icontains=query) |
+			Q(user__last_name__icontains=query)).distinct()
+
+	paginator = Paginator(membersobj, 6)
+	page_request_var = "page"
+	page = request.GET.get(page_request_var)
+	page = request.GET.get('page')
+
+	try:
+		members = paginator.page(page)
+	except PageNotAnInteger:
+		members = paginator.page(1)
+	except EmptyPage:
+		members = paginator.page(paginator.num_pages)
+
+
+
+	return render(request, template_name, {'members':members, 'page_request_var':page_request_var})
 
 
 
@@ -461,6 +489,8 @@ def mkulima_panel(request, template_name="mkulima-panel.html"):
 	user = request.user
 	orders = Order.objects.filter(owner=user).order_by('cleared')[:8]
 
+	
+
 	paginator = Paginator(wakulimaobj, 6)
 	page_request_var = "page"
 	page = request.GET.get(page_request_var)
@@ -485,6 +515,7 @@ def admin_panel(request, template_name="admin-panel.html"):
 
 	sacco_name = request.user.adminuserprofile.sacco_name
 	membersobj = MkulimaUserProfile.objects.filter(sacco_name=sacco_name)
+
 	
 	paginator = Paginator(membersobj, 6)
 	page_request_var = "page"
@@ -502,22 +533,22 @@ def admin_panel(request, template_name="admin-panel.html"):
 	admins_obj = AdminUserProfile.objects.all()
 	adminsobj = admins_obj.exclude(id=request.user.adminuserprofile.id)
 
-	paginator = Paginator(adminsobj, 4)
-	page_request_var = "page"
-	page = request.GET.get(page_request_var)
-	page = request.GET.get('page')
+	paginator_a = Paginator(adminsobj, 4)
+	page_request_var_a = "page_a"
+	page_a = request.GET.get(page_request_var_a)
+	page_a = request.GET.get('page_a')
 
 	try:
-		admins = paginator.page(page)
+		admins = paginator_a.page(page_a)
 	except PageNotAnInteger:
-		admins = paginator.page(1)
+		admins = paginator_a.page(1)
 	except EmptyPage:
-		admins = paginator.page(paginator.num_pages)
+		admins = paginator_a.page(paginator_a.num_pages)
 
 
 
 
-	return render(request, template_name, {'admins':admins, 'members':members,'page_request_var':page_request_var})
+	return render(request, template_name, {'admins':admins, 'members':members,'page_request_var':page_request_var, 'page_request_var_a':page_request_var_a})
 
 
 
@@ -616,9 +647,26 @@ def product_editlist(request, template_name="product-editlist.html"):
 		raise Http404
 
 	user = request.user
-	products = Product.objects.filter(user=user).order_by('-updated')
+	productsobj = Product.objects.filter(user=user).order_by('-updated')
 
-	return render(request, template_name, {'products':products})
+	query = request.GET.get("q")
+	if query:
+		productsobj = productsobj.filter(Q(name__icontains=query)).distinct()
+	
+
+	paginator = Paginator(productsobj, 6)
+	page_request_var = "page"
+	page = request.GET.get(page_request_var)
+	page = request.GET.get('page')
+
+	try:
+		products = paginator.page(page)
+	except PageNotAnInteger:
+		products = paginator.page(1)
+	except EmptyPage:
+		products = paginator.page(paginator.num_pages)
+
+	return render(request, template_name, {'products':products,'page_request_var':page_request_var})
 
 
 @login_required(login_url='/login/')
@@ -628,9 +676,26 @@ def product_deletelist(request, template_name="product-deletelist.html"):
 		raise Http404
 		
 	user = request.user
-	products = Product.objects.filter(user=user).order_by('-updated')
+	productsobj = Product.objects.filter(user=user).order_by('-updated')
 
-	return render(request, template_name, {'products':products})
+	query = request.GET.get("q")
+	if query:
+		productsobj = productsobj.filter(Q(name__icontains=query)).distinct()
+	
+
+	paginator = Paginator(productsobj, 6)
+	page_request_var = "page"
+	page = request.GET.get(page_request_var)
+	page = request.GET.get('page')
+
+	try:
+		products = paginator.page(page)
+	except PageNotAnInteger:
+		products = paginator.page(1)
+	except EmptyPage:
+		products = paginator.page(paginator.num_pages)
+
+	return render(request, template_name, {'products':products,'page_request_var':page_request_var})
 
 
 @login_required(login_url='/login/')
@@ -641,9 +706,65 @@ def orders_view(request, template_name="orders.html"):
 
 	user = request.user
 	ordersobj = Order.objects.filter(owner=user).order_by('-timestamp')
-	orders = ordersobj.filter(cleared=False)
+	orders_qs = ordersobj.filter(cleared=False)
 
-	return render(request, template_name, {'orders':orders})
+	query = request.GET.get("q")
+	if query:
+		orders_qs = orders_qs.filter(
+			Q(customer__user__email__icontains=query) | 
+			Q(customer__user__username__icontains=query) |
+			Q(customer__user__first_name__icontains=query) |
+			Q(customer__user__last_name__icontains=query) |
+			Q(customer__phonenumber__icontains=query) |
+			Q(product__name__icontains=query)).distinct()
+	
+
+	paginator = Paginator(orders_qs, 6)
+	page_request_var = "page"
+	page = request.GET.get(page_request_var)
+	page = request.GET.get('page')
+
+	try:
+		orders = paginator.page(page)
+	except PageNotAnInteger:
+		orders = paginator.page(1)
+	except EmptyPage:
+		orders = paginator.page(paginator.num_pages)
+
+	return render(request, template_name, {'orders':orders,'page_request_var':page_request_var})
+
+@login_required(login_url='/login/')
+def my_orders_view(request, template_name="my-orders.html"):
+
+	if not request.user.groups.filter(name='Customer').exists():
+		raise Http404
+
+	user = request.user
+	ordersobj = Order.objects.filter(customer=user).order_by('-timestamp')
+	
+
+	query = request.GET.get("q")
+	if query:
+		ordersobj = ordersobj.filter(
+			Q(owner__username__icontains=query) | 
+			Q(owner__email__icontains=query) |
+			Q(owner__mkulimauserprofile__phonenumber__icontains=query) |
+			Q(product__name__icontains=query)).distinct()
+	
+
+	paginator = Paginator(ordersobj, 6)
+	page_request_var = "page"
+	page = request.GET.get(page_request_var)
+	page = request.GET.get('page')
+
+	try:
+		orders = paginator.page(page)
+	except PageNotAnInteger:
+		orders = paginator.page(1)
+	except EmptyPage:
+		orders = paginator.page(paginator.num_pages)
+
+	return render(request, template_name, {'orders':orders,'page_request_var':page_request_var})
 
 
 @login_required(login_url='/login/')
@@ -674,7 +795,6 @@ def clear_order(request, pk=None, template_name="order-confirm-clear.html"):
 def logout_view(request):
 	logout(request)
 	return redirect('/login/')
-
 
 
 @login_required(login_url='/login/')
@@ -717,7 +837,7 @@ def tap_product(request):
 		else:
 			data['form_is_valid'] = False
 			data['form_errors'] = form.errors
-			print(data['form_errors'])
+			
 
 	else:
 		form = OrderForm(request)
@@ -736,13 +856,18 @@ def tap_product(request):
 				data['price'] = product.price
 				data['description'] = product.description
 				data['quantity'] = product.quantity
+				data['owner'] = product.user.username
+				data['email'] = product.user.email
+				data['contact'] = product.user.mkulimauserprofile.phonenumber
+				data['location'] = product.user.mkulimauserprofile.location
+
+				
 				
 
 	data['html_form'] = render_to_string('order-form.html', {'form':form}, request=request)
 	
 
 	return JsonResponse(data)
-	
 
 @login_required(login_url='/login/')
 def trash_product(request):

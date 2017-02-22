@@ -61,6 +61,8 @@ class MkulimaUserProfile(models.Model):
 	location = models.CharField(max_length=255, blank=True, null=True)
 	website = models.URLField(blank=True, null=True)	
 	bio = models.TextField(blank=True, null=True)
+	phonenumber = models.CharField(max_length=10, default="0701555677")
+
 	
 	
 

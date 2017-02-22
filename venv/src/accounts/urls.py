@@ -17,6 +17,11 @@ urlpatterns = [
 	url(r'^products/tap_product/$', views.tap_product, name='tap_product'),
 	url(r'^products/trash_product/$', views.trash_product, name='trash_product'),
 
+	url(r'^products/myorders/$', views.my_orders_view, name='my-orders'),
+
+
+
+	#mkulima
 	url(r'^orders/$', views.orders_view, name='orders'),
 	url(r'^orders/(?P<pk>\d+)/clear/$', views.clear_order, name='clear_order'),
 

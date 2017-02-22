@@ -4,16 +4,280 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"sty",
+				"style\tAttr"
+			],
+			[
+				"login",
+				"login_url"
+			],
+			[
+				"st",
+				"style\tAttr"
+			],
+			[
+				"Te",
+				"TextField"
+			],
+			[
+				"paddin",
+				"padding-right\t(index.html)"
+			],
+			[
+				"admins",
+				"adminsobj"
+			],
+			[
+				"member",
+				"memberobject"
+			],
+			[
+				"exc",
+				"exclude"
+			],
+			[
+				"log",
+				"logout_view"
+			],
+			[
+				"order",
+				"order_by"
+			],
+			[
+				"btn",
+				"btn-mint\t(order-confirm-clear.html)"
+			],
+			[
+				"clear",
+				"clearorder\t(orders.html)"
+			],
+			[
+				"orders",
+				"ordersobj"
+			],
+			[
+				"pr",
+				"productobj_qunatity"
+			],
+			[
+				"order_",
+				"order_id"
+			],
+			[
+				"ren",
+				"render"
+			],
+			[
+				"csrf",
+				"csrftoken\t(index.html)"
+			],
+			[
+				"view",
+				"view_func"
+			],
+			[
+				"t",
+				"th\t<th>"
+			],
+			[
+				"reqe",
+				"request.user.adminuserprofile"
+			],
+			[
+				"reques",
+				"request.user.mkulimauserprofile"
+			],
+			[
+				"prodcu",
+				"product_id"
+			],
+			[
+				"get",
+				"get_product_q"
+			],
+			[
+				"product_q",
+				"product_q_fn"
+			],
+			[
+				"prid",
+				"product_id_q"
+			],
+			[
+				"product_id",
+				"product_id_q"
+			],
+			[
+				"img",
+				"img-responsive"
+			],
+			[
+				"pri",
+				"product_id_q"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"red",
+				"render"
+			],
+			[
+				"html",
+				"html_home_page\t(views.py)"
+			],
+			[
+				"customer",
+				"customerprofile\t(urls.py)"
+			],
+			[
+				"user",
+				"userprofileform"
+			],
+			[
+				"Custom",
+				"CustomerUserProfile"
+			],
+			[
+				"edit_",
+				"edit_profile_customer\t(views.py)"
+			],
+			[
+				"edit_profile",
+				"edit_profile_mkulima\t(views.py)"
+			],
+			[
+				"tem",
+				"template_name"
+			],
+			[
+				"product",
+				"productobj"
+			],
+			[
+				"prod",
+				"product_stock"
+			],
+			[
+				"adm",
+				"adminuserprofile"
+			],
+			[
+				"use",
+				"userobject"
+			],
+			[
+				"us",
+				"user"
+			],
+			[
+				"admin",
+				"adminobject"
+			],
+			[
+				"sac",
+				"sacco_name_data"
+			],
+			[
+				"mem",
+				"members"
+			],
+			[
+				"memr",
+				"members"
+			],
+			[
+				"obj",
+				"objects"
+			],
+			[
+				"Mkul",
+				"MkulimaUserProfile"
+			],
+			[
+				"sacco",
+				"sacco_name"
+			],
+			[
+				"Admin",
+				"AdminUserProfile"
+			],
+			[
+				"Customer",
+				"CustomerUserProfile\t(views.py)"
+			],
+			[
+				"produ",
+				"product_id"
+			],
+			[
+				"pro",
+				"product_slug"
+			],
+			[
+				"sta",
+				"static-tap\t(index.html)"
+			],
+			[
+				"Cus",
+				"CustomerUserProfile"
+			],
+			[
+				"es",
+				"exists"
+			],
+			[
+				"moal",
+				"modal-content\t(index.html)"
+			],
+			[
+				"form",
+				"form_is_valid\t(views.py)"
+			],
+			[
+				"js",
+				"js-order-form\t(order-form.html)"
+			],
+			[
+				"Order",
+				"OrderForm"
+			],
+			[
+				"modal",
+				"modal-body\t(index.html)"
+			],
+			[
+				"rend",
+				"render_to_string"
+			],
+			[
+				"tme",
+				"timezone"
+			],
+			[
+				"time",
+				"timezone\t(views.py)"
+			],
+			[
+				"saco",
+				"sacco_name"
+			],
+			[
 				"to",
 				"topdeals\t(index.html)"
 			],
 			[
 				"new",
 				"newarrivals\t(index.html)"
-			],
-			[
-				"re",
-				"return"
 			],
 			[
 				"sacc",
@@ -26,10 +290,6 @@
 			[
 				"It",
 				"IntegerField"
-			],
-			[
-				"customer",
-				"customerinfo"
 			],
 			[
 				"PROD",
@@ -48,10 +308,6 @@
 				"login_required"
 			],
 			[
-				"login",
-				"login_required"
-			],
-			[
 				"def",
 				"default"
 			],
@@ -64,10 +320,6 @@
 				"UserType"
 			],
 			[
-				"user",
-				"usertype"
-			],
-			[
 				"mku",
 				"mkulimaobj"
 			],
@@ -76,24 +328,12 @@
 				"MkulimaUserProfile"
 			],
 			[
-				"prod",
-				"product\t(views.py)"
-			],
-			[
-				"order",
-				"order_by\t(models.py)"
-			],
-			[
 				"erro",
 				"errors\t(views.py)"
 			],
 			[
 				"Imag",
 				"ImageField\t(models.py)"
-			],
-			[
-				"form",
-				"forms"
 			],
 			[
 				"M",
@@ -118,14 +358,6 @@
 			[
 				"regi",
 				"register_view\t(views.py)"
-			],
-			[
-				"padding",
-				"padding-left"
-			],
-			[
-				"admin",
-				"admin_profile_pic"
 			],
 			[
 				"ad",
@@ -156,10 +388,6 @@
 				"upload_location"
 			],
 			[
-				"margin",
-				"margin-bottom"
-			],
-			[
 				"min",
 				"min-width"
 			],
@@ -182,10 +410,6 @@
 			[
 				"back",
 				"background-color"
-			],
-			[
-				"paddin",
-				"padding-left"
 			],
 			[
 				"marg",
@@ -280,10 +504,6 @@
 				"refer_id"
 			],
 			[
-				"get",
-				"get_ref_id"
-			],
-			[
 				"new_",
 				"new_join_old"
 			],
@@ -294,240 +514,11 @@
 			[
 				"Re",
 				"request"
-			],
-			[
-				"Joi",
-				"JoinForm"
-			],
-			[
-				"create",
-				"created"
-			],
-			[
-				"pad",
-				"padding-top"
-			],
-			[
-				"style",
-				"style\tAttr"
-			],
-			[
-				"email",
-				"email_form"
-			],
-			[
-				"Email",
-				"EmailField\t(models.py)"
-			],
-			[
-				"views",
-				"views.home\t(urls.py)"
-			],
-			[
-				"url",
-				"urlpatterns\t(urls.py)"
-			],
-			[
-				"djan",
-				"django.conf.urls\t(urls.py)"
-			],
-			[
-				"a",
-				"admin"
-			],
-			[
-				"log",
-				"logout"
-			],
-			[
-				"em",
-				"email_qs"
-			],
-			[
-				"clea",
-				"cleaned_data"
-			],
-			[
-				"conta",
-				"container1\t(mycss.css)"
-			],
-			[
-				"widget",
-				"widget_tweaks\t(login.html)"
-			],
-			[
-				"model",
-				"model"
-			],
-			[
-				"changePA",
-				"changePasswordForm"
-			],
-			[
-				"pas",
-				"password_form"
-			],
-			[
-				"r",
-				"request"
-			],
-			[
-				"Model",
-				"ModelForm"
-			],
-			[
-				"md",
-				"model\tmodel"
-			],
-			[
-				"reg",
-				"registered"
-			],
-			[
-				"regist",
-				"registered"
-			],
-			[
-				"Http",
-				"HttpResponseRedirect"
-			],
-			[
-				"u",
-				"user_form"
-			],
-			[
-				"HttR",
-				"HttpResponseRedirect"
-			],
-			[
-				"L",
-				"LOGIN_URL\t(settings.py)"
-			],
-			[
-				"se",
-				"settings\t(settings.py)"
-			],
-			[
-				"LGIN",
-				"LOGIN_URL\t(views.py)"
-			],
-			[
-				"apps",
-				"apps.django_test\t(settings.py)"
-			],
-			[
-				"ur",
-				"url"
-			],
-			[
-				"UserForm",
-				"UserFormView\t(views.py)"
-			],
-			[
-				"reu",
-				"return"
-			],
-			[
-				"au",
-				"authenticate"
-			],
-			[
-				"dja",
-				"django.conf.urls"
-			],
-			[
-				"S",
-				"STATIC_ROOT\t(settings.py)"
-			],
-			[
-				"tem",
-				"template_name"
-			],
-			[
-				"ST",
-				"STATIC_ROOT"
-			],
-			[
-				"BA",
-				"BASE_DIR"
-			],
-			[
-				"cle",
-				"cleaned_data"
-			],
-			[
-				"use",
-				"username"
-			],
-			[
-				"fo",
-				"forms\t(views.py)"
-			],
-			[
-				"cont",
-				"contrib\t(views.py)"
-			],
-			[
-				"te",
-				"template_name"
-			],
-			[
-				"font",
-				"font-weight"
-			],
-			[
-				"wid",
-				"width"
-			],
-			[
-				"Htt",
-				"HttpResponse"
-			],
-			[
-				"http",
-				"HttpResponseRedirect"
-			],
-			[
-				"for",
-				"forms"
-			],
-			[
-				"col",
-				"col-md-offset-3"
-			],
-			[
-				"onC",
-				"onclick\tAttr"
-			],
-			[
-				"list",
-				"list-style-type"
-			],
-			[
-				"op",
-				"option\tTag"
-			],
-			[
-				"pa",
-				"parent_obj_url"
-			],
-			[
-				"pare",
-				"parent_obj"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/Stuff/DjangoFiles/lens/venv/src/templates/panel.html",
-			"settings":
-			{
-				"buffer_size": 8730,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -595,46 +586,86 @@
 	[
 		"/D/Stuff/DjangoFiles/mkulima-online/venv",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/src",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/static_cdn"
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/tcl"
 	],
 	"file_history":
 	[
-		"/D/Stuff/DjangoFiles/lens/venv/src/static/css/settings.css",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/pages-login.html",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/base.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/sacco-member-form.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/top-navbar.html",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/views.py",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/orders.html",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/product-confirm-delete.html",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/mkulima-panel.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/mkulima-register.html",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/css/mycss.css",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/index.html",
-		"/C/Users/Chewa/Downloads/Compressed/lens by M'Rinyiru1 - trial/panel.html",
-		"/D/Stuff/DjangoFiles/login/venv/src/templates/base.html",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/css/font-awesome.min.css",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/models.py",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/src/urls.py",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/urls.py",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/navbar.html",
+		"/D/Stuff/DjangoFiles/trydjango192/src/templates/post_list.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/order-confirm-clear.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/product-editlist.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/src/middleware.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/models.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/index.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/view-profile.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/js/mkulima-ajax.js",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/add-account.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/base-login-register.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/base-panel.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/admin-panel.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/urls.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/member-removelist.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/member-confirm-remove.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/product-confirm-delete.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/orders.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/base-tables-panels.html",
+		"/D/Stuff/DjangoFiles/login/venv/src/accounts/models.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/customer-register.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/pages-login.html",
+		"/D/Stuff/DjangoFiles/launch with code/lwc/src/templates/home.html",
+		"/D/Stuff/DjangoFiles/launch with code/lwc/src/templates/base.html",
+		"/D/Stuff/DjangoFiles/trydjango192/src/posts/views.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/members.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/order-form.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/add-product.html",
+		"/D/Stuff/DjangoFiles/launch with code/lwc/src/joins/views.py",
+		"/D/Stuff/DjangoFiles/trydjango192/src/accounts/views.py",
+		"/D/Stuff/DjangoFiles/trydjango192/src/accounts/forms.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/base-index.html",
+		"/D/Stuff/DjangoFiles/djangocrud/mysite/servers/views.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/base.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/mkulima-panel.html",
+		"/D/Stuff/DjangoFiles/launch with code/lwc/src/joins/models.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/src/settings.py",
+		"/D/Stuff/DjangoFiles/djangocrud/mysite/servers/urls.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/src/urls.py",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/admin.py",
+		"/E/CT/CT 3.2/HCI/PROJECT/Class project/Class project/Online dic/search.php",
+		"/E/CT/CT 3.2/HCI/PROJECT/Class project.rar",
+		"/E/CT/CT 3.2/HCI/PROJECT/Class project/Class project/Online dic/index.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/add-member-form.html",
+		"/D/Stuff/DjangoFiles/login/venv/src/static/js/mkulima-ajax.js",
+		"/H/mkulima-online/venv/static_cdn/js/mkulima-ajax.js",
+		"/D/Stuff/DjangoFiles/login/venv/src/templates/base.html",
+		"/D/Stuff/DjangoFiles/login/venv/src/accounts/urls.py",
+		"/D/Stuff/DjangoFiles/login/venv/src/templates/partial-order-form.html",
+		"/D/Stuff/DjangoFiles/login/venv/src/accounts/views.py",
+		"/D/Stuff/DjangoFiles/login/venv/src/templates/product_list.html",
+		"/D/Stuff/DjangoFiles/login/venv/src/templates/product_form - Copy.html",
+		"/D/Stuff/Web/bootstrap/Bootstrap 3/boostrap 3 tutorial files/vd4/modal.html",
+		"/H/mkulima-online/venv/src/accounts/views.py",
+		"/D/Stuff/DjangoFiles/lens/venv/src/templates/panel.html",
+		"/D/Stuff/DjangoFiles/lens/venv/src/static/css/settings.css",
+		"/C/Users/Chewa/Downloads/Compressed/lens by M'Rinyiru1 - trial/panel.html",
+		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/css/font-awesome.min.css",
 		"/D/Stuff/DjangoFiles/trydjango192/src/templates/messages_display.html",
 		"/D/Stuff/DjangoFiles/trydjango192/src/templates/base.html",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/product-editlist.html",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/product-deletelist.html",
 		"/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/myauthapp/templates/myauthapp/login.html",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/admin.py",
 		"/D/Stuff/DjangoFiles/authapp(using djangoWidgetTweaks)/mysite/myauthapp/templates/myauthapp/register.html",
-		"/D/Stuff/DjangoFiles/trydjango192/src/posts/views.py",
 		"/D/Stuff/DjangoFiles/trydjango192/src/posts/models.py",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/add-product.html",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/css/themify-icons.min.css",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/static/css/nifty-demo-icons.min.css",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/Lib/site-packages/django/http/response.py",
-		"/D/Stuff/DjangoFiles/login/venv/src/accounts/models.py",
-		"/D/Stuff/DjangoFiles/trydjango192/src/accounts/forms.py",
 		"/D/Stuff/DjangoFiles/djangocrud/mysite/servers/templates/servers/server_confirm_delete.html",
-		"/D/Stuff/DjangoFiles/login/venv/src/accounts/views.py",
-		"/D/Stuff/DjangoFiles/trydjango192/src/templates/post_list.html",
 		"/D/Stuff/DjangoFiles/crud/mysite/rango/models.py",
 		"/D/Stuff/DjangoFiles/trydjango192/src/accounts/models.py",
 		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/myauthapp/views.py",
@@ -642,8 +673,6 @@
 		"/D/Stuff/DjangoFiles/djangocrud/mysite/servers/templates/servers/server_list.html",
 		"/D/Stuff/DjangoFiles/login/venv/src/src/urls.py",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/pages-register.html",
-		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/src/settings.py",
-		"/D/Stuff/DjangoFiles/trydjango192/src/accounts/views.py",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/accounts/migrations/0001_initial.py",
 		"/D/Stuff/DjangoFiles/trydjango192/src/trydjango19/settings.py",
 		"/D/Stuff/DjangoFiles/mkulima-online/venv/src/templates/css/mycss.css",
@@ -663,7 +692,6 @@
 		"/D/Stuff/Web/designs/biozeqtrial/contact.html",
 		"/D/Stuff/Web/designs/biozeqtrial/home.html",
 		"/D/Stuff/Web/designs/biozeqtrial/assets/css/mycss.css",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/templates/home.html",
 		"/D/Stuff/Web/bootstrap/Bootstrap 3/boostrap 3 tutorial files/vd4/carousel.html",
 		"/D/Stuff/Web/designs/probusiness/templates/probusiness/css/template.css",
 		"/D/Stuff/DjangoFiles/launch with code/lwc/src/templates/share.html",
@@ -681,7 +709,6 @@
 		"/D/Stuff/Web/bootstrap/Bootstrap 3/boostrap 3 tutorial files/vd4/collapsing navigation.html",
 		"/D/Stuff/Web/designs/biozeq/home.html",
 		"/D/Stuff/Web/designs/biozeq/templates/probusiness/css/mycss.css",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/templates/base.html",
 		"/D/Stuff/DjangoFiles/launch with code/lwc/src/static/static_dirs/css/mycss.css",
 		"/D/Stuff/Web/designs/biozeq/New folder/home.html",
 		"/D/Stuff/DjangoFiles/launch with code/lwc/src/lwc/settings/local.py",
@@ -690,45 +717,10 @@
 		"/D/Stuff/DjangoFiles/deploy/venv/src/settings.py",
 		"/D/Stuff/DjangoFiles/launch with code/lwc/src/Procfile",
 		"/D/Stuff/DjangoFiles/launch with code/lwc/src/lwc/settings_old.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/joins/views.py",
 		"/D/Stuff/DjangoFiles/launch with code/lwc/src/joins/urls.py",
 		"/D/Stuff/DjangoFiles/launch with code/lwc/src/lwc/settings/production.py",
 		"/D/Stuff/DjangoFiles/launch with code/lwc/src/lwc/wsgi.py",
-		"/D/Stuff/DjangoFiles/deploy/venv/src/wsgi.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/lwc/settings/base.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/lwc/settings/__init__.py",
-		"/D/Stuff/DjangoFiles/deploy/venv/Procfile",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/templates/404.html",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/lwc/urls.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/lwc/settings.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/templates/500.html",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/templates/400.html",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/static/static_dirs/css/cover.css",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/joins/models.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/templates/navbar.html",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/lwc/middleware.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/Lib/site-packages/django/contrib/admin/sites.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/Lib/site-packages/django/http/request.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/static/static_dirs/css/jumbotron.css",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/joins/admin.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/static/static_dirs/css/ie10-viewport-bug-workaround.css",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/static/static_dirs/js/ie10-viewport-bug-workaround.js",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/static/static_dirs/js/ie-emulation-modes-warning.js",
-		"/C/Users/Chewa/Music/Biozeq/Cover Template for Bootstrap.html",
-		"/D/Stuff/DjangoFiles/faiba-mitaani/venv/src/src/settings.py",
-		"/C/Users/Chewa/Downloads/lens by M'Rinyiru1/style.css",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/src/static/static_dirs/css/bootstrap.min.css",
-		"/D/Stuff/DjangoFiles/trydjango192/src/posts/urls.py",
-		"/D/Stuff/DjangoFiles/launch with code/lwc/requirements",
-		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/myauthapp/templates/myauthapp/admin-home.html",
-		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/myauthapp/templates/myauthapp/installers-home.html",
-		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/myauthapp/templates/myauthapp/retention-team-home.html",
-		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/myauthapp/templates/myauthapp/sales-home.html",
-		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/accounts/views.py",
-		"/D/Stuff/DjangoFiles/authapp(using crispyforms)/mysite/myauthapp/templates/myauthapp/register.html",
-		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/accounts/templates/accounts/login_form.html",
-		"/D/Stuff/DjangoFiles/userauth-bootstrap/mysite/accounts/templates/accounts/base.html",
-		"/D/Stuff/DjangoFiles/trydjango192/src/templates/post_details.html"
+		"/D/Stuff/DjangoFiles/deploy/venv/src/wsgi.py"
 	],
 	"find":
 	{
@@ -746,6 +738,101 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"button",
+			"}}\n",
+			"information",
+			"website",
+			"website ",
+			"location",
+			"location ",
+			"admin",
+			"image.url",
+			"default=\"Update your profile data\"",
+			"\"\"",
+			"False",
+			"Actions",
+			"2x",
+			"fa ",
+			"wakulima",
+			"_a",
+			"wakulima",
+			"admins",
+			"wakulima",
+			"mkulimaoption",
+			"sacco_name",
+			"Http404",
+			"():\n",
+			"My Ne",
+			"image",
+			"object_list",
+			"order",
+			"dmi",
+			"Accou",
+			"#",
+			"slug",
+			"button",
+			"return redirect('/orders/')",
+			"rm",
+			"details",
+			"data",
+			"today",
+			"\"",
+			"War",
+			"Prof",
+			"login",
+			"<foo",
+			"#",
+			"get_ref_id",
+			"get_ip",
+			"UserRegistrationForm",
+			"t$",
+			"dit",
+			"customer",
+			"admin",
+			"viewp",
+			"view",
+			"product",
+			"customer",
+			"\"",
+			"usertype == \"Admin\"",
+			"Edit",
+			"slug",
+			"<a type=\"button\" class=\"taps btn btn-default add-to-cart\" data-productid=\"{{product.id}}\" data-toggle=\"modal\" data-target=\"#policy\"><i class=\"fa fa-shopping-cart\"></i>Tap</a>",
+			"user.",
+			"{% if usertype == \"Mkulima\" %}",
+			"\"",
+			"aside",
+			"<he",
+			"<hea",
+			"<he",
+			"<hea",
+			"usertypemkulima",
+			"user)",
+			"user",
+			"mkulimao",
+			"'",
+			"\"",
+			"mkulimaob",
+			"member.",
+			"sacco_name",
+			"admino",
+			"(",
+			"ADD",
+			"mkulima",
+			"sacco_name",
+			"user",
+			"product",
+			"Mkulima",
+			"wakulima",
+			"\n",
+			"id",
+			", )",
+			":p",
+			"'name':product.name,'price':product.price, 'description':product.description,",
+			"#",
+			"#\tproduct_slug = request.GET['product_slug']",
+			"data-productid=\"{{product.id}}\"",
+			"<div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">\n                    Close\n                </button>\n            </div>\n        </div>\n    </div>\n</div>",
 			"id=\"",
 			"entry-",
 			"timez",
@@ -778,102 +865,7 @@
 			"qs",
 			"mkulima",
 			"True",
-			"usertype",
-			"usertypeadmin",
-			"upload_l",
-			"ton ",
-			"type=\"button",
-			"\"></",
-			"}}\"><",
-			"type=\"a\"",
-			"button",
-			"a>",
-			"a> ",
-			"equired=T",
-			"requ",
-			"label=''",
-			" null=False,",
-			"''",
-			"bio",
-			"email",
-			"password2",
-			"password",
-			"form.",
-			"form",
-			"Goods",
-			"#",
-			"'title':title",
-			"first_name",
-			"first_",
-			"username",
-			", 'class",
-			"email",
-			"==",
-			"rnam",
-			"pic,",
-			"sto",
-			"new_id",
-			"admin.site.urls",
-			"white",
-			"whoweare",
-			"<div>",
-			"slide",
-			"<div class=\"sppb-col-sm",
-			"<div class=\"contactinfo-container\">",
-			"<div>",
-			"ppb-addon-content",
-			"img",
-			"service",
-			"https://plus",
-			"3x",
-			"<h3",
-			"whowea",
-			"glyph",
-			"right",
-			"myCa",
-			"divider",
-			"rgba(33, 130, 241, 0.7) !important",
-			"side",
-			"#439bff",
-			"#2d68b2",
-			"class=\"preset\"",
-			"}",
-			"\t\n",
-			"cli",
-			"1045px",
-			"../../",
-			"components/com_spsimpleportfolio/",
-			"media/com_uniterevolution2/assets/rs-plugin",
-			"templates/probusiness/",
-			"media/jui/",
-			"./mrclab_files/DImage_",
-			"slide",
-			"       \n",
-			"ss=\"fa",
-			"<a cla",
-			"sm",
-			"ppb-col-sm-3",
-			"pagebui",
-			"center>",
-			"ter",
-			"ppb-col-sm-3",
-			"CEO &amp; Founder",
-			"assets/images/team1",
-			"images/sppagebuilder/",
-			"jlvextension",
-			"fa-4x",
-			"a href",
-			"col-sm-3",
-			"footer",
-			"blog/",
-			"pages/jo",
-			"\"\"",
-			"\"",
-			"pages/othe",
-			"pages/contact/contact",
-			"ages/about/about",
-			"ace.html",
-			"ery-style.html"
+			"usertype"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -891,37 +883,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/Stuff/DjangoFiles/lens/venv/src/templates/panel.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8730,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8460,
-								8460
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 838.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1010,7 +973,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 214.0,
+	"side_bar_width": 292.0,
 	"status_bar_visible": false,
 	"template_settings":
 	{

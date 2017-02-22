@@ -7,23 +7,16 @@
                 <div id="page-title">
                     <h1 class="page-header text-overflow">Delete My Products</h1>
                     <!--Searchbox-->
-                    <div class="searchbox">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search..">
-                            <span class="input-group-btn">
-                                <button class="text-muted" type="button"><i class="demo-pli-magnifi-glass"></i></button>
-                            </span>
-                        </div>
-                    </div>
+                  
                 </div>
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End page title-->
                 <!--Breadcrumb-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <ol class="breadcrumb">
-                    <li><a href="default.html">Home</a></li>
-                    <li><a href="#">Actions</a></li>
-                    <li class="active">Delete Products</li>
+                    <li><a href="/products/">Home</a></li>
+                    <li><a href="/mkulimapanel/">Actions</a></li>
+                    <li class="#">Delete Products</li>
                 </ol>
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End breadcrumb-->
@@ -42,12 +35,14 @@
                                     <div class="pad-btm form-inline">
                                         <div class="row">
                                             <div class="col-sm-6 col-xs-offset-6 table-toolbar-right">
-                                                <div class="form-group">
-                                                    <input type="text" autocomplete="off" class="form-control" placeholder="Search" id="demo-input-search2">
-                                                </div>
-                                                <div class="btn-group">
-                                                    <button class="btn btn-default"><i class="demo-pli-download-from-cloud"></i></button>
-                                                </div>
+                                                      <form method="GET" action="">
+                                                        <div class="input-group">
+                                                            <input class="form-control" type="text" name="q" placeholder="Search" value="{{request.GET.q}}">
+                                                            <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                                                            </span>
+                                                        </div>
+                                                    </form>
                                             </div>
                                         </div>
                                     </div>
@@ -81,31 +76,23 @@
                                         </table>
                                     </div>
                                     <hr>
-                                    <div class="pull-right">
-                                        <ul class="pagination text-nowrap mar-no">
-                                            <li class="page-pre disabled">
-                                                <a href="#">&lt;</a>
-                                            </li>
-                                            <li class="page-number active">
-                                                <span>1</span>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">2</a>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">3</a>
-                                            </li>
-                                            <li>
-                                                <span>...</span>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">9</a>
-                                            </li>
-                                            <li class="page-next">
-                                                <a href="#">&gt;</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                       <div class="pagination">
+                                                        <span class="step-links">
+
+                                                            {% if products.has_previous %}
+                                                                <a href="?{{ page_request_var }}={{products.previous_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Previous</a>
+                                                            {% endif %}
+            
+
+                                                            <span class="current">
+                                                                Page {{ products.number }} of {{products.paginator.num_pages}}
+                                                            </span> 
+
+                                                            {% if products.has_next %}
+                                                            <a href="?{{ page_request_var }}={{products.next_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Next</a>
+                                                            {% endif %}
+                                                        </span>
+                                                    </div>
                                 </div>
                                 <!--===================================================-->
                                 <!--End Data Table-->
